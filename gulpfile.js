@@ -1,96 +1,80 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
+// ========================================
+// GULP DEV SERVER - FULL VERSION
+// No SCSS, No Minify — Just Live Reload
+// LAN üzerinden erişilebilir
+// ========================================
 
-// -----------------------------
+const gulp = require('gulp');
+const browserSync = require('browser-sync').create();
+const os = require('os');
+
+// ----------------------------------------
+// Bilgisayarın yerel IP adresini bulur
+// ----------------------------------------
+function getLocalIP() {
+  const interfaces = os.networkInterfaces();
+  for (const name of Object.keys(interfaces)) {
+    for (const net of interfaces[name]) {
+      // IPv4 adresi ve dahili (localhost) olmayanları filtrele
+      if (net.family === 'IPv4' && !net.internal) {
+        return net.address;
+      }
+    }
+  }
+  // Hiçbiri bulunamazsa localhost döndür
+  return '127.0.0.1';
+}
+
+// ----------------------------------------
 // BrowserSync başlat
-// -----------------------------
+// ----------------------------------------
 function serve(done) {
+  const localIP = getLocalIP();
+
   browserSync.init({
     server: {
-      baseDir: './',
-      index: 'index.html'
+      baseDir: './',        // Proje kök dizini
+      index: 'index.html'   // Açılacak ana dosya
     },
-    notify: false,
-    open: true,
+    host: localIP,           // LAN IP (telefon erişimi için)
+    port: 3000,              // Port (gerekirse değiştirilebilir)
+    notify: false,           // Sağ üstteki BrowserSync bildirimi kapalı
+    open: false,             // Tarayıcıyı otomatik açma
+    cors: true,              // CORS açık (gerekirse)
   });
+
+  console.log('\n========================================');
+  console.log('  🔥 Gulp Live Server Çalışıyor!');
+  console.log('----------------------------------------');
+  console.log(`  💻 Local:   http://localhost:3000`);
+  console.log(`  📱 LAN IP:  http://${localIP}:3000`);
+  console.log('----------------------------------------');
+  console.log('  Değişiklik yap → sayfa otomatik yenilenir');
+  console.log('========================================\n');
+
   done();
 }
 
-// -----------------------------
-// Dosyaları izle
-// -----------------------------
+// ----------------------------------------
+// İzleme (HTML, CSS, JS)
+// ----------------------------------------
 function watchFiles() {
-  gulp.watch('js/**/*.js').on('change', browserSync.reload);
-  gulp.watch('css/**/*.css').on('change', browserSync.reload);
   gulp.watch('**/*.html').on('change', browserSync.reload);
+  gulp.watch('css/**/*.css').on('change', browserSync.reload);
+  gulp.watch('js/**/*.js').on('change', browserSync.reload);
 }
 
-// -----------------------------
-// Dev Task (sadece izleme ve live reload)
-var dev = gulp.series(
+// ----------------------------------------
+// DEV Task
+// (Sadece canlı yenileme, derleme yok)
+// ----------------------------------------
+const dev = gulp.series(
   serve,
   watchFiles
 );
 
-// -----------------------------
-// Build Task (istersen minify ve SCSS dahil burada yapabilirsin)
-function compileSass() {
-  var sass = require('gulp-sass')(require('sass'));
-  var header = require('gulp-header');
-  var pkg = require('./package.json');
-  var banner = ['/*!\n',
-    ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-    ' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-    ' * Licensed under <%= pkg.license %> (https://github.com/BlackrockDigital/<%= pkg.name %>/blob/master/LICENSE)\n',
-    ' */\n',
-    ''
-  ].join('');
-
-  return gulp.src('scss/**/*.scss', { sourcemaps: true })
-    .pipe(sass({ quietDeps: true }).on('error', sass.logError))
-    .pipe(header(banner, { pkg: pkg }))
-    .pipe(gulp.dest('css', { sourcemaps: '.' }));
-}
-
-function minifyCss() {
-  var cleanCSS = require('gulp-clean-css');
-  var rename = require('gulp-rename');
-  return gulp.src('css/**/*.css')
-    .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('css'));
-}
-
-function minifyJs() {
-  var uglify = require('gulp-uglify');
-  var rename = require('gulp-rename');
-  var header = require('gulp-header');
-  var pkg = require('./package.json');
-  var banner = ['/*!\n',
-    ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-    ' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-    ' * Licensed under <%= pkg.license %> (https://github.com/BlackrockDigital/<%= pkg.name %>/blob/master/LICENSE)\n',
-    ' */\n',
-    ''
-  ].join('');
-
-  return gulp.src('js/**/*.js')
-    .pipe(uglify())
-    .pipe(header(banner, { pkg: pkg }))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('js'));
-}
-
-// Build task (opsiyonel)
-var build = gulp.series(
-  compileSass,
-  gulp.parallel(minifyCss, minifyJs)
-);
-
-// -----------------------------
-// Export
+// ----------------------------------------
+// Export (terminal komutları)
+// ----------------------------------------
 exports.dev = dev;
-exports.build = build;
-exports.sass = compileSass;
-exports['minify-css'] = minifyCss;
-exports['minify-js'] = minifyJs;
+exports.default = dev;

@@ -16,20 +16,20 @@
 </div>
 
 <div id="results" class="quiz-container" style="display: none; text-align: center;">
-    <h2 id="results-title">Congratulations! Quiz Completed! 🎉</h2>
-    <p id="final-message" style="font-size: 1.2em; font-weight: bold; margin-bottom: 20px;"></p>
-    
-    <h3>Share Your Result:</h3>
-    <div id="share-links" style="margin-top: 20px;">
-        <button id="generic-share-btn" style="padding: 10px 20px; margin: 5px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
-            Share My Result
-        </button>
-        
-        <button id="try-again-btn" style="padding: 10px 20px; margin: 5px; background-color: #ff6347; color: white; border: none; border-radius: 5px; cursor: pointer;">
-            Try Again 🔄
-        </button>
-    </div>
+    <h2 id="results-title">Congratulations! Quiz Completed! 🎉</h2>
+    <p id="final-message" style="font-size: 1.2em; font-weight: bold; margin-bottom: 20px;"></p>
+    
+    <!-- Tek share buton -->
+    <button id="share-result-btn" style="padding: 10px 20px; margin: 5px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Share My Result
+    </button>
+
+    <!-- Try Again butonu -->
+    <button id="try-again-btn" style="padding: 10px 20px; margin: 5px; background-color: #ff6347; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Try Again 🔄
+    </button>
 </div>
+
 <script>
 const quizData = [
     {
@@ -158,17 +158,14 @@ const quizContainer = document.getElementById('quiz');
 const scoreElement = document.getElementById('score');
 const resultsContainer = document.getElementById('results');
 const finalMessage = document.getElementById('final-message');
-const genericShareBtn = document.getElementById('generic-share-btn');
-const linkedinShareLink = document.getElementById('linkedin-share-link');
 const timerElement = document.getElementById('timer'); 
-const tryAgainBtn = document.getElementById('try-again-btn'); 
 
 let correctAnswers = 0;
 let answeredQuestions = 0;
 const totalQuestions = quizData.length;
 let currentQuestionIndex = 0;
 let timerInterval;
-const TIME_PER_QUESTION = 30; // Set back to 30 seconds
+const TIME_PER_QUESTION = 0;// Set back to 30 seconds
 
 // --- TIMER FUNCTIONS ---
 function startTimer() {
@@ -242,112 +239,47 @@ function updateScore() {
     }
 }
 
+// JS
+const shareResultBtn = document.getElementById('share-result-btn');
+const tryAgainBtn = document.getElementById('try-again-btn');
+
+// SHOW RESULTS FUNCTION
 function showResults() {
-    stopTimer();
-    quizContainer.style.display = 'none';
-    resultsContainer.style.display = 'block';
-    timerElement.style.display = 'none';
+  stopTimer();
+  quizContainer.style.display = 'none';
+  resultsContainer.style.display = 'block';
+  timerElement.style.display = 'none';
 
-    const percentage = Math.round((correctAnswers / totalQuestions) * 100);
-    let messageText;
+  const percentage = Math.round((correctAnswers / totalQuestions) * 100);
+  let message;
+  if (percentage === 100) message = `Perfect! You answered all ${correctAnswers} questions correctly! 🚢⚓`;
+  else if (percentage >= 70) message = `Great! You scored ${correctAnswers}/${totalQuestions} (${percentage}%)! 🌊`;
+  else message = `You scored ${correctAnswers}/${totalQuestions} (${percentage}%). Keep studying LGHP4 notes! 📚`;
 
-    if (percentage === 100) {
-        messageText = `Perfect! You answered all ${correctAnswers} questions correctly! 🚢⚓`;
-    } else if (percentage >= 70) {
-        messageText = `Congratulations! You have a strong knowledge base with ${correctAnswers} / ${totalQuestions} (${percentage}%) correct answers.`;
-    } else {
-        messageText = `A good start! You scored ${correctAnswers} / ${totalQuestions} (${percentage}%). You might want to review the LGHP4 notes.`;
-    }
-
-    finalMessage.textContent = messageText;
-
-    const shareText = `I scored ${correctAnswers}/${totalQuestions} (${percentage}%) on the LGHP Advanced Quiz! Tested my LNG / LGC knowledge. #LGHP4 #LNG #Maritime`;
-    const shareUrl = window.location.href;
-
-    // LinkedIn
-    linkedinShareLink.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent('LGHP Advanced Quiz Result')}&summary=${encodeURIComponent(shareText)}`;
-    linkedinShareLink.target = "_blank";
-    linkedinShareLink.rel = "noopener noreferrer";
-
-    // Generic Share (Web Share API + fallback)
-    // Önceki listener varsa temizle
-    const newBtn = genericShareBtn.cloneNode(true);
-    genericShareBtn.parentNode.replaceChild(newBtn, genericShareBtn);
-
-    newBtn.addEventListener('click', () => {
-        if (navigator.share) {
-            navigator.share({
-                title: 'LGHP Advanced Quiz Result',
-                text: shareText,
-                url: shareUrl,
-            }).catch(console.error);
-        } else {
-            const fallbackText = `${shareText} ${shareUrl}`;
-            navigator.clipboard.writeText(fallbackText).then(() => {
-                alert("Your result has been copied to the clipboard! You can paste and share it anywhere.");
-            }).catch(() => {
-                // Fallback: Twitter
-                const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
-                window.open(twitterUrl, '_blank');
-            });
-        }
-    });
+  finalMessage.textContent = message;
 }
 
+// SHARE BUTTON
+shareResultBtn.addEventListener('click', () => {
+  const percentage = Math.round((correctAnswers / totalQuestions) * 100);
+  const shareText = `I scored ${correctAnswers}/${totalQuestions} (${percentage}%) on the LGHP4 Quiz! Tested my LNG/LGC knowledge. #LGHP4 #Maritime`;
+  const shareUrl = window.location.href;
 
-
-// --- INITIALIZATION AND LOOP ---
-
-// Quiz question element creation
-quizData.forEach((q, index) => {
-    const questionDiv = document.createElement('div');
-    questionDiv.className = 'question';
-    questionDiv.style.display = index === 0 ? 'block' : 'none'; 
-
-    const questionTitle = document.createElement('h3');
-    questionTitle.textContent = `${index + 1}. ${q.question}`;
-    questionDiv.appendChild(questionTitle);
-
-    const optionsDiv = document.createElement('div');
-    optionsDiv.className = 'options';
-
-    q.options.forEach((opt, i) => {
-        const btn = document.createElement('button');
-        btn.textContent = opt;
-        
-        btn.addEventListener('click', () => {
-            stopTimer(); 
-            answeredQuestions++;
-            
-            // Highlight answers and disable buttons
-            Array.from(optionsDiv.children).forEach(b => b.disabled = true);
-            Array.from(optionsDiv.children).forEach((b, idx) => {
-                if (idx === q.answer) {
-                    b.classList.add('correct');
-                }
-            });
-            
-            if (i === q.answer) {
-                correctAnswers++;
-            } else {
-                btn.classList.add('incorrect');
-            }
-            
-            // Move to the next question after a brief delay
-            setTimeout(() => {
-                currentQuestionIndex++;
-                updateScore(); 
-                if (currentQuestionIndex < totalQuestions) {
-                    showQuestion(currentQuestionIndex);
-                }
-            }, 1500); 
-        });
-        optionsDiv.appendChild(btn);
-    });
-
-    questionDiv.appendChild(optionsDiv); 
-    quizContainer.appendChild(questionDiv);
+  if (navigator.share) {
+    navigator.share({
+      title: 'LGHP4 Quiz Result',
+      text: shareText,
+      url: shareUrl
+    }).catch(console.error);
+  } else {
+    const fallbackText = `${shareText} ${shareUrl}`;
+    navigator.clipboard.writeText(fallbackText).then(() => alert("Result copied to clipboard!")).catch(() => {
+      const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+      window.open(twitterUrl, '_blank');
+    });
+  }
 });
+
 
 // Try Again button functionality
 tryAgainBtn.addEventListener('click', () => {
