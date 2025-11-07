@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What is the minimum vapour pressure required for a liquid to be defined as a \"liquefied gas\" by the IMO, at 37.8°C?",
+    "options": [
+      "Exceeding 0.28 MPa",
+      "Exactly 0.28 MPa",
+      "Less than 0.28 MPa",
+      "Exceeding 0.10 MPa"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which of the following is NOT typically removed from natural gas during the purification process before liquefaction?",
+    "options": [
+      "Carbon Dioxide (CO₂)",
+      "Water (for dehydration)",
+      "Nitrogen",
+      "Methane (CH₄)"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the primary characteristic of 'Lean LNG'?",
+    "options": [
+      "It contains high volumes of NGLs and heavier hydrocarbons.",
+      "It is primarily composed of ethane and propane mixtures.",
+      "It contains a high percentage of methane.",
+      "It has a very low atmospheric boiling point compared to Rich LNG."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of these chemical gases is NOT typically derived from propane or a related cracking process according to the notes?",
+    "options": [
+      "Ethylene",
+      "VCM (Vinyl Chloride Monomer)",
+      "Ammonia",
+      "Butadiene"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "The key physical property defined as the equilibrium pressure between a liquid and its vapor at a given temperature is known as:",
+    "options": [
+      "Atmospheric Boiling Point (ABP)",
+      "Normal Temperature and Pressure (NTP)",
+      "Saturated Vapour Pressure (SVP)",
+      "Triple Point Pressure (TPP)"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "The **IGC Code** is mandatory under which international convention?",
+    "options": [
+      "The MARPOL Convention",
+      "The Load Line Convention",
+      "The STCW Convention",
+      "The SOLAS Convention"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "LNG production requires reducing the temperature of methane gas to approximately:",
+    "options": [
+      "-104°C",
+      "-152°C",
+      "-162°C",
+      "-184°C"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Where does LPG (Liquefied Petroleum Gas) primarily come from?",
+    "options": [
+      "Gas-to-Liquids (GTL) refinery process.",
+      "Separation from natural gas/crude oil streams or crude oil refining.",
+      "Direct production via the Reverse Brayton Cycle.",
+      "Chemical synthesis using VCM."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which chemical is the third most transported liquefied gas by sea after LNG and LPG, and is primarily used in the production of fertilisers?",
+    "options": [
+      "Ethylene",
+      "VCM (Vinyl Chloride Monomer)",
+      "Butadiene",
+      "Ammonia"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which document, issued by the flag administration, specifies the gases a ship is certified to carry and under what conditions, demonstrating compliance with the IGC Code?",
+    "options": [
+      "Certificate of Compliance",
+      "Ship/Shore Safety Checklist",
+      "Port Clearance Certificate",
+      "Certificate of Fitness"
+    ],
+    "answer": 3
+  }
+]

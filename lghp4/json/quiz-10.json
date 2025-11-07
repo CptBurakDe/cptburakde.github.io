@@ -1,0 +1,152 @@
+[
+  {
+    "question": "What is the essential difference between liquefaction and reliquefaction?",
+    "options": [
+      "Liquefaction uses a compressor, while reliquefaction does not.",
+      "Liquefaction occurs on shore, while reliquefaction occurs only on board.",
+      "The source of the gas; reliquefaction deals with Boil-Off Gas (BOG) from an already liquefied cargo.",
+      "Liquefaction requires cooling, while reliquefaction only requires compression."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "According to the notes, which two methods are used to squeeze gas molecules closer together to achieve liquefaction?",
+    "options": [
+      "Increasing volume and decreasing pressure.",
+      "Increasing pressure and increasing temperature.",
+      "Increasing pressure and lowering temperature.",
+      "Decreasing density and increasing volume."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the Critical Temperature (Tc) of a gas?",
+    "options": [
+      "The minimum temperature required to initiate the Joule-Thomson effect.",
+      "The temperature at which the gas must be cooled to achieve its normal boiling point.",
+      "The temperature above which the gas cannot be liquefied, regardless of the pressure applied.",
+      "The temperature at which the liquid phase begins to completely vaporize."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which gas is noted as being more difficult to liquefy due to its extremely low critical temperature (-147°C)?",
+    "options": [
+      "Carbon Dioxide",
+      "Propane",
+      "Ethane",
+      "Nitrogen"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "In which type of reliquefaction system is the cargo vapor condensed using a refrigerant without being compressed?",
+    "options": [
+      "Cascade System",
+      "Direct System",
+      "Combined System",
+      "Indirect System"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "For which specific condition is the Cascade System primarily required?",
+    "options": [
+      "When the cargo is flammable and cannot be compressed.",
+      "When the cargo's critical temperature is higher than the sea water temperature.",
+      "When the cargo's critical temperature is lower than the sea water temperature, necessitating a refrigerant for condensation.",
+      "When the cargo density is too low for the Direct System to be effective."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the primary operational effect of having an ethane content of 22% (mol) in the BOG of a chilled propane cargo, compared to pure propane?",
+    "options": [
+      "It significantly increases the mass flow rate through the compressor.",
+      "It causes the BOG to condense at a much lower pressure.",
+      "It reduces the cooling capacity of the system due to a higher condensation pressure.",
+      "It eliminates the need for sea water cooling."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which statement correctly describes the Direct Cycle reliquefaction system?",
+    "options": [
+      "It is typically more complex and requires more machinery than the Cascade System.",
+      "It uses an external, non-cargo refrigerant to cool the BOG without compression.",
+      "It takes BOG, compresses it, condenses it, and returns the liquid to the tanks, using the cargo itself as the working fluid.",
+      "It is mandatory for Type 1G vessels and certain chemical cargoes."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What thermodynamic principle dictates that external heat will constantly enter an insulated cargo tank from the environment?",
+    "options": [
+      "Boyle's Law",
+      "First Law of Thermodynamics",
+      "Joule-Thomson Effect",
+      "Second Law of Thermodynamics"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the ultimate effect of the heat continuously entering the cargo tank?",
+    "options": [
+      "It causes the liquid to freeze, leading to tank damage.",
+      "It causes the BOG to dissolve back into the liquid phase.",
+      "It overcomes the liquid's latent heat of vaporization, causing BOG formation and pressure increase.",
+      "It leads to a rapid pressure decrease, requiring immediate reliquefaction."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "The Joule-Thomson Effect is defined by which process?",
+    "options": [
+      "Gas changing temperature during compression with external work.",
+      "Gas changing temperature during expansion with heat transfer.",
+      "Gas changing temperature during compression without work or heat transfer.",
+      "Gas changing temperature during expansion without external work or heat transfer."
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the required Critical Pressure (Pc) for Carbon Dioxide at 31°C to ensure it liquefies?",
+    "options": [
+      "31 bar",
+      "1.1 bar",
+      "73.8 bar",
+      "147 bar"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "The Cascade System uses two or more sequential vapour compression cycles. What is the main benefit derived from this complexity?",
+    "options": [
+      "It simplifies the overall operating procedures.",
+      "It allows the system to operate effectively with much hotter sea water temperatures.",
+      "It eliminates the need for the Joule-Thomson expansion valve.",
+      "It improves the overall efficiency of the reliquefaction cycle by dividing the cooling work."
+    ],
+    "answer": 3
+  },
+  {
+    "question": "In the Direct Cycle, the actual cooling effect on the cargo is a result of the removal of both:",
+    "options": [
+      "Compression Work and Expansion Work.",
+      "Sensible Heat and Specific Heat.",
+      "Refrigerant Heat and Sea Water Heat.",
+      "Sensible Heat and Latent Heat (during condensation, cooling, and return)."
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which system requires the mandatory use of a very cold refrigerant and large heat exchange surfaces due to the nature of the process?",
+    "options": [
+      "Cascade System (Combined System)",
+      "Direct System",
+      "Single-stage System",
+      "Indirect System"
+    ],
+    "answer": 3
+  }
+]

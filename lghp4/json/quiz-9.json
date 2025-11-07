@@ -1,0 +1,152 @@
+[
+  {
+    "question": "What happens to the flammable range if oxygen concentration increases?",
+    "options": [
+      "LFL decreases, UFL decreases",
+      "LFL remains similar, UFL increases",
+      "Both LFL and UFL decrease",
+      "Both LFL and UFL remain the same"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the effect of reducing oxygen concentration on flammability?",
+    "options": [
+      "Flammable range widens",
+      "Flammable range narrows and ignition energy increases",
+      "Ignition becomes easier",
+      "No effect"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the purpose of inerting in gas carriers?",
+    "options": [
+      "To increase oxygen levels in the tank",
+      "To create an oxygen-deficient atmosphere to prevent ignition",
+      "To heat the cargo for easier pumping",
+      "To pressurize the tank"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How is inert gas typically produced on gas carriers?",
+    "options": [
+      "By using flue gas directly from propulsion exhaust",
+      "By burning distillate oil in an Inert Gas Generator (IGG)",
+      "By adding pure oxygen",
+      "By venting LNG boil-off directly"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which gas is preferred for complete chemical compatibility in inerting?",
+    "options": [
+      "CO₂",
+      "Nitrogen (high purity)",
+      "Oxygen",
+      "Air"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Why is CO₂ problematic in LNG or ammonia cargoes?",
+    "options": [
+      "It is highly flammable",
+      "It freezes below −55 °C and can form carbamate",
+      "It increases oxygen content",
+      "It reacts to form peroxides"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is a key safety measure during gas-freeing of a tank?",
+    "options": [
+      "Vent directly to atmosphere without monitoring",
+      "Measure tank atmosphere regularly with calibrated devices",
+      "Only measure at the start",
+      "Use uncalibrated sensors"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "In LNG or LPG tanks, what oxygen concentration is typically maintained during loading?",
+    "options": [
+      "Above 10%",
+      "Below 5%",
+      "Around 15%",
+      "100%"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the primary difference between inert gas and nitrogen used on ships?",
+    "options": [
+      "Inert gas is from combustion; nitrogen is separated from air",
+      "Nitrogen contains CO₂; inert gas does not",
+      "Both are identical",
+      "Nitrogen is flammable"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the main risk of incomplete combustion in IGG?",
+    "options": [
+      "Production of oxygen",
+      "Production of carbon and carbon monoxide",
+      "Reduced LNG temperature",
+      "Increased inert gas purity"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the significance of “sensible heat”?",
+    "options": [
+      "Heat that changes phase",
+      "Heat measurable with a thermometer",
+      "Energy stored in chemical bonds",
+      "Heat that cannot be measured"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is “latent heat”?",
+    "options": [
+      "Heat measured by a thermometer",
+      "Heat during phase change that is not directly measurable",
+      "Heat in flue gases",
+      "Heat in inert gas"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "When does a liquid boil?",
+    "options": [
+      "When vapor pressure equals atmospheric pressure",
+      "When vapor pressure is zero",
+      "At any temperature if heated",
+      "When mixed with nitrogen"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What does “enthalpy (H)” represent?",
+    "options": [
+      "The total system energy (heat + pressure energy)",
+      "The system temperature only",
+      "Energy lost to the environment",
+      "Kinetic energy of molecules only"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the danger of even low oxygen levels in certain cargoes like butadiene or VCM?",
+    "options": [
+      "No danger",
+      "Formation of peroxides and polymers",
+      "Increased flammability of nitrogen",
+      "Rapid freezing"
+    ],
+    "answer": 1
+  }
+]

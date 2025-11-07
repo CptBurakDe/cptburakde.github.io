@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LGHP4 Quiz 2</title>
+<link rel="stylesheet" href="../../css/quiz.css">
+</head>
+<body>
+<h1>LGHP4 Liquefied Gas Handling Procedures Quiz 2</h1>
+
+<h3 id="timer">Time Left: 30 seconds</h3> 
+
+<h2 id="score">Score: 0 / 12</h2> 
+<div class="quiz-container" id="quiz">
+</div>
+
+<div id="results" class="quiz-container" style="display: none; text-align: center;">
+    <h2 id="results-title">Congratulations! Quiz Completed! 🎉</h2>
+    <p id="final-message" style="font-size: 1.2em; font-weight: bold; margin-bottom: 20px;"></p>
+    
+    <button id="share-result-btn" style="padding: 10px 20px; margin: 5px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Share My Result
+    </button>
+
+    <button id="try-again-btn" style="padding: 10px 20px; margin: 5px; background-color: #ff6347; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Try Again 🔄
+    </button>
+</div>
+
+<script>
+const quizContainer = document.getElementById('quiz');
+const scoreElement = document.getElementById('score');
+const resultsContainer = document.getElementById('results');
+const finalMessage = document.getElementById('final-message');
+const timerElement = document.getElementById('timer'); 
+const shareResultBtn = document.getElementById('share-result-btn');
+const tryAgainBtn = document.getElementById('try-again-btn');
+
+let quizData = [];   // Artık dışarıdan gelecek
+let correctAnswers = 0;
+let answeredQuestions = 0;
+let currentQuestionIndex = 0;
+let timerInterval;
+const TIME_PER_QUESTION = 30;
+
+// --- JSON'DAN SORULARI ÇEK ---
+async function loadQuizData() {
+    try {
+        const response = await fetch('../json/quiz-2.json'); // JSON yolu
+        if (!response.ok) throw new Error('Quiz data could not be loaded');
+        quizData = await response.json();
+        initializeQuiz();
+    } catch (err) {
+        console.error('Error loading quiz data:', err);
+        quizContainer.innerHTML = '<p style="color:red;">Failed to load quiz data.</p>';
+    }
+}
+
+// --- QUIZ INITIALIZATION ---
+function initializeQuiz() {
+    const totalQuestions = quizData.length;
+
+    // Soruları oluştur
+    quizData.forEach((q, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question';
+        questionDiv.style.display = index === 0 ? 'block' : 'none';
+
+        const questionTitle = document.createElement('h3');
+        questionTitle.textContent = `${index + 1}. ${q.question}`;
+        questionDiv.appendChild(questionTitle);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        q.options.forEach((opt, i) => {
+            const btn = document.createElement('button');
+            btn.textContent = opt;
+
+            btn.addEventListener('click', () => {
+                stopTimer();
+                answeredQuestions++;
+                Array.from(optionsDiv.children).forEach(b => b.disabled = true);
+                Array.from(optionsDiv.children).forEach((b, idx) => {
+                    if (idx === q.answer) b.classList.add('correct');
+                });
+                if (i === q.answer) correctAnswers++;
+                else btn.classList.add('incorrect');
+
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    updateScore();
+                    if (currentQuestionIndex < totalQuestions) showQuestion(currentQuestionIndex);
+                }, 1500);
+            });
+
+            optionsDiv.appendChild(btn);
+        });
+
+        questionDiv.appendChild(optionsDiv);
+        quizContainer.appendChild(questionDiv);
+    });
+
+    updateScore();
+    showQuestion(currentQuestionIndex);
+}
+
+// --- TIMER, SCORE, RESULTS (Mevcut fonksiyonları koru) ---
+function startTimer() {
+    let timeLeft = TIME_PER_QUESTION;
+    timerElement.textContent = `Time Left: ${timeLeft} seconds`;
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = `Time Left: ${timeLeft} seconds`;
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            timerElement.textContent = "Time's Up!";
+            handleTimeout();
+        }
+    }, 1000);
+}
+
+function stopTimer() { clearInterval(timerInterval); }
+
+function handleTimeout() {
+    const currentQuestionDiv = quizContainer.children[currentQuestionIndex];
+    if (currentQuestionDiv) {
+        const optionsDiv = currentQuestionDiv.querySelector('.options');
+        Array.from(optionsDiv.children).forEach(b => b.disabled = true);
+        Array.from(optionsDiv.children).forEach((b, idx) => {
+            if (idx === quizData[currentQuestionIndex].answer) b.classList.add('correct');
+        });
+    }
+    answeredQuestions++;
+    currentQuestionIndex++;
+    updateScore();
+    if (currentQuestionIndex < quizData.length) setTimeout(() => showQuestion(currentQuestionIndex), 1500);
+}
+
+function showQuestion(index) {
+    Array.from(quizContainer.children).forEach((div, i) => {
+        div.style.display = i === index ? 'block' : 'none';
+    });
+    startTimer();
+}
+
+function updateScore() {
+    scoreElement.textContent = `Score: ${correctAnswers} / ${quizData.length}`;
+    if (answeredQuestions === quizData.length) {
+        stopTimer();
+        showResults();
+    }
+}
+
+function showResults() {
+    stopTimer();
+    quizContainer.style.display = 'none';
+    resultsContainer.style.display = 'block';
+    timerElement.style.display = 'none';
+    const percentage = Math.round((correctAnswers / quizData.length) * 100);
+    let message;
+    if (percentage === 100) message = `Perfect! You answered all ${correctAnswers} questions correctly! 🚢⚓`;
+    else if (percentage >= 70) message = `Great! You scored ${correctAnswers}/${quizData.length} (${percentage}%)! 🌊`;
+    else message = `You scored ${correctAnswers}/${quizData.length} (${percentage}%). Keep studying LGHP4 notes! 📚`;
+    finalMessage.textContent = message;
+}
+
+// --- SHARE & TRY AGAIN BUTTONS (Mevcut kodları koru) ---
+document.addEventListener('DOMContentLoaded', loadQuizData);
+
+tryAgainBtn.addEventListener('click', () => { window.location.reload(); });
+</script>
+
+</body>
+</html>

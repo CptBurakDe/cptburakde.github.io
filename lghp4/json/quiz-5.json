@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Which atomic particles are electrically neutral and contribute to the mass of an atom's nucleus?",
+    "options": [
+      "Electrons",
+      "Protons",
+      "Ions",
+      "Neutrons"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "The smallest unit of a substance that retains all the chemical properties of that substance is called a/an:",
+    "options": [
+      "Atom",
+      "Nucleus",
+      "Electron",
+      "Molecule"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Why is the Saturated Vapour Pressure (SVP) of isobutane different from n-butane?",
+    "options": [
+      "They have different chemical formulas.",
+      "They have different physical properties, such as vaporization temperatures, due to different molecular structures (isomers).",
+      "Isobutane has a triple bond, making it more reactive.",
+      "n-Butane has a longer carbon chain (C₅H₁₂) than isobutane."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following functional groups, when attached to a hydrocarbon, forms an alcohol (e.g., methanol)?",
+    "options": [
+      "Alkyl group (-CH₃)",
+      "Carbonyl group (C=O)",
+      "Hydroxyl group (-OH)",
+      "Sulfur group (-SH)"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the IUPAC name for the common liquefied gas 'Propylene'?",
+    "options": [
+      "Propane",
+      "Propyne",
+      "Propene",
+      "Propyl"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Hydrocarbon molecules with the general formula $C_nH_{2n}$ are typically classified as:",
+    "options": [
+      "Saturated hydrocarbons (Alkanes)",
+      "Hydrocarbons containing triple bonds",
+      "Unsaturated hydrocarbons (Alkenes)",
+      "Hydrocarbons used primarily as fuel"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the maximum number of chemical bonds that a single Carbon atom can form?",
+    "options": [
+      "6 (Equal to its atomic number)",
+      "2 (Due to its inner shell electrons)",
+      "3 (Based on its molecular geometry in methane)",
+      "4 (Based on the number of electrons in its valence shell)"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Butadiene ($C_4H_6$) is commonly transported as liquid cargo, despite having two double bonds which generally imply high reactivity. Why is it commonly transported?",
+    "options": [
+      "It is only transported as a mixed $C_4$ raffinate, never pure.",
+      "It is often used as a fuel, requiring frequent transport.",
+      "The common isomer (1,3-Butadiene) is more stable and is used widely in synthetic rubber production.",
+      "It is stabilized by forming a triple bond during liquefaction."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "In the context of hydrocarbon nomenclature, what is the meaning of the prefix 'iso' (e.g., isobutane)?",
+    "options": [
+      "It indicates the molecule contains a double or triple bond.",
+      "It indicates the molecule contains sulfur or oxygen.",
+      "It indicates a straight-chain structure.",
+      "It indicates a branched-chain structure."
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What characteristic makes triple bonds ($C \\equiv C$) typically too reactive for common transportation as liquefied cargo?",
+    "options": [
+      "Their greater length compared to single bonds.",
+      "Their lower density at atmospheric pressure.",
+      "Their tendency to inhibit free rotation, leading to instability.",
+      "Their high inherent reactivity and instability."
+    ],
+    "answer": 3
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Which statement correctly defines the **Lower Flammable Limit (LFL)** of a gas/air mixture?",
+    "options": [
+      "The concentration at which the mixture is 'over rich' and lacks oxygen.",
+      "The concentration at which combustion produces carbon monoxide (CO).",
+      "The minimum gas concentration required to support combustion (too lean below this).",
+      "The maximum gas concentration that will burn (too rich above this)."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Liquefied gases are typically transported at temperatures above their flash point. Why does this not cause an immediate fire hazard in the cargo tanks?",
+    "options": [
+      "The gas is chemically inhibited from burning at high temperatures.",
+      "The atmosphere within the tank is safely inerted, remaining below the Lower Flammable Limit (LFL).",
+      "Air is excluded, keeping the atmosphere 'over rich' (above UFL) and non-flammable.",
+      "The tank's static charge is too high to allow ignition."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the difference between the Higher Heating Value (HHV) and the Lower Heating Value (LHV) of a fuel gas?",
+    "options": [
+      "HHV assumes condensation of water vapor, while LHV does not.",
+      "LHV measures the heat released during incomplete combustion (CO production).",
+      "HHV includes the heat absorbed by the fuel at the start of combustion.",
+      "LHV measures the total energy released, assuming products are cooled to original conditions."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "In the event of a liquefied gas leak in open air, where does the dangerous flammable zone (C) occur?",
+    "options": [
+      "Right at the leak source (Zone B), where the mixture is over rich.",
+      "At the farthest downwind point (Zone D), where the mixture is too lean.",
+      "At a certain distance downwind from the leak, where the concentration is between the LFL and UFL.",
+      "The entire vapor cloud is uniformly flammable."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following gases is classified by the IGC Code as **\"non-flammable\"** primarily because its Minimum Ignition Energy (MIE) is extremely high, and the heat released during combustion is often insufficient to sustain the reaction?",
+    "options": [
+      "Ethylene",
+      "Propane",
+      "Methane",
+      "Ammonia"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the lowest temperature at which a gas/air mixture will spontaneously ignite **without** the need for an external spark or flame source?",
+    "options": [
+      "Flash Point",
+      "Auto-ignition Temperature",
+      "Boiling Point",
+      "Lower Flammable Limit (LFL)"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the primary function of an **Insulation Flange** placed between the ship's piping and the shore terminal's system?",
+    "options": [
+      "To allow high voltage static charges to safely pass to the ground while preventing the flow of low voltage current.",
+      "To prevent any static charge buildup in the ship's piping system.",
+      "To ensure continuous electrical bonding between the ship and shore.",
+      "To increase the Minimum Ignition Energy (MIE) of the cargo."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What hazardous gas is produced during the **incomplete (partial) combustion** of a hydrocarbon when there is insufficient oxygen present?",
+    "options": [
+      "Water Vapor ($H_2O$)",
+      "Carbon Dioxide ($CO_2$)",
+      "Ethylene ($C_2H_4$)",
+      "Carbon Monoxide (CO)"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Why does static electricity pose a significant ignition risk when handling liquefied gases?",
+    "options": [
+      "Liquefied gases act as excellent electrical conductors, rapidly transferring charge.",
+      "The friction of the fluid flowing through pipes can generate static charges, and the accumulated energy can exceed the very low Minimum Ignition Energy of hydrocarbon vapors.",
+      "The process requires an external flame or spark, which is always present due to static.",
+      "The static charge directly causes the cargo's temperature to rise above its auto-ignition temperature."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "The chemical reaction where Methane ($CH_4$) combines with Oxygen ($O_2$) to produce Carbon Dioxide ($CO_2$), Water ($H_2O$), and Heat is known as:",
+    "options": [
+      "Polymerization",
+      "Isomerization",
+      "Hydrogenation",
+      "Combustion"
+    ],
+    "answer": 3
+  }
+]

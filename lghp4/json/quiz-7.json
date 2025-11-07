@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Which highly reactive compound requires the addition of an inhibitor to the cargo as a **mandatory** requirement under the IGC Code?",
+    "options": [
+      "Propylene",
+      "Ethylene",
+      "Vinyl Chloride Monomer (VCM)",
+      "Butadiene"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the primary reason why the inhibitor remains effective mainly in the liquid phase of the cargo?",
+    "options": [
+      "The inhibitor gradually consumes the oxygen in the vapor space.",
+      "The inhibitor has a much lower vapour pressure than the cargo, causing it to mostly stay in the liquid.",
+      "The cargo's low temperature causes the inhibitor to polymerize in the liquid.",
+      "The IGC Code restricts inhibitor placement only to the liquid phase."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following substances poses a high risk of forming solid 'hydrates' with most hydrocarbons, even at temperatures above 0°C?",
+    "options": [
+      "Oxygen",
+      "Trace amounts of methanol",
+      "Free water",
+      "Dissolved nitrogen"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Why should methanol or ethanol **never** be added to a cargo that already contains a polymerization inhibitor?",
+    "options": [
+      "The mixture creates an explosive atmosphere in the tank.",
+      "Methanol/ethanol significantly increase the dimerization rate of the cargo.",
+      "These chemicals can disrupt the polymerization inhibition mechanism.",
+      "The resulting mixture becomes highly corrosive to the mild steel tanks."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the critical action recommended to slow down the dimerization reaction in cargoes like Butadiene, as this process cannot be stopped by inhibitors?",
+    "options": [
+      "Adding a high concentration of TBC inhibitor to the cargo.",
+      "Heating the cargo to above $10^{\\circ}C$ to vaporize the dimer.",
+      "Keeping the cargo temperature as cool as possible, preferably below $4^{\\circ}C$.",
+      "Increasing the oxygen content in the vapor space to stabilize the monomer."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the specific function of Tertiary Butyl Catechol (TBC) when added to Butadiene cargo?",
+    "options": [
+      "To increase the overall cargo density.",
+      "To function primarily as an oxygen scavenger, removing oxygen which acts as a polymerization catalyst.",
+      "To react directly with the double bonds to form single bonds.",
+      "To increase the boiling point, reducing the cargo's vapor pressure."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "According to the IGC Code, which crucial information must be detailed on the **Inhibitor Certificate** provided by the shipper?",
+    "options": [
+      "The maximum flow rate allowed during discharge.",
+      "The precise molecular formula of the cargo monomer.",
+      "The duration for which the inhibitor is expected to remain effective.",
+      "The atmospheric boiling point of the specific inhibitor used."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of these common liquefied gas cargoes is **NOT** prone to self-reaction risks like polymerization or dimerization?",
+    "options": [
+      "Butadiene",
+      "Vinyl Chloride Monomer (VCM)",
+      "Propylene Oxide",
+      "Ethylene"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which dangerous outcome is possible if the inhibitor in a polymerization-prone cargo (like VCM) is completely consumed during a long voyage?",
+    "options": [
+      "The cargo will rapidly convert back into a gaseous state.",
+      "The cargo will undergo immediate solidification, becoming viscous, hot, and impossible to pump.",
+      "The cargo's density will drop, leading to buoyancy issues for the ship.",
+      "The cargo will lose its toxic properties, but remain highly flammable."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the main operational risk posed by the formation of solid ice or hydrates in the cargo system?",
+    "options": [
+      "Increased wear and tear on tank insulation materials.",
+      "Creation of highly corrosive acids that damage steel.",
+      "Clogging of filters, spray nozzles, and pump intake valves.",
+      "Spontaneous ignition of the cargo due to friction."
+    ],
+    "answer": 2
+  }
+]

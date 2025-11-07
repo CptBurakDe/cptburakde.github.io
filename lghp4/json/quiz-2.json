@@ -1,0 +1,152 @@
+[
+  {
+    "question": "What does the Francis Formula calculate?",
+    "options": [
+      "Boil-off rate of LPG",
+      "Density of pure components at their boiling points",
+      "Pressure drop in cargo tanks",
+      "Boiling point of LNG mixtures"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is FSRU used for?",
+    "options": [
+      "Cooling LPG tanks",
+      "Compressing natural gas for transport",
+      "Storing and regasifying LNG onboard for delivery to pipelines",
+      "Generating electricity onboard LNG carriers"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the principle of a Fusible Plug?",
+    "options": [
+      "Automatically vents boil-off gas",
+      "Melts at a specific high temperature to prevent tank isolation",
+      "Measures LNG temperature in the tank",
+      "Increases pressure in the tank during fire"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is a GCU on an LNG carrier?",
+    "options": [
+      "Gas Cooling Unit to reduce tank temperature",
+      "Gas Circulation Unit to mix cargo",
+      "Gas Combustion Unit to safely dispose of excess gas",
+      "Gas Compression Unit for pumping"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does GIIGNL stand for?",
+    "options": [
+      "Gas Industry International Navigation League",
+      "Group for Innovation in LNG Logistics",
+      "Global Institute of Industrial Natural Liquids",
+      "International Group of Liquefied Gas Importers"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What does GTL mean?",
+    "options": [
+      "Gas Tank Loading procedure",
+      "Gas-to-Liquids refinery process converting natural gas into longer hydrocarbons",
+      "Gas Thermal Liquefaction",
+      "Gas Transport Logistics"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the role of GTT?",
+    "options": [
+      "Provides engineering and licensing for LNG containment and insulation",
+      "Operates floating LNG terminals",
+      "Manufactures compressors for LNG carriers",
+      "Measures LNG density onboard"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is a Hazardous Area?",
+    "options": [
+      "An area with high radiation levels",
+      "An area of extreme cold for cryogenic operations",
+      "An area where explosive gas atmosphere may exist, requiring special precautions",
+      "A storage area for non-flammable liquids"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does HEEL represent on a gas carrier?",
+    "options": [
+      "Maximum allowable pressure of a tank",
+      "Temperature of LNG at tank bottom",
+      "Amount of liquid cargo remaining in a tank after discharge",
+      "Inert gas injection rate"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does IOGP stand for?",
+    "options": [
+      "International Association of Oil & Gas Producers",
+      "International Organization for Gas Processing",
+      "Institute of Offshore Gas Production",
+      "International Oil and Gas Pipeline association"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is an isentropic process?",
+    "options": [
+      "Process for measuring gas density",
+      "Ideal process with constant entropy and no energy loss",
+      "Process with maximum energy dissipation",
+      "Process with constant temperature"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is an isothermal process?",
+    "options": [
+      "Boiling of LNG in tanks",
+      "Process with maximum energy dissipation",
+      "Process with constant temperature, allowing heat exchange",
+      "Process with constant entropy"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does LEC stand for?",
+    "options": [
+      "Low Emission Carrier",
+      "LNG Exporter Carrier",
+      "Liquefied Ethylene Carrier",
+      "Liquid Energy Container"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does LN₂ refer to?",
+    "options": [
+      "Liquefied Nitrogen",
+      "Liquid Neon",
+      "LNG Neutralizer",
+      "Low-pressure Nitrogen"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is LNG?",
+    "options": [
+      "Liquefied Natural Gas, mainly methane, 1/600th of gaseous volume",
+      "Liquid Nitrogen Gas",
+      "Low-pressure natural gas in pipelines",
+      "Liquefied Nitrogen for cooling"
+    ],
+    "answer": 0
+  }
+]

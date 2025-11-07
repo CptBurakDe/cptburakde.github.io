@@ -1,0 +1,152 @@
+[
+  {
+    "question": "What is a Bi-lobe tank?",
+    "options": [
+      "A double cylindrical cargo tank that allows better utilisation of hold space",
+      "A spherical tank used for LNG only",
+      "A tank designed for fully pressurised LPG",
+      "A tank for cryogenic ammonia storage"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What does BLEVE stand for?",
+    "options": [
+      "Burst Low Energy Vessel Event",
+      "Boiling Liquid Expanding Vapour Explosion",
+      "Basic Liquefied Evaporation and Venting Explosion",
+      "Boiling Low Energy Vapor Emission"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is Blowdown in a pressure relief valve?",
+    "options": [
+      "Maximum pressure a valve can withstand",
+      "Difference between popping pressure and re-seating pressure",
+      "Time taken for a valve to fully open",
+      "Pressure drop across the tank"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is BOG (Boil-Off Gas)?",
+    "options": [
+      "Gas injected to cool the cargo",
+      "Gas vented for inerting purposes",
+      "Gas produced only during cargo loading",
+      "Gas produced above the surface of a boiling liquid cargo due to heat ingress or pressure drop"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is BOR (Boil-Off Rate)?",
+    "options": [
+      "Rate of inert gas injection into the tank",
+      "Percentage of oxygen in the tank",
+      "Loss of cargo due to leaks",
+      "The natural vaporisation rate of cargo during transportation relative to total cargo"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the purpose of Cool-Down in LNG operations?",
+    "options": [
+      "Increase pressure in the tank",
+      "Mix cargo for homogeneity",
+      "Heat the tank to prevent freezing",
+      "Reduce cargo tank temperature to a safe level for loading"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What does the Costald Equation calculate?",
+    "options": [
+      "Vapor pressure at ambient temperature",
+      "Heat capacity of LNG",
+      "Density of liquid mixtures in LPG and other liquefied gases",
+      "Boiling point of cryogenic liquids"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Cryogenic systems operate typically at temperatures below:",
+    "options": [
+      "0°C",
+      "−50°C",
+      "−20°C",
+      "−80°C"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is an ESD valve used for?",
+    "options": [
+      "Regular tank venting",
+      "Emergency shutdown of cargo flow",
+      "Controlling boil-off gas rate",
+      "Measuring pressure in the tank"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does FLNG stand for?",
+    "options": [
+      "Flowing LNG platform",
+      "Fully Loaded Natural Gas ship",
+      "Fixed LNG generator",
+      "Floating LNG Facility"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What does FP (Fully-Pressurised) indicate in LPG/LNG carriers?",
+    "options": [
+      "Small vessels transporting cargo at ambient temperature with tanks rated for ~20 bar",
+      "Cryogenic vessels with cooling systems",
+      "Inerted nitrogen-only tanks",
+      "Vessels with re-liquefaction units"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is FPSO?",
+    "options": [
+      "Fully Pressurised Storage Ocean vessel",
+      "Flowing Pipeline Service Operator",
+      "Floating Production, Storage and Offloading facility",
+      "Fixed Production and Supply Operation"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does FR (Fully-Refrigerated) mean in LPG carriers?",
+    "options": [
+      "Cargo continuously re-liquefied",
+      "Cargo is inerted fully with nitrogen",
+      "Cargo carried at low temperature near atmospheric pressure",
+      "Cargo carried at high pressure"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which cargoes are at risk even at low oxygen levels?",
+    "options": [
+      "Butadiene and VCM, due to peroxide and polymer formation",
+      "Nitrogen-rich mixtures",
+      "LNG only",
+      "Ammonia at ambient temperature"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What happens to flammability if oxygen concentration is reduced?",
+    "options": [
+      "Ignition becomes easier",
+      "Flammable range narrows and ignition energy increases",
+      "Flammable range widens",
+      "No effect"
+    ],
+    "answer": 1
+  }
+]

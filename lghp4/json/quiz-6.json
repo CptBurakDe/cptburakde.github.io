@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What is the highly toxic and alkaline liquid formed when Amonia ($NH_3$) reacts quickly and exothermically with water?",
+    "options": [
+      "Ammonium Nitrate",
+      "Ammonia Carbonate",
+      "Ammonium Hydroxide",
+      "Ammonium Chloride"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "According to the IGC Code recommendations, what should be the maximum actual yield strength ($R_{eH}$) for fine-grained carbon-manganese steel used in tanks carrying ammonia, to minimize the risk of Stress Corrosion Cracking (SCC)?",
+    "options": [
+      "It must not exceed 355 N/mm².",
+      "It must not exceed 440 N/mm².",
+      "It must not exceed 510 N/mm².",
+      "It must not exceed 600 N/mm²."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following materials is generally **incompatible** with ammonia due to its high chemical reactivity?",
+    "options": [
+      "Soft Steel",
+      "Teflon / PTFE",
+      "Stainless Steel",
+      "Copper and Aluminum alloys"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Why is it unsafe to rapidly spray water into a closed tank containing a high concentration of ammonia vapour?",
+    "options": [
+      "The water will react violently, causing a rapid pressure increase.",
+      "The water will cause the ammonia to immediately solidify, damaging pumps.",
+      "The ammonia will dissolve rapidly, creating a vacuum that could damage the tank structure.",
+      "The water will neutralize the ammonia, requiring excessive venting."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "In the context of VCM (Vinyl Chloride Monomer) cargo, what is the maximum permissible oxygen level above which an inhibitor **must** be added to prevent polymerization?",
+    "options": [
+      "Above 0.05%",
+      "Above 0.1%",
+      "Above 0.3%",
+      "Above 0.5%"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the term for the process where small molecules (monomers) link together to form a long-chain new substance (polymer), often involving the breaking of double bonds?",
+    "options": [
+      "Exothermic reaction",
+      "Hydrolysis",
+      "Polymerisation",
+      "Isomerization"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following is an accurate chemical risk associated with carrying butadiene and isoprene?",
+    "options": [
+      "They are highly corrosive and cause pitting in steel.",
+      "They are highly acidic and react with Teflon seals.",
+      "They are highly toxic but not flammable.",
+      "They have unsaturated structures and are prone to polymerization."
+    ],
+    "answer": 3
+  },
+  {
+    "question": "According to the safety notes provided, which common liquefied gas poses a severe reaction risk with almost all hydrocarbon gases?",
+    "options": [
+      "Ammonia",
+      "Vinyl Chloride",
+      "Chlorine",
+      "Propylene Oxide"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "VCM (Vinyl Chloride Monomer) is notable among common cargoes for which physical property?",
+    "options": [
+      "Having the lowest boiling point at atmospheric pressure.",
+      "Having a very low density (around 0.5 g/ml).",
+      "Having the highest density (around 0.97 g/ml), which affects loading and pumping.",
+      "Being entirely non-flammable due to its chlorine content."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which operational measure is specifically required to minimize the risk of Stress Corrosion Cracking (SCC) when carrying ammonia, according to the IGC Code?",
+    "options": [
+      "Keeping the cargo temperature above $0^{\\circ}C$.",
+      "Using steel with more than 10% nickel content in the cargo system.",
+      "Ensuring the dissolved oxygen in the cargo is kept below 2.5 ppm (w/w).",
+      "Discharging ammonia under the waterline to minimize vapor release."
+    ],
+    "answer": 2
+  }
+]

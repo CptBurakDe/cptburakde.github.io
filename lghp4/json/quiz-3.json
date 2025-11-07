@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What is the primary function of the Quick Connect/Disconnect Coupling (QC/DC) at some terminals?",
+    "options": [
+      "To manually bolt the Marine Loading Arms (MLAs) to the ship's manifold flange.",
+      "To provide an automatic emergency release system (ERS) in case of high tension.",
+      "To quickly connect MLAs to the ship's manifold flange using a hydraulic clamping device.",
+      "To allow the transfer of inert gas through the ship's manifold."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "A Pressure Relief Valve (PRV) is designed to automatically open under which condition?",
+    "options": [
+      "When the downstream pressure exceeds the upstream pressure.",
+      "When the upstream dynamic pressure reaches its set point.",
+      "When there is a lack of fluid flow in the line.",
+      "When excessive upstream static pressure is detected."
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What does the term \"Reliquefaction\" describe in the context of gas carriers?",
+    "options": [
+      "The process of converting the liquid cargo back into a gaseous state for discharge.",
+      "The controlled heating of the cargo to increase tank pressure to safe limits.",
+      "The ideal process where heat is transferred into the system to produce mechanical work.",
+      "The process of converting cargo boil-off vapours back into liquid."
+    ],
+    "answer": 3
+  },
+  {
+    "question": "The Reverse Brayton Cycle achieves a cooling effect primarily by reversing the gas turbine cycle. What happens to the gas right before it achieves the low temperature?",
+    "options": [
+      "The gas is compressed.",
+      "The gas is cooled.",
+      "The gas is expanded.",
+      "The gas is exhausted."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the defining characteristic of a Membrane Tank?",
+    "options": [
+      "It is a fully self-supporting tank with independent structural integrity.",
+      "It is a non-self-supporting tank whose thin primary barrier is supported by the adjacent hull structure via insulation.",
+      "It requires only a single barrier with no need for secondary containment.",
+      "It is designed to handle pressures far exceeding 7 bar without any reliquefaction plant."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the PSA process used for in the maritime gas industry?",
+    "options": [
+      "Cooling down the cargo tanks prior to loading.",
+      "Producing nitrogen for inerting.",
+      "Storing liquefied gas at atmospheric pressure.",
+      "Increasing the pressure within semi-refrigerated tanks."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which pressure and temperature define the conditions for STP (Standard Temperature and Pressure)?",
+    "options": [
+      "101,325 Pa (1.01325 bar) and 0°C.",
+      "200,000 Pa (2 bar) and 273.15 K.",
+      "100,000 Pa (1 bar) and 25°C.",
+      "100,000 Pa (1 bar) and 273.15 K (0°C)."
+    ],
+    "answer": 3
+  },
+  {
+    "question": "The Popping Pressure is the value of increasing inlet pressure at which the disk moves faster than the corresponding movement at what other pressures?",
+    "options": [
+      "Only at lower pressures.",
+      "Only at higher pressures.",
+      "At both higher and lower pressures.",
+      "At exactly the set pressure only."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Semi-Refrigerated (SR) ships are capable of loading from and discharging to which types of storage facilities?",
+    "options": [
+      "Only fully refrigerated storage facilities.",
+      "Only high-pressure gas storage facilities.",
+      "Only shore-side pipelines with high flow rates.",
+      "Both pressurized and refrigerated storage facilities."
+    ],
+    "answer": 3
+  },
+  {
+    "question": "A Regasification Vessel (RV) must contain which onboard system to perform its primary function?",
+    "options": [
+      "A powerful Gas Compressor Unit (GCU) for increasing line pressure.",
+      "A Submerged Turret Loading System (STL) for fast mooring.",
+      "Onboard vaporisers to convert the liquid LNG into gas.",
+      "An advanced reliquefaction plant to handle all boil-off gas."
+    ],
+    "answer": 2
+  }
+]
