@@ -9,7 +9,7 @@
 <body>
 <h1>LGHP4 Liquefied Gas Handling Procedures Quiz 1</h1>
 
-<h3 id="timer">Time Left: 60 seconds</h3> 
+<h3 id="timer">Time Left: 30 seconds</h3> 
 
 <h2 id="score">Score: 0 / 12</h2> 
 <div class="quiz-container" id="quiz">
@@ -25,10 +25,6 @@
             Share My Result
         </button>
         
-        <a id="linkedin-share-link" target="_blank" style="padding: 10px 20px; margin: 5px; background-color: #0077B5; color: white; text-decoration: none; border-radius: 5px; display: inline-block;">
-            Share on LinkedIn 💼
-        </a>
-
         <button id="try-again-btn" style="padding: 10px 20px; margin: 5px; background-color: #ff6347; color: white; border: none; border-radius: 5px; cursor: pointer;">
             Try Again 🔄
         </button>
@@ -172,7 +168,7 @@ let answeredQuestions = 0;
 const totalQuestions = quizData.length;
 let currentQuestionIndex = 0;
 let timerInterval;
-const TIME_PER_QUESTION = 60; // Set back to 60 seconds
+const TIME_PER_QUESTION = 30; // Set back to 30 seconds
 
 // --- TIMER FUNCTIONS ---
 function startTimer() {
