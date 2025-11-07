@@ -3,271 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LGHP Quiz</title>
-<style>
-    /* Renk Paleti: Koyu Mavi/Gri Tema (Denizcilik) */
-    :root {
-        --primary-color: #007bff; /* Mavi - Vurgu */
-        --secondary-color: #1e3a8a; /* Koyu Mavi - Başlıklar */
-        --background-dark: #f0f4f8; /* Açık Gri Arka Plan */
-        --card-bg: #ffffff; /* Beyaz Kart Arka Planı */
-        --text-color: #334155; /* Koyu Gri Metin */
-        --success-color: #10b981; /* Yeşil - Doğru Cevap */
-        --error-color: #ef4444; /* Kırmızı - Yanlış Cevap */
-    }
-
-    body {
-        /* Popüler ve temiz bir font */
-        font-family: 'Poppins', Arial, sans-serif; 
-        background-color: var(--background-dark);
-        padding: 20px;
-        color: var(--text-color);
-        line-height: 1.6;
-        margin: 0;
-    }
-
-    h1 {
-        text-align: center;
-        color: var(--secondary-color);
-        margin-bottom: 5px;
-        font-size: 2.5em;
-    }
-
-    #score {
-        text-align: center;
-        color: var(--primary-color);
-        font-size: 1.2em;
-        margin-bottom: 25px;
-        font-weight: 700;
-        padding: 10px;
-        background-color: #e0f2ff;
-        display: block;
-        width: fit-content;
-        margin: 10px auto 30px auto;
-        border-radius: 6px;
-    }
-
-    .quiz-container {
-        max-width: 800px;
-        margin: 20px auto;
-        background: var(--card-bg);
-        border-radius: 12px;
-        padding: 30px;
-        /* Hafif ve profesyonel gölge */
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
-    }
-
-    .question {
-        margin-bottom: 30px;
-        padding-bottom: 15px;
-        /* Soruları ayırmak için ince çizgi */
-        border-bottom: 1px solid #e2e8f0; 
-    }
-
-    .question h3 {
-        margin-bottom: 15px;
-        font-size: 1.1em;
-        color: var(--secondary-color);
-        font-weight: 700;
-    }
-
-    .options button {
-        display: block;
-        width: 100%;
-        margin: 10px 0;
-        padding: 14px 20px;
-        /* Butonun temel rengi ve çerçevesi */
-        border: 2px solid var(--primary-color);
-        border-radius: 8px;
-        background: #f0faff; 
-        color: var(--secondary-color);
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-align: left;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-
-    /* Hover efekti: Buton üzerine gelindiğinde renk değişimi ve hafif kalkma efekti */
-    .options button:hover:not(:disabled) {
-        background: var(--primary-color);
-        color: white;
-        border-color: var(--primary-color);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
-    }
-    
-    /* Doğru Cevap Stilleri */
-    .options button.correct {
-        background: var(--success-color);
-        color: white;
-        border-color: var(--success-color);
-        pointer-events: none; 
-        animation: pulse-correct 0.5s ease-out;
-    }
-
-    /* Yanlış Cevap Stilleri */
-    .options button.incorrect {
-        background: var(--error-color);
-        color: white;
-        border-color: var(--error-color);
-        pointer-events: none; 
-        opacity: 0.7;
-    }
-
-    /* Doğru cevap için hafif animasyon */
-    @keyframes pulse-correct {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.01); }
-        100% { transform: scale(1); }
-    }
-</style>
+<title>LGHP4 Quiz 1</title>
+<link rel="stylesheet" href="../../css/quiz.css">
 </head>
 <body>
+<h1>LGHP4 Liquefied Gas Handling Procedures Quiz 1</h1>
 
-<h1>LGHP Advanced Quiz</h1>
-<h2 id="score">Skor: 0 / 12</h2> 
+<h3 id="timer">Time Left: 60 seconds</h3> 
+
+<h2 id="score">Score: 0 / 12</h2> 
 <div class="quiz-container" id="quiz">
-    </div>
-
-<div id="results" class="quiz-container" style="display: none; text-align: center;">
-    <h2>Tebrikler! Quiz Tamamlandı! 🎉</h2>
-    <p id="final-message" style="font-size: 1.2em; font-weight: bold; margin-bottom: 20px;"></p>
-    
-    <h3>Sonucunu Paylaş:</h3>
-    <div id="share-links" style="margin-top: 20px;">
-        <button id="generic-share-btn" style="padding: 10px 20px; margin: 5px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
-            Sonucumu Paylaş
-        </button>
-        
-        <a id="linkedin-share-link" target="_blank" style="padding: 10px 20px; margin: 5px; background-color: #0077B5; color: white; text-decoration: none; border-radius: 5px; display: inline-block;">
-            LinkedIn'de Paylaş 💼
-        </a>
-    </div>
 </div>
 
+<div id="results" class="quiz-container" style="display: none; text-align: center;">
+    <h2 id="results-title">Congratulations! Quiz Completed! 🎉</h2>
+    <p id="final-message" style="font-size: 1.2em; font-weight: bold; margin-bottom: 20px;"></p>
+    
+    <h3>Share Your Result:</h3>
+    <div id="share-links" style="margin-top: 20px;">
+        <button id="generic-share-btn" style="padding: 10px 20px; margin: 5px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Share My Result
+        </button>
+        
+        <a id="linkedin-share-link" target="_blank" style="padding: 10px 20px; margin: 5px; background-color: #0077B5; color: white; text-decoration: none; border-radius: 5px; display: inline-block;">
+            Share on LinkedIn 💼
+        </a>
+
+        <button id="try-again-btn" style="padding: 10px 20px; margin: 5px; background-color: #ff6347; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Try Again 🔄
+        </button>
+    </div>
+</div>
 <script>
 const quizData = [
-    {
-        question: "Which statement correctly describes a membrane tank?",
-        options: [
-            "A self-supporting tank with thick walls capable of holding pressure independently.",
-            "A fully pressurized cargo tank used only on SR ships.",
-            "A tank that uses pressurized gas to maintain its structural integrity.",
-            "A non-self-supporting tank with a thin primary barrier supported by insulation and the hull structure." // Doğru Cevap
-        ],
-        answer: 3
-    },
-    {
-        question: "The popping pressure of a safety valve is best defined as:",
-        options: [
-            "The pressure at which the disk moves faster than at higher or lower pressures.", // Doğru Cevap (Aniden açıldığı an)
-            "The pressure at which the valve permanently fails.",
-            "The maximum pressure the vessel can tolerate before rupture.",
-            "The pressure required to manually open the valve."
-        ],
-        answer: 0
-    },
-    {
-        question: "Which of the following statements about PRVs (Pressure Relief Valves) is correct?",
-        options: [
-            "PRVs can only be manually operated.",
-            "PRVs are not used in LNG carriers.",
-            "PRVs allow process fluid to flow automatically under excessive upstream pressure until normal conditions are restored.", // Doğru Cevap
-            "PRVs are designed only for vacuum conditions."
-        ],
-        answer: 2
-    },
-    {
-        question: "In LNG shipping, what is the primary function of reliquefaction?",
-        options: [
-            "To maintain tank structural integrity.",
-            "To convert boil-off gas back into liquid.", // Doğru Cevap
-            "To vaporize the cargo for immediate discharge.",
-            "To heat the cargo for easier pumping."
-        ],
-        answer: 1
-    },
-    {
-        question: "A Reverse Brayton Cycle is primarily used for:",
-        options: [
-            "Generating mechanical work in gas turbines.",
-            "Compressing LNG for storage in fully pressurized tanks.",
-            "Removing heat from a system to produce a cooling effect.", // Doğru Cevap
-            "Increasing the pressure in semi-refrigerated cargo tanks."
-        ],
-        answer: 2
-    },
-    {
-        question: "Which of the following best describes a Regasification Vessel (RV)?",
-        options: [
-            "A ship capable of converting LNG back into gas using onboard vaporisers.", // Doğru Cevap
-            "A standard LNG carrier without onboard vaporisers.",
-            "A vessel that carries pressurized nitrogen.",
-            "A tanker designed exclusively for crude oil."
-        ],
-        answer: 0
-    },
-    {
-        question: "What is the key difference between SR (Semi-Refrigerated) ships and fully pressurized gas carriers?",
-        options: [
-            "SR ships cannot discharge to pressurized facilities.",
-            "SR ships use lower design pressure tanks (5–7 bar) and rely on a reliquefaction plant.", // Doğru Cevap
-            "SR ships do not carry boil-off gas.",
-            "SR ships operate only at ambient temperature."
-        ],
-        answer: 1
-    },
-    {
-        question: "Quick Connect/Disconnect Couplings (QC/DC) are used primarily for:",
-        options: [
-            "Connecting LNG pipelines onshore.",
-            "Allowing rapid hydraulic connection of MLAs to the ship’s manifold flange.", // Doğru Cevap
-            "Sealing fully pressurized tanks.",
-            "Monitoring tank pressure remotely."
-        ],
-        answer: 1
-    },
-    {
-        question: "The STL (Submerged Turret Loading) system is designed to:",
-        options: [
-            "Load or unload oil or liquefied gas from a tanker through a buoy moored to the seabed.", // Doğru Cevap
-            "Vaporize LNG for discharge.",
-            "Generate electricity onboard LNG carriers.",
-            "Pressurize cargo tanks to prevent boil-off."
-        ],
-        answer: 0
-    },
-    {
-        question: "At STP (Standard Temperature and Pressure), which conditions are correct?",
-        options: [
-            "273 K and 2 atm",
-            "25°C and 1 atm",
-            "0°C and 1 atm (100,000 Pa)", // Doğru Cevap (Modern STP tanımına yakın)
-            "0°C and 5 bar"
-        ],
-        answer: 2
-    },
-    {
-        question: "SVP (Saturated Vapour Pressure) refers to:",
-        options: [
-            "The pressure inside a semi-refrigerated tank.",
-            "The pressure exerted by a vapor in equilibrium with its condensed phase at a given temperature.", // Doğru Cevap
-            "The relief valve opening pressure.",
-            "The maximum pressure a pressurized tank can withstand."
-        ],
-        answer: 1
-    },
-    {
-        question: "Which of the following best describes the purpose of the Reverse Brayton Cycle in LNG carriers?",
-        options: [
-            "To convert LNG boil-off gas into mechanical work.",
-            "To vaporize LNG before transfer to shore pipelines.",
-            "To use compressed and expanded air to remove heat, providing onboard cooling.", // Doğru Cevap
-            "To pressurize cargo tanks before loading."
-        ],
-        answer: 2
-    }
+    {
+        question: "Which statement correctly describes a membrane tank?",
+        options: [
+            "A self-supporting tank with thick walls capable of holding pressure independently.",
+            "A fully pressurized cargo tank used only on SR ships.",
+            "A tank that uses pressurized gas to maintain its structural integrity.",
+            "A non-self-supporting tank with a thin primary barrier supported by insulation and the hull structure." 
+        ],
+        answer: 3
+    },
+    {
+        question: "The popping pressure of a safety valve is best defined as:",
+        options: [
+            "The pressure at which the disk moves faster than at higher or lower pressures.", 
+            "The pressure at which the valve permanently fails.",
+            "The maximum pressure the vessel can tolerate before rupture.",
+            "The pressure required to manually open the valve."
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of the following statements about PRVs (Pressure Relief Valves) is correct?",
+        options: [
+            "PRVs can only be manually operated.",
+            "PRVs are not used in LNG carriers.",
+            "PRVs allow process fluid to flow automatically under excessive upstream pressure until normal conditions are restored.", 
+            "PRVs are designed only for vacuum conditions."
+        ],
+        answer: 2
+    },
+    {
+        question: "In LNG shipping, what is the primary function of reliquefaction?",
+        options: [
+            "To maintain tank structural integrity.",
+            "To convert boil-off gas back into liquid.", 
+            "To vaporize the cargo for immediate discharge.",
+            "To heat the cargo for easier pumping."
+        ],
+        answer: 1
+    },
+    {
+        question: "A Reverse Brayton Cycle is primarily used for:",
+        options: [
+            "Generating mechanical work in gas turbines.",
+            "Compressing LNG for storage in fully pressurized tanks.",
+            "Removing heat from a system to produce a cooling effect.", 
+            "Increasing the pressure in semi-refrigerated cargo tanks."
+        ],
+        answer: 2
+    },
+    {
+        question: "Which of the following best describes a Regasification Vessel (RV)?",
+        options: [
+            "A ship capable of converting LNG back into gas using onboard vaporisers.", 
+            "A standard LNG carrier without onboard vaporisers.",
+            "A vessel that carries pressurized nitrogen.",
+            "A tanker designed exclusively for crude oil."
+        ],
+        answer: 0
+    },
+    {
+        question: "What is the key difference between SR (Semi-Refrigerated) ships and fully pressurized gas carriers?",
+        options: [
+            "SR ships cannot discharge to pressurized facilities.",
+            "SR ships use lower design pressure tanks (5–7 bar) and rely on a reliquefaction plant.", 
+            "SR ships do not carry boil-off gas.",
+            "SR ships operate only at ambient temperature."
+        ],
+        answer: 1
+    },
+    {
+        question: "Quick Connect/Disconnect Couplings (QC/DC) are used primarily for:",
+        options: [
+            "Connecting LNG pipelines onshore.",
+            "Allowing rapid hydraulic connection of MLAs to the ship’s manifold flange.", 
+            "Sealing fully pressurized tanks.",
+            "Monitoring tank pressure remotely."
+        ],
+        answer: 1
+    },
+    {
+        question: "The STL (Submerged Turret Loading) system is designed to:",
+        options: [
+            "Load or unload oil or liquefied gas from a tanker through a buoy moored to the seabed.", 
+            "Vaporize LNG for discharge.",
+            "Generate electricity onboard LNG carriers.",
+            "Pressurize cargo tanks to prevent boil-off."
+        ],
+        answer: 0
+    },
+    {
+        question: "At STP (Standard Temperature and Pressure), which conditions are correct?",
+        options: [
+            "273 K and 2 atm",
+            "25°C and 1 atm",
+            "0°C and 1 atm (100,000 Pa)", 
+            "0°C and 5 bar"
+        ],
+        answer: 2
+    },
+    {
+        question: "SVP (Saturated Vapour Pressure) refers to:",
+        options: [
+            "The pressure inside a semi-refrigerated tank.",
+            "The pressure exerted by a vapor in equilibrium with its condensed phase at a given temperature.", 
+            "The relief valve opening pressure.",
+            "The maximum pressure a pressurized tank can withstand."
+        ],
+        answer: 1
+    },
+    {
+        question: "Which of the following best describes the purpose of the Reverse Brayton Cycle in LNG carriers?",
+        options: [
+            "To convert LNG boil-off gas into mechanical work.",
+            "To vaporize LNG before transfer to shore pipelines.",
+            "To use compressed and expanded air to remove heat, providing onboard cooling.", 
+            "To pressurize cargo tanks before loading."
+        ],
+        answer: 2
+    }
 ];
 
 const quizContainer = document.getElementById('quiz');
@@ -276,124 +164,204 @@ const resultsContainer = document.getElementById('results');
 const finalMessage = document.getElementById('final-message');
 const genericShareBtn = document.getElementById('generic-share-btn');
 const linkedinShareLink = document.getElementById('linkedin-share-link');
+const timerElement = document.getElementById('timer'); 
+const tryAgainBtn = document.getElementById('try-again-btn'); 
 
 let correctAnswers = 0;
 let answeredQuestions = 0;
 const totalQuestions = quizData.length;
+let currentQuestionIndex = 0;
+let timerInterval;
+const TIME_PER_QUESTION = 60; // Set back to 60 seconds
 
+// --- TIMER FUNCTIONS ---
+function startTimer() {
+    let timeLeft = TIME_PER_QUESTION;
+    // Set initial text
+    timerElement.textContent = `Time Left: ${timeLeft} seconds`;
+    
+    clearInterval(timerInterval);
+
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = `Time Left: ${timeLeft} seconds`;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            timerElement.textContent = "Time's Up!";
+            handleTimeout();
+        }
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+
+function handleTimeout() {
+    // Disable buttons for the current question
+    const currentQuestionDiv = quizContainer.children[currentQuestionIndex];
+    if (currentQuestionDiv) {
+        const optionsDiv = currentQuestionDiv.querySelector('.options');
+        if (optionsDiv) {
+            Array.from(optionsDiv.children).forEach(b => b.disabled = true);
+            
+            // Highlight the correct answer since time ran out
+            Array.from(optionsDiv.children).forEach((b, idx) => {
+                if (idx === quizData[currentQuestionIndex].answer) {
+                    b.classList.add('correct');
+                }
+            });
+        }
+    }
+    
+    answeredQuestions++;
+    currentQuestionIndex++;
+    updateScore(); 
+    
+    if (currentQuestionIndex < totalQuestions) {
+        // Move to the next question after a brief delay
+        setTimeout(() => {
+            showQuestion(currentQuestionIndex);
+        }, 1500); 
+    } else {
+        showResults();
+    }
+}
+
+// --- QUESTION DISPLAY AND NAVIGATION ---
+function showQuestion(index) {
+    Array.from(quizContainer.children).forEach((div, i) => {
+        div.style.display = i === index ? 'block' : 'none';
+    });
+    startTimer();
+}
+
+// --- SCORE AND RESULTS FUNCTIONS ---
 function updateScore() {
-    scoreElement.textContent = `Skor: ${correctAnswers} / ${totalQuestions}`;
-    if (answeredQuestions === totalQuestions) {
-        showResults();
-    }
+    scoreElement.textContent = `Score: ${correctAnswers} / ${totalQuestions}`;
+    if (answeredQuestions === totalQuestions) {
+        stopTimer();
+        showResults();
+    }
 }
 
 function showResults() {
-    // Quiz ekranını gizle, sonuç ekranını göster
+    stopTimer();
     quizContainer.style.display = 'none';
     resultsContainer.style.display = 'block';
+    timerElement.style.display = 'none';
 
     const percentage = Math.round((correctAnswers / totalQuestions) * 100);
     let messageText;
 
     if (percentage === 100) {
-        messageText = `Mükemmel! ${correctAnswers} sorunun tamamını doğru cevapladınız! 🚢⚓`;
+        messageText = `Perfect! You answered all ${correctAnswers} questions correctly! 🚢⚓`;
     } else if (percentage >= 70) {
-        messageText = `Tebrikler! ${correctAnswers} / ${totalQuestions} (${percentage}%) doğru cevap ile güçlü bir bilgiye sahipsiniz.`;
+        messageText = `Congratulations! You have a strong knowledge base with ${correctAnswers} / ${totalQuestions} (${percentage}%) correct answers.`;
     } else {
-        messageText = `İyi bir başlangıç! ${correctAnswers} / ${totalQuestions} (${percentage}%) doğru cevapladınız. LGHP4 notlarına göz atmak isteyebilirsiniz.`;
+        messageText = `A good start! You scored ${correctAnswers} / ${totalQuestions} (${percentage}%). You might want to review the LGHP4 notes.`;
     }
 
     finalMessage.textContent = messageText;
 
-    // --- PAYLAŞIM BAĞLANTILARINI OLUŞTUR ---
-    const shareText = `LGHP Advanced Quiz'de ${correctAnswers} / ${totalQuestions} (${percentage}%) skor elde ettim! LNG / LGC bilgimi test ettim. #LGHP4 #LNG #Denizcilik`;
-    const shareUrl = window.location.href; // Quiz'in bulunduğu sayfanın URL'si
+    const shareText = `I scored ${correctAnswers}/${totalQuestions} (${percentage}%) on the LGHP Advanced Quiz! Tested my LNG / LGC knowledge. #LGHP4 #LNG #Maritime`;
+    const shareUrl = window.location.href;
 
-    // 1. Genel Paylaşım Bağlantısı (Web Share API veya Kopyala)
-    genericShareBtn.addEventListener('click', () => {
+    // LinkedIn
+    linkedinShareLink.href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent('LGHP Advanced Quiz Result')}&summary=${encodeURIComponent(shareText)}`;
+    linkedinShareLink.target = "_blank";
+    linkedinShareLink.rel = "noopener noreferrer";
+
+    // Generic Share (Web Share API + fallback)
+    // Önceki listener varsa temizle
+    const newBtn = genericShareBtn.cloneNode(true);
+    genericShareBtn.parentNode.replaceChild(newBtn, genericShareBtn);
+
+    newBtn.addEventListener('click', () => {
         if (navigator.share) {
-            // Mobil cihazlar için Web Share API'yi kullan
             navigator.share({
-                title: 'LGHP Advanced Quiz Sonucum',
+                title: 'LGHP Advanced Quiz Result',
                 text: shareText,
                 url: shareUrl,
-            }).catch((error) => console.log('Paylaşım başarısız', error));
+            }).catch(console.error);
         } else {
-            // Masaüstü veya Web Share API desteklemeyenler için Kopyalama/Twitter bağlantısı
-            const fallbackText = shareText + " " + shareUrl;
+            const fallbackText = `${shareText} ${shareUrl}`;
             navigator.clipboard.writeText(fallbackText).then(() => {
-                alert("Sonucunuz panoya kopyalandı! İstediğiniz yerde yapıştırıp paylaşabilirsiniz.");
-            }).catch(err => {
-                // Clipboard API başarısız olursa Twitter bağlantısını yedek olarak kullan
+                alert("Your result has been copied to the clipboard! You can paste and share it anywhere.");
+            }).catch(() => {
+                // Fallback: Twitter
                 const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
                 window.open(twitterUrl, '_blank');
             });
         }
     });
-
-        // 2. LinkedIn Paylaşım Bağlantısı
-        const linkedinUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent('LGHP Advanced Quiz Sonucum')}&summary=${encodeURIComponent(safeShareText)}&source=${encodeURIComponent(shareUrl)}`;
-
-        linkedinShareLink.href = linkedinUrl;
-        linkedinShareLink.target = "_blank";
-        linkedinShareLink.rel = "noopener noreferrer";
-        linkedinShareLink.addEventListener('click', () => {
-            // opsiyonel: tıklama sonrası console log
-            console.log('LinkedIn paylaşım linkine tıklandı');
-        }
-    );
-
 }
 
+
+
+// --- INITIALIZATION AND LOOP ---
+
+// Quiz question element creation
 quizData.forEach((q, index) => {
-    const questionDiv = document.createElement('div');
-    questionDiv.className = 'question';
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question';
+    questionDiv.style.display = index === 0 ? 'block' : 'none'; 
 
-    const questionTitle = document.createElement('h3');
-    questionTitle.textContent = `${index + 1}. ${q.question}`;
-    questionDiv.appendChild(questionTitle);
+    const questionTitle = document.createElement('h3');
+    questionTitle.textContent = `${index + 1}. ${q.question}`;
+    questionDiv.appendChild(questionTitle);
 
-    const optionsDiv = document.createElement('div');
-    optionsDiv.className = 'options';
+    const optionsDiv = document.createElement('div');
+    optionsDiv.className = 'options';
 
-    q.options.forEach((opt, i) => {
-        const btn = document.createElement('button');
-        btn.textContent = opt;
-        
-        btn.addEventListener('click', () => {
-            answeredQuestions++;
-            
-            if (i === q.answer) {
-                correctAnswers++;
-            }
-            
-            updateScore(); // Skor ve tamamlama kontrolü burada yapılır
+    q.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.textContent = opt;
+        
+        btn.addEventListener('click', () => {
+            stopTimer(); 
+            answeredQuestions++;
+            
+            // Highlight answers and disable buttons
+            Array.from(optionsDiv.children).forEach(b => b.disabled = true);
+            Array.from(optionsDiv.children).forEach((b, idx) => {
+                if (idx === q.answer) {
+                    b.classList.add('correct');
+                }
+            });
+            
+            if (i === q.answer) {
+                correctAnswers++;
+            } else {
+                btn.classList.add('incorrect');
+            }
+            
+            // Move to the next question after a brief delay
+            setTimeout(() => {
+                currentQuestionIndex++;
+                updateScore(); 
+                if (currentQuestionIndex < totalQuestions) {
+                    showQuestion(currentQuestionIndex);
+                }
+            }, 1500); 
+        });
+        optionsDiv.appendChild(btn);
+    });
 
-            Array.from(optionsDiv.children).forEach(b => b.disabled = true);
-            
-            Array.from(optionsDiv.children).forEach((b, idx) => {
-                if (idx === q.answer) {
-                    b.classList.add('correct');
-                }
-            });
-            
-            if (i !== q.answer) {
-                btn.classList.add('incorrect');
-            }
-        });
-        optionsDiv.appendChild(btn);
-    });
-
-    // İŞTE EKSİK OLAN KRİTİK ADIM BURADA!
-    // Seçenekler div'ini, soru div'inin içine ekle
-    questionDiv.appendChild(optionsDiv); 
-    
-    quizContainer.appendChild(questionDiv);
+    questionDiv.appendChild(optionsDiv); 
+    quizContainer.appendChild(questionDiv);
 });
 
-// Başlangıç skorunu ayarla
+// Try Again button functionality
+tryAgainBtn.addEventListener('click', () => {
+    window.location.reload();
+});
+
+
+// Start the quiz
 updateScore();
+showQuestion(currentQuestionIndex);
 </script>
 
 </body>

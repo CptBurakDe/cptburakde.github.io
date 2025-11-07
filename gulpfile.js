@@ -16,35 +16,43 @@ var banner = ['/*!\n',
   ''
 ].join('');
 
-// Compile SCSS
+// -----------------------------
+// SCSS derleme
+// -----------------------------
 function compileSass() {
-  return gulp.src('scss/resume.scss')
+  return gulp.src('scss/**/*.scss', { sourcemaps: true })
     .pipe(sass({ quietDeps: true }).on('error', sass.logError))
     .pipe(header(banner, { pkg: pkg }))
-    .pipe(gulp.dest('css'))
+    .pipe(gulp.dest('css', { sourcemaps: '.' }))
     .pipe(browserSync.stream());
 }
 
-// Minify CSS
+// -----------------------------
+// CSS minify
+// -----------------------------
 function minifyCss() {
-  return gulp.src('css/resume.css')
+  return gulp.src('css/**/*.css')
     .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('css'))
     .pipe(browserSync.stream());
 }
 
-// Minify JS
+// -----------------------------
+// JS minify
+// -----------------------------
 function minifyJs() {
-  return gulp.src('js/resume.js')
+  return gulp.src('js/**/*.js')
     .pipe(uglify())
     .pipe(header(banner, { pkg: pkg }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('js'))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.reload({ stream: true }));
 }
 
-// Copy vendor files
+// -----------------------------
+// Vendor copy (Bootstrap, jQuery, vs.)
+// -----------------------------
 function copyVendors() {
   gulp.src([
       'node_modules/bootstrap/dist/**/*',
@@ -83,37 +91,50 @@ function copyVendors() {
   return Promise.resolve();
 }
 
-// BrowserSync
+// -----------------------------
+// BrowserSync başlat
+// -----------------------------
 function serve(done) {
   browserSync.init({
     server: {
-      baseDir: 'D:/xampp/htdocs/mycv',
+      baseDir: './',  // Proje kökü
       index: 'index.html'
     },
+    notify: false,
+    open: true,
   });
   done();
 }
 
-// Watch files
+// -----------------------------
+// Dosyaları izle
+// -----------------------------
 function watchFiles() {
   gulp.watch('scss/**/*.scss', gulp.series(compileSass, minifyCss));
-  gulp.watch('js/**/*.js', minifyJs);
-  gulp.watch('*.html').on('change', browserSync.reload);
+  gulp.watch('js/**/*.js', gulp.series(minifyJs));
+  gulp.watch('**/*.html').on('change', browserSync.reload); // Tüm alt dizinlerdeki HTML
+  gulp.watch('css/**/*.css').on('change', browserSync.reload); // CSS değişimlerini izlemek için
 }
 
-// Dev task
+// -----------------------------
+// Dev Task
+// -----------------------------
 var dev = gulp.series(
   gulp.parallel(compileSass, minifyCss, minifyJs),
   serve,
   watchFiles
 );
 
-// Default task
+// -----------------------------
+// Build Task
+// -----------------------------
 var build = gulp.series(
   gulp.parallel(compileSass, minifyCss, minifyJs, copyVendors)
 );
 
-// Export tasks
+// -----------------------------
+// Export
+// -----------------------------
 exports.sass = compileSass;
 exports['minify-css'] = minifyCss;
 exports['minify-js'] = minifyJs;
