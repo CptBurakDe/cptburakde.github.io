@@ -253,31 +253,46 @@ function showResults() {
 
 // *** CRUCIAL FIX: SHARE BUTTON FUNCTIONALITY ***
 
-shareResultBtn.addEventListener('click', () => {
-  const percentage = Math.round((correctAnswers / totalQuestions) * 100);
-  const shareText = `I scored ${correctAnswers}/${totalQuestions} (${percentage}%) on the LGHP4 Quiz! Tested my LNG/LGC knowledge. #LGHP4 #Maritime`;
-  const shareUrl = window.location.href;
+function setupShareResultButton() {
+  const shareResultBtn = document.getElementById('shareResultBtn');
+  if (!shareResultBtn) return;
 
-  if (navigator.share) {
-    // Use Web Share API for native sharing on mobile/desktop
-    navigator.share({
-      title: 'LGHP4 Quiz Result',
-      text: shareText,
-      url: shareUrl
-    }).catch(error => console.error('Sharing failed', error));
-  } else {
-    // Fallback: Copy to clipboard and provide alert
-    const fallbackText = `${shareText} ${shareUrl}`;
-    navigator.clipboard.writeText(fallbackText).then(() => {
-        alert("Result copied to clipboard! Paste the link to share your score.");
-    }).catch(err => {
-      console.error('Clipboard copy failed, opening Twitter fallback.', err);
-      // Secondary fallback to Twitter if clipboard fails (less common)
-      const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
-      window.open(twitterUrl, '_blank');
-    });
-  }
-});
+  shareResultBtn.addEventListener('click', async () => {
+    const percentage = Math.round((correctAnswers / totalQuestions) * 100);
+    const shareText = `I scored ${correctAnswers}/${totalQuestions} (${percentage}%) on the LGHP4 Quiz! Tested my LNG/LGC knowledge. #LGHP4 #Maritime`;
+    const shareUrl = window.location.href;
+    const fullText = `${shareText} ${shareUrl}`;
+
+    // ✅ Her durumda clipboard’a kopyala
+    try {
+      await navigator.clipboard.writeText(fullText);
+      console.log('✅ Quiz result copied to clipboard.');
+    } catch (err) {
+      console.warn('⚠️ Clipboard copy failed:', err);
+    }
+
+    // ✅ Web Share API varsa ayrıca paylaş
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'LGHP4 Quiz Result',
+          text: shareText,
+          url: shareUrl
+        });
+      } catch (error) {
+        console.error('Sharing failed:', error);
+        alert("Result copied to clipboard! Paste it anywhere to share.");
+      }
+    } else {
+      // 🚫 Web Share desteklenmiyorsa sadece bilgi ver
+      alert("Result copied to clipboard! Paste it anywhere to share.");
+    }
+  });
+}
+
+// Sayfa yüklendiğinde aktif et
+document.addEventListener('DOMContentLoaded', setupShareResultButton);
+
 
 
 // Try Again button functionality
