@@ -16,18 +16,16 @@
 </div>
 
 <div id="results" class="quiz-container" style="display: none; text-align: center;">
-    <h2 id="results-title">Congratulations! Quiz Completed! 🎉</h2>
-    <p id="final-message" style="font-size: 1.2em; font-weight: bold; margin-bottom: 20px;"></p>
-    
-    <!-- Tek share buton -->
-    <button id="share-result-btn" style="padding: 10px 20px; margin: 5px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
-        Share My Result
-    </button>
+    <h2 id="results-title">Congratulations! Quiz Completed! 🎉</h2>
+    <p id="final-message" style="font-size: 1.2em; font-weight: bold; margin-bottom: 20px;"></p>
+    
+    <button id="share-result-btn" style="padding: 10px 20px; margin: 5px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Share My Result
+    </button>
 
-    <!-- Try Again butonu -->
-    <button id="try-again-btn" style="padding: 10px 20px; margin: 5px; background-color: #ff6347; color: white; border: none; border-radius: 5px; cursor: pointer;">
-        Try Again 🔄
-    </button>
+    <button id="try-again-btn" style="padding: 10px 20px; margin: 5px; background-color: #ff6347; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Try Again 🔄
+    </button>
 </div>
 
 <script>
@@ -159,18 +157,19 @@ const scoreElement = document.getElementById('score');
 const resultsContainer = document.getElementById('results');
 const finalMessage = document.getElementById('final-message');
 const timerElement = document.getElementById('timer'); 
+const shareResultBtn = document.getElementById('share-result-btn'); // Grab the share button
+const tryAgainBtn = document.getElementById('try-again-btn'); // Grab the try again button
 
 let correctAnswers = 0;
 let answeredQuestions = 0;
 const totalQuestions = quizData.length;
 let currentQuestionIndex = 0;
 let timerInterval;
-const TIME_PER_QUESTION = 0;// Set back to 30 seconds
+const TIME_PER_QUESTION = 30; // Set back to 30 seconds
 
 // --- TIMER FUNCTIONS ---
 function startTimer() {
     let timeLeft = TIME_PER_QUESTION;
-    // Set initial text
     timerElement.textContent = `Time Left: ${timeLeft} seconds`;
     
     clearInterval(timerInterval);
@@ -192,31 +191,28 @@ function stopTimer() {
 }
 
 function handleTimeout() {
-    // Disable buttons for the current question
     const currentQuestionDiv = quizContainer.children[currentQuestionIndex];
     if (currentQuestionDiv) {
         const optionsDiv = currentQuestionDiv.querySelector('.options');
         if (optionsDiv) {
             Array.from(optionsDiv.children).forEach(b => b.disabled = true);
-            
-            // Highlight the correct answer since time ran out
-            Array.from(optionsDiv.children).forEach((b, idx) => {
+            
+            Array.from(optionsDiv.children).forEach((b, idx) => {
                 if (idx === quizData[currentQuestionIndex].answer) {
                     b.classList.add('correct');
                 }
             });
         }
     }
-    
+    
     answeredQuestions++;
     currentQuestionIndex++;
     updateScore(); 
     
     if (currentQuestionIndex < totalQuestions) {
-        // Move to the next question after a brief delay
-        setTimeout(() => {
-            showQuestion(currentQuestionIndex);
-        }, 1500); 
+        setTimeout(() => {
+            showQuestion(currentQuestionIndex);
+        }, 1500); 
     } else {
         showResults();
     }
@@ -239,51 +235,105 @@ function updateScore() {
     }
 }
 
-// JS
-const shareResultBtn = document.getElementById('share-result-btn');
-const tryAgainBtn = document.getElementById('try-again-btn');
-
 // SHOW RESULTS FUNCTION
 function showResults() {
-  stopTimer();
-  quizContainer.style.display = 'none';
-  resultsContainer.style.display = 'block';
-  timerElement.style.display = 'none';
+  stopTimer();
+  quizContainer.style.display = 'none';
+  resultsContainer.style.display = 'block';
+  timerElement.style.display = 'none';
 
-  const percentage = Math.round((correctAnswers / totalQuestions) * 100);
-  let message;
-  if (percentage === 100) message = `Perfect! You answered all ${correctAnswers} questions correctly! 🚢⚓`;
-  else if (percentage >= 70) message = `Great! You scored ${correctAnswers}/${totalQuestions} (${percentage}%)! 🌊`;
-  else message = `You scored ${correctAnswers}/${totalQuestions} (${percentage}%). Keep studying LGHP4 notes! 📚`;
+  const percentage = Math.round((correctAnswers / totalQuestions) * 100);
+  let message;
+  if (percentage === 100) message = `Perfect! You answered all ${correctAnswers} questions correctly! 🚢⚓`;
+  else if (percentage >= 70) message = `Great! You scored ${correctAnswers}/${totalQuestions} (${percentage}%)! 🌊`;
+  else message = `You scored ${correctAnswers}/${totalQuestions} (${percentage}%). Keep studying LGHP4 notes! 📚`;
 
-  finalMessage.textContent = message;
+  finalMessage.textContent = message;
 }
 
-// SHARE BUTTON
-shareResultBtn.addEventListener('click', () => {
-  const percentage = Math.round((correctAnswers / totalQuestions) * 100);
-  const shareText = `I scored ${correctAnswers}/${totalQuestions} (${percentage}%) on the LGHP4 Quiz! Tested my LNG/LGC knowledge. #LGHP4 #Maritime`;
-  const shareUrl = window.location.href;
+// *** CRUCIAL FIX: SHARE BUTTON FUNCTIONALITY ***
 
-  if (navigator.share) {
-    navigator.share({
-      title: 'LGHP4 Quiz Result',
-      text: shareText,
-      url: shareUrl
-    }).catch(console.error);
-  } else {
-    const fallbackText = `${shareText} ${shareUrl}`;
-    navigator.clipboard.writeText(fallbackText).then(() => alert("Result copied to clipboard!")).catch(() => {
-      const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
-      window.open(twitterUrl, '_blank');
-    });
-  }
+shareResultBtn.addEventListener('click', () => {
+  const percentage = Math.round((correctAnswers / totalQuestions) * 100);
+  const shareText = `I scored ${correctAnswers}/${totalQuestions} (${percentage}%) on the LGHP4 Quiz! Tested my LNG/LGC knowledge. #LGHP4 #Maritime`;
+  const shareUrl = window.location.href;
+
+  if (navigator.share) {
+    // Use Web Share API for native sharing on mobile/desktop
+    navigator.share({
+      title: 'LGHP4 Quiz Result',
+      text: shareText,
+      url: shareUrl
+    }).catch(error => console.error('Sharing failed', error));
+  } else {
+    // Fallback: Copy to clipboard and provide alert
+    const fallbackText = `${shareText} ${shareUrl}`;
+    navigator.clipboard.writeText(fallbackText).then(() => {
+        alert("Result copied to clipboard! Paste the link to share your score.");
+    }).catch(err => {
+      console.error('Clipboard copy failed, opening Twitter fallback.', err);
+      // Secondary fallback to Twitter if clipboard fails (less common)
+      const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+      window.open(twitterUrl, '_blank');
+    });
+  }
 });
 
 
 // Try Again button functionality
 tryAgainBtn.addEventListener('click', () => {
     window.location.reload();
+});
+
+
+// --- INITIALIZATION ---
+// Quiz question element creation (Remains unchanged for brevity)
+quizData.forEach((q, index) => {
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question';
+    questionDiv.style.display = index === 0 ? 'block' : 'none'; 
+
+    const questionTitle = document.createElement('h3');
+    questionTitle.textContent = `${index + 1}. ${q.question}`;
+    questionDiv.appendChild(questionTitle);
+
+    const optionsDiv = document.createElement('div');
+    optionsDiv.className = 'options';
+
+    q.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.textContent = opt;
+        
+        btn.addEventListener('click', () => {
+            stopTimer(); 
+            answeredQuestions++;
+            
+            Array.from(optionsDiv.children).forEach(b => b.disabled = true);
+            Array.from(optionsDiv.children).forEach((b, idx) => {
+                if (idx === q.answer) {
+                    b.classList.add('correct');
+                }
+            });
+            
+            if (i === q.answer) {
+                correctAnswers++;
+            } else {
+                btn.classList.add('incorrect');
+            }
+            
+            setTimeout(() => {
+                currentQuestionIndex++;
+                updateScore(); 
+                if (currentQuestionIndex < totalQuestions) {
+                    showQuestion(currentQuestionIndex);
+                }
+            }, 1500); 
+        });
+        optionsDiv.appendChild(btn);
+    });
+
+    questionDiv.appendChild(optionsDiv); 
+    quizContainer.appendChild(questionDiv);
 });
 
 

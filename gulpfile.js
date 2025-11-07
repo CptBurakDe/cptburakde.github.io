@@ -1,80 +1,79 @@
-// ========================================
-// GULP DEV SERVER - FULL VERSION
-// No SCSS, No Minify — Just Live Reload
-// LAN üzerinden erişilebilir
-// ========================================
-
+// gulpfile.js
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const os = require('os');
+const qrcode = require('qrcode-terminal');
 
-// ----------------------------------------
-// Bilgisayarın yerel IP adresini bulur
-// ----------------------------------------
+// --- Wi-Fi adaptör adı desenleri ---
+const WIFI_PATTERNS = [
+  /wi-?fi/i,
+  /wireless/i,
+  /wlan/i,
+  /^wlp/i,
+  /^wl/i,
+  /^en0$/,
+];
+
+// --- LAN IP tespiti ---
 function getLocalIP() {
-  const interfaces = os.networkInterfaces();
-  for (const name of Object.keys(interfaces)) {
-    for (const net of interfaces[name]) {
-      // IPv4 adresi ve dahili (localhost) olmayanları filtrele
-      if (net.family === 'IPv4' && !net.internal) {
-        return net.address;
-      }
+  if (process.env.LOCAL_IP) return process.env.LOCAL_IP.trim();
+
+  const nets = os.networkInterfaces();
+  const addrs = [];
+  for (const name in nets) {
+    for (const net of nets[name]) {
+      if (net.family === 'IPv4' && !net.internal)
+        addrs.push({ name, address: net.address });
     }
   }
-  // Hiçbiri bulunamazsa localhost döndür
-  return '127.0.0.1';
+  if (!addrs.length) return '127.0.0.1';
+
+  for (const pat of WIFI_PATTERNS) {
+    const found = addrs.find(n => pat.test(n.name));
+    if (found) return found.address;
+  }
+  return addrs[0].address;
 }
 
-// ----------------------------------------
-// BrowserSync başlat
-// ----------------------------------------
+// --- BrowserSync başlat ---
 function serve(done) {
   const localIP = getLocalIP();
 
   browserSync.init({
     server: {
-      baseDir: './',        // Proje kök dizini
-      index: 'index.html'   // Açılacak ana dosya
+      baseDir: './',
+      index: 'index.html'
     },
-    host: localIP,           // LAN IP (telefon erişimi için)
-    port: 3000,              // Port (gerekirse değiştirilebilir)
-    notify: false,           // Sağ üstteki BrowserSync bildirimi kapalı
-    open: false,             // Tarayıcıyı otomatik açma
-    cors: true,              // CORS açık (gerekirse)
+    host: localIP,
+    port: 3000,
+    open: true,
+    notify: false,
+    cors: true,
+    https: true
   });
 
-  console.log('\n========================================');
-  console.log('  🔥 Gulp Live Server Çalışıyor!');
-  console.log('----------------------------------------');
-  console.log(`  💻 Local:   http://localhost:3000`);
-  console.log(`  📱 LAN IP:  http://${localIP}:3000`);
-  console.log('----------------------------------------');
-  console.log('  Değişiklik yap → sayfa otomatik yenilenir');
-  console.log('========================================\n');
+  const url = `https://${localIP}:3000`;
+  console.log('\n====================================');
+  console.log('🔥 Gulp Live Server running');
+  console.log('------------------------------------');
+  console.log(`Local:   https://localhost:3000`);
+  console.log(`LAN:     ${url}`);
+  console.log('------------------------------------');
+  console.log('📱 QR kod ile tarayıp telefondan aç:');
+  qrcode.generate(url, { small: true });
+  console.log('====================================\n');
 
   done();
 }
 
-// ----------------------------------------
-// İzleme (HTML, CSS, JS)
-// ----------------------------------------
+// --- Dosya izleme ---
 function watchFiles() {
   gulp.watch('**/*.html').on('change', browserSync.reload);
   gulp.watch('css/**/*.css').on('change', browserSync.reload);
   gulp.watch('js/**/*.js').on('change', browserSync.reload);
 }
 
-// ----------------------------------------
-// DEV Task
-// (Sadece canlı yenileme, derleme yok)
-// ----------------------------------------
-const dev = gulp.series(
-  serve,
-  watchFiles
-);
-
-// ----------------------------------------
-// Export (terminal komutları)
-// ----------------------------------------
+// --- Ana görev ---
+const dev = gulp.series(serve, watchFiles);
 exports.dev = dev;
 exports.default = dev;
