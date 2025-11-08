@@ -1,0 +1,212 @@
+[
+  {
+    "question": "What is viscosity in the context of liquefied gases?",
+    "options": [
+      "The property that restricts fluid flow due to friction between molecules.",
+      "The ability of a liquid to absorb heat from mechanical components.",
+      "The pressure required to maintain a liquid state at low temperatures.",
+      "The rate at which a liquid evaporates under atmospheric pressure."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is a consequence of the poor cooling properties of liquefied gases?",
+    "options": [
+      "Enhanced heat transfer from pump bearings to the cargo.",
+      "Rapid temperature increase in pump shaft bearings if overheating occurs.",
+      "Decreased vapor pressure in the cargo system.",
+      "Improved pump efficiency at higher temperatures."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What happens when liquid propane overheats in a bearing?",
+    "options": [
+      "It forms ice crystals that block the bearing.",
+      "It increases its lubrication properties significantly.",
+      "It maintains stable temperature due to high specific heat.",
+      "It vaporizes and pushes liquid out, causing bearing failure."
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Why can liquefied hydrocarbons cause lubrication problems?",
+    "options": [
+      "They can dissolve in lubricating oil causing inadequate lubrication.",
+      "They increase oil viscosity beyond acceptable limits.",
+      "They react chemically with metal surfaces.",
+      "They freeze the lubricating oil at low temperatures."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What do the Gas Laws describe?",
+    "options": [
+      "The behavior of liquids at various temperatures.",
+      "The relationship between pressure, volume, and temperature for a fixed mass of gas.",
+      "The chemical reactions between different gases.",
+      "The phase transitions from solid to liquid states."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Why are the Gas Laws called \"Ideal Gas Laws\"?",
+    "options": [
+      "Because they work perfectly for all real gases at any condition.",
+      "Because they were derived from theoretical calculations only.",
+      "Because they assume gas molecules behave ideally without interaction.",
+      "Because they only apply to gases at ideal temperatures."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does Boyle's Law state?",
+    "options": [
+      "Volume increases with temperature at constant pressure.",
+      "Pressure x volume equals a constant at constant temperature.",
+      "Pressure increases linearly with temperature at constant volume.",
+      "Volume is independent of pressure at constant temperature."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "According to Charles' Law, what happens to gas volume at constant pressure?",
+    "options": [
+      "It remains constant regardless of temperature changes.",
+      "It decreases as temperature increases.",
+      "It increases proportionally with absolute temperature.",
+      "It doubles for every 10°C increase."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is absolute zero temperature?",
+    "options": [
+      "0°C or 273.15 K",
+      "-100°C or 173.15 K",
+      "-273.15°C or 0 K",
+      "-373.15°C or -100 K"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the relationship between Kelvin and Celsius scales?",
+    "options": [
+      "1 K interval equals 1°C interval, but K scale starts at absolute zero.",
+      "1 K equals 2°C in temperature difference.",
+      "Kelvin scale uses degrees symbol while Celsius does not.",
+      "0 K equals 0°C as both start at the same point."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What does the Pressure Law state?",
+    "options": [
+      "Pressure decreases with temperature at constant volume.",
+      "Pressure remains constant regardless of temperature changes.",
+      "Pressure varies directly with temperature at constant volume.",
+      "Pressure is independent of absolute temperature."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What volume does one mole of any gas occupy at NTP?",
+    "options": [
+      "11.2 liters",
+      "44 liters",
+      "22.4 liters",
+      "16 liters"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is Avogadro's number?",
+    "options": [
+      "22.4 × 10²³ molecules per mole",
+      "6.022 × 10²³ molecules per mole",
+      "273.15 × 10²³ molecules per mole",
+      "1.0 × 10²³ molecules per mole"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the General Gas Law equation?",
+    "options": [
+      "P + V = n × R × T",
+      "P × V = n + R + T",
+      "P / V = n × R / T",
+      "P × V = n × R × T"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What does viscosity describe in a liquefied gas?",
+    "options": [
+      "Resistance to flow due to molecular friction",
+      "Heat absorption capability",
+      "Pressure maintenance at low temperature",
+      "Rate of evaporation"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "How do liquefied gases perform as lubricants compared to oil?",
+    "options": [
+      "Provide superior lubrication",
+      "Poor lubrication properties",
+      "Same as oil",
+      "Require no lubrication"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Why can propane vaporize rapidly under overheating conditions?",
+    "options": [
+      "High viscosity",
+      "Specific heat about half that of water",
+      "Low vapor pressure",
+      "Strong solvent properties"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is a risk of liquefied hydrocarbons dissolving in lubricating oil?",
+    "options": [
+      "Better lubrication of pump seals",
+      "Inadequate lubrication of mechanical components",
+      "Increased viscosity",
+      "Reduced heat transfer"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How can liquefied gases act in mechanical systems like valves?",
+    "options": [
+      "Improve lubrication",
+      "Cause degreasing of mechanical parts",
+      "Increase viscosity",
+      "Stabilize temperature"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is essential when choosing lubricating oil for a cargo compressor?",
+    "options": [
+      "High viscosity",
+      "Compatibility with cargo grade",
+      "Maximum specific heat",
+      "Minimum density"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which property makes liquefied gases challenging in pump lubrication?",
+    "options": [
+      "High freezing point",
+      "Low density",
+      "Solvent behavior",
+      "High thermal conductivity"
+    ],
+    "answer": 2
+  }
+]
