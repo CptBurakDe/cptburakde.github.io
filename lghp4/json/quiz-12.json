@@ -1,0 +1,282 @@
+[
+  {
+    "question": "What distinguishes LPG vessels designed for fully refrigerated cargo?",
+    "options": [
+      "Cylindrical tanks protruding above deck level.",
+      "Spherical tanks rising prominently above main deck.",
+      "Prismatic tanks at atmospheric pressure with much higher freeboard.",
+      "Membrane deck construction with reinforced hull plating."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is a key feature of the IGC Code 2016 edition?",
+    "options": [
+      "Elimination of all pressure relief valve requirements.",
+      "Increased protection distances for cargo tanks based on collision data.",
+      "Removal of cargo heating system regulations.",
+      "Standardization of all carriers to Type A tanks only."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which vessels are excluded from IGC Code coverage according to recent updates?",
+    "options": [
+      "Semi-refrigerated LPG carriers under 5,000 m³.",
+      "Fully pressurized ammonia carriers with Type C tanks.",
+      "LNG production, storage and offloading units (FPSO).",
+      "Regasification vessels operating in international waters."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What new requirement was introduced for regasification vessels (RV)?",
+    "options": [
+      "Mandatory thermal oxidation systems for all cargo types.",
+      "Internal cofferdam and piping requirements.",
+      "Elimination of secondary barriers for Type B tanks.",
+      "Reduced protection distances for collision scenarios."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the primary advantage of Type C containment systems under IGC Code?",
+    "options": [
+      "They require full secondary barriers in all configurations.",
+      "They must use stainless steel construction materials.",
+      "They do not require a secondary barrier.",
+      "They operate only at atmospheric pressure conditions."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "At what temperature do fully pressurized ships typically carry cargo?",
+    "options": [
+      "At atmospheric boiling point with refrigeration systems.",
+      "At ambient temperatures, minimum 0°C with suitable steels to -10°C.",
+      "At -48°C using low temperature steel construction.",
+      "At -104°C with specialized alloy materials."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the typical design pressure for fully pressurized gas carriers?",
+    "options": [
+      "0.7 bar maximum working pressure.",
+      "5 to 7 bar for operational flexibility.",
+      "18 bar, with some accepting up to 20 bar.",
+      "25 bar for enhanced cargo capacity."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Why are fully pressurized ships typically small in size?",
+    "options": [
+      "Port regulations limit their maximum dimensions.",
+      "High design pressures make cargo tanks excessively heavy.",
+      "Low temperature steels increase construction costs significantly.",
+      "Reliquefaction systems require excessive deck space."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the typical cargo capacity range for fully pressurized ships?",
+    "options": [
+      "20,000 to 85,000 m³ for major LPG routes.",
+      "10,000 to 25,000 m³ for semi-refrigerated operations.",
+      "1,000 to 5,000 m³, with some up to 6,000-11,000 m³.",
+      "70,000 to 175,000 m³ for long-distance trades."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What enables fully pressurized ships to load from fully refrigerated storage facilities?",
+    "options": [
+      "High-capacity reliquefaction plants installed onboard.",
+      "Specialized cryogenic transfer pumps and hoses.",
+      "Cargo heater equipment fitted to the vessel.",
+      "Membrane containment system with thermal flexibility."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the typical operating pressure for semi-refrigerated ships?",
+    "options": [
+      "18 to 20 bar for maximum cargo flexibility.",
+      "0.7 bar atmospheric pressure with refrigeration.",
+      "5 to 7 bar maximum working pressure.",
+      "1 to 3 bar with partial reliquefaction capability."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Why did semi-refrigerated carriers develop in the gas transport industry?",
+    "options": [
+      "To eliminate the need for double hull construction.",
+      "For flexibility in carrying various gases like LPG, VCM, propylene and butadiene.",
+      "To achieve higher speeds on long-distance routes.",
+      "For compliance with new environmental regulations only."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What temperature range can semi-refrigerated carriers typically handle?",
+    "options": [
+      "0°C to -10°C using carbon steel tanks.",
+      "-48°C using low temperature steels for most cargoes.",
+      "-89°C for ethane transport exclusively.",
+      "-162°C with specialized membrane systems."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the purpose of anti-flotation chocks on semi-refrigerated vessels?",
+    "options": [
+      "To allow thermal expansion and contraction of tanks.",
+      "To prevent static and dynamic loads during rough seas.",
+      "To prevent tank rising in hold space if ballast tanks leak.",
+      "To secure cargo pumps during discharge operations."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the maximum working pressure for fully refrigerated ships?",
+    "options": [
+      "18 bar for Type C cylindrical tanks.",
+      "5 to 7 bar for operational flexibility.",
+      "0.7 bar with independent Type A prismatic tanks.",
+      "20 bar for enhanced discharge capabilities."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the typical capacity range for VLGC (Very Large Gas Carriers)?",
+    "options": [
+      "20,000 to 43,000 m³ for regional trades.",
+      "52,000 to 60,000 m³ for medium routes.",
+      "70,000 to 85,000 m³ for major shipping lanes.",
+      "100,000 to 125,000 m³ for LNG operations."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "How many cargo tanks do fully refrigerated ships above 35,000 m³ typically have?",
+    "options": [
+      "Two tanks with longitudinal bulkheads only.",
+      "Three tanks with transverse wash plates.",
+      "Four tanks with stability enhancement features.",
+      "Five tanks for optimal weight distribution."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What barrier requirement does IGC Code impose for Type A tanks on FR ships?",
+    "options": [
+      "No secondary barrier needed for LPG cargoes.",
+      "Partial secondary barrier using drip-pan protection.",
+      "Complete secondary barrier, which can be hull structure for LPG.",
+      "Triple barrier system for all flammable cargoes."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the atmospheric boiling point of ethylene?",
+    "options": [
+      "-48°C, suitable for standard low temperature steels.",
+      "-89°C, requiring specialized alloy construction.",
+      "-104°C, typically carried fully refrigerated.",
+      "-162°C, necessitating cryogenic containment systems."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the atmospheric boiling point of ethane?",
+    "options": [
+      "-162°C for cryogenic operations.",
+      "-104°C with membrane containment required.",
+      "-89°C, historically carried in small LEC vessels.",
+      "-48°C using Type A prismatic tanks."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What requirement applies to all cargoes carried below -55°C under IGC Code?",
+    "options": [
+      "Mandatory gas detection systems in all holds.",
+      "Full double hull (double bottom plus side tanks).",
+      "Type B spherical containment systems only.",
+      "Reliquefaction capacity exceeding 150% of boil-off."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "At what temperature is LNG typically carried in carriers?",
+    "options": [
+      "-48°C using low temperature carbon steel tanks.",
+      "-89°C with semi-refrigerated containment systems.",
+      "-104°C in Type C pressure vessel tanks.",
+      "-162°C at its atmospheric boiling point."
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What was the typical LNG carrier size in the 1970s for membrane type?",
+    "options": [
+      "27,400 m³ with prismatic Type A tanks.",
+      "70,000 m³ as the standard design.",
+      "125,000 m³ for Moss type vessels.",
+      "155,000 m³ for long-distance routes."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the current nominal capacity for modern LNG carriers?",
+    "options": [
+      "70,000 m³ for regional distribution networks.",
+      "125,000 m³ as industry standard size.",
+      "175,000 m³ due to trade development and voyage lengths.",
+      "266,000 m³ for all new construction projects."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the typical capacity range for small-scale LNG carriers?",
+    "options": [
+      "500 to 1,000 m³ for harbor operations only.",
+      "1,500 to 27,000 m³ with Type C tanks.",
+      "35,000 to 50,000 m³ for coastal trades.",
+      "70,000 to 100,000 m³ for international routes."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What structural requirement applies to all LNG vessels along cargo length?",
+    "options": [
+      "Triple hull construction for enhanced safety.",
+      "Double hull providing sufficient ballast space.",
+      "Single hull with external ice-breaking capability.",
+      "Membrane barrier extending to engine room."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What type of secondary barrier do membrane tank systems have on LNG carriers?",
+    "options": [
+      "No secondary barrier due to advanced membrane design.",
+      "Partial drip-pan protection under tank supports.",
+      "Full secondary barrier integrated in containment system.",
+      "Hull structure serving as sole barrier."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What heating medium is used in RV vaporizers for regasification?",
+    "options": [
+      "Cargo vapor compressed and superheated onboard.",
+      "Diesel fuel combustion in dedicated boilers.",
+      "Seawater, with steam if ambient temperature is low.",
+      "Glycol mixture circulated through heat exchangers."
+    ],
+    "answer": 2
+  }
+]
