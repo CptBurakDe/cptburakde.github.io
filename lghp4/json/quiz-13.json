@@ -1,0 +1,178 @@
+[
+  {
+    "question": "Which requirement applies to cargo pipelines on gas carriers according to the IGC Code?",
+    "options": [
+      "Pipelines must be fitted with expansion bellows in the cargo holds.",
+      "Pipelines must be routed through the double bottom structure for protection.",
+      "Pipelines are not permitted to be run beneath the main deck level.",
+      "Pipelines must be constructed using a special low-temperature alloy."
+    ],
+    "answer": 2,
+    "explanation": "Gas carriers are subject to two critical safety restrictions under the IGC Code, one of which prohibits running cargo pipelines beneath the level of the upper deck. This is a fundamental design feature to prevent cargo leakage into enclosed spaces."
+  },
+  {
+    "question": "What is the consequence if the ventilation over-pressure is lost in a motor room containing electrically unsafe equipment?",
+    "options": [
+      "The non-certified equipment must be automatically tripped deactivated.",
+      "The airlock doors must be immediately locked from the outside.",
+      "The emergency power supply to the motor room is immediately cut off.",
+      "The reliquefaction compressor must automatically shift to bypass mode."
+    ],
+    "answer": 0,
+    "explanation": "For motor rooms containing equipment that is not certified as electrically safe, the loss of ventilation over-pressure is a critical safety event that requires the automatic tripping or deactivation of that equipment. This measure protects against the risk of an ignition source existing concurrently with a gas leak into the area."
+  },
+  {
+    "question": "Which characteristic of the insulation system is crucial to prevent the ingress of water or water vapour?",
+    "options": [
+      "High ability to bear mechanical loads.",
+      "Low thermal conductivity.",
+      "Vapour sealing property.",
+      "Resistance to cargo liquid effects."
+    ],
+    "answer": 2,
+    "explanation": "The ingress of moisture into the thermal insulation system can lead to a loss of efficiency and extensive mechanical damage due to condensation and freezing. Therefore, the vapour sealing property of the insulation system is an important characteristic required to prevent water and vapour penetration."
+  },
+  {
+    "question": "What is the required negative pressure ventilation provided to, under the IGC Code?",
+    "options": [
+      "The accommodation and service spaces.",
+      "The electric motor room.",
+      "The cargo compressor area.",
+      "The cargo control room."
+    ],
+    "answer": 2,
+    "explanation": "To maintain a pressure differential between adjacent spaces, the IGC Code requires positive pressure ventilation for the electric motor room and corresponding negative pressure ventilation for the cargo compressor area."
+  },
+  {
+    "question": "Gas carriers are categorized into ship Types 1G, 2G, 2PG, and 3G based on what criterion?",
+    "options": [
+      "The maximum overall length of the vessel.",
+      "The hazard rating of the cargoes the ship is certified to carry.",
+      "The total volume of ballast water required by design.",
+      "The minimum required design temperature of the cargo tanks."
+    ],
+    "answer": 1,
+    "explanation": "The IGC Code classifies all gas carriers into the four ship types (1G, 2G, 2PG, 3G) based on an assessment of the relative hazard rating of the liquefied gases they are authorized to transport. Type 1G carries the highest hazard cargoes."
+  },
+  {
+    "question": "Where must air intakes for accommodation and engine spaces be sited relative to the cargo system?",
+    "options": [
+      "Sited in conjunction with gas detection systems.",
+      "Sited away from cargo vent risers.",
+      "Sited beneath the weather deck.",
+      "Sited inside the cargo control room."
+    ],
+    "answer": 1,
+    "explanation": "The IGC Code requires that air intakes for accommodation and engine spaces must be located away from cargo vent risers. Additionally, all air intakes to accommodation and service spaces must be equipped with closing devices."
+  },
+  {
+    "question": "The traditional connection between the reliquefaction motors and compressors was made through which component?",
+    "options": [
+      "A flexible coupling inside the combination room.",
+      "A gas-tight bulkhead seal.",
+      "A specialized airlock entrance.",
+      "An open access hatch."
+    ],
+    "answer": 1,
+    "explanation": "In the traditional layout, the connection between the electric motor room and the adjacent compressor room was achieved using drive shafts that penetrated the gas-tight bulkhead via a gas-tight bulkhead seal. The purpose of this seal was to isolate the hazardous compressor area from the electrical machinery."
+  },
+  {
+    "question": "Why must cargo tanks on gas carriers be equipped with separate ballast tanks?",
+    "options": [
+      "To facilitate easier purging operations after cargo discharge.",
+      "Because the cargo tanks are not designed for the carriage of ballast.",
+      "To comply with stability requirements only during loading operations.",
+      "To increase the efficiency of the reliquefaction process."
+    ],
+    "answer": 1,
+    "explanation": "A unique feature of gas carrier design is that the cargo tanks are not designed to carry water ballast. Consequently, gas carriers must be designed with separate ballast tanks to meet stability and structural requirements."
+  },
+  {
+    "question": "What is the fundamental difference between an Explosive atmosphere and an Explosive gas atmosphere as defined in IEC 60079-10-1?",
+    "options": [
+      "Explosive atmosphere is continuous; Explosive gas atmosphere is periodic.",
+      "Explosive atmosphere includes dust or fibers; Explosive gas atmosphere only includes gas or vapour.",
+      "Explosive atmosphere requires ignition; Explosive gas atmosphere does not.",
+      "Explosive atmosphere relates to Zone 0; Explosive gas atmosphere relates to Zone 2."
+    ],
+    "answer": 1,
+    "explanation": "While both definitions refer to a mixture that permits self-sustaining flame propagation after ignition, the definition of an Explosive atmosphere is broader, including flammable substances in the form of gas, vapour, dust, fibres, or flyings. The definition of an Explosive gas atmosphere is restricted only to gas or vapour forms."
+  },
+  {
+    "question": "What is a primary design goal for gas carriers concerning hazardous areas?",
+    "options": [
+      "To maximize the extent of Zone 2 areas by increasing ventilation.",
+      "To eliminate the likelihood of an explosive gas atmosphere occurring.",
+      "To ensure all equipment is certified safe regardless of its location.",
+      "To simplify the process of ballast water exchange."
+    ],
+    "answer": 1,
+    "explanation": "One of the two primary goals of gas carrier design is the elimination of the likelihood of an explosive gas atmosphere occurring. The second goal is the elimination of ignition sources in areas where such atmospheres might occur."
+  },
+  {
+    "question": "Which ship type has the least stringent structural requirements regarding damage survival capability?",
+    "options": [
+      "Ship Type 1G.",
+      "Ship Type 2G.",
+      "Ship Type 2PG.",
+      "Ship Type 3G."
+    ],
+    "answer": 3,
+    "explanation": "The IGC Code imposes progressively less stringent structural requirements, particularly concerning damage survival capability in the event of collision or grounding, for ship types certified to carry cargoes representing progressively decreasing environmental hazards. Ship Type 3G is the category with the least stringent structural requirements."
+  },
+  {
+    "question": "The fixed dry powder fire fighting installation is commonly actuated using the pressure of which stored substance?",
+    "options": [
+      "Argon.",
+      "Nitrogen.",
+      "Helium.",
+      "Compressed air."
+    ],
+    "answer": 1,
+    "explanation": "The dry powder installation is typically actuated by nitrogen pressure. The nitrogen is stored in cylinders located adjacent to the dry powder containers, providing the necessary pressure to dispense the extinguishing agent."
+  },
+  {
+    "question": "Where is a monitor required to be fitted for the dry powder system, capable of being actuated both locally and remotely?",
+    "options": [
+      "To protect the entire length of the main deck.",
+      "To protect any load/unload connection area.",
+      "To protect the lifeboats and muster stations.",
+      "To protect the engine room entrance."
+    ],
+    "answer": 1,
+    "explanation": "The IGC Code mandates that a monitor capable of both local and remote actuation must be fitted to specifically protect any cargo load or unload connection area on the gas carrier."
+  },
+  {
+    "question": "Which area classification term describes an area where an explosive gas atmosphere is likely to occur periodically or occasionally in normal operation?",
+    "options": [
+      "Zone 0.",
+      "Zone 1.",
+      "Zone 2.",
+      "Non-hazardous area."
+    ],
+    "answer": 1,
+    "explanation": "Hazardous areas are classified into zones based on the frequency and likely duration of an explosive gas atmosphere. Zone 1 is defined as an area in which an explosive gas atmosphere is likely to occur periodically or occasionally during normal operation."
+  },
+  {
+    "question": "What minimum separation distance must be maintained between the two gas-tight doors of the airlock entrance?",
+    "options": [
+      "Not less than 1.5 meters.",
+      "Exactly 2.5 meters.",
+      "Not less than 0.5 meters.",
+      "Not more than 1.5 meters."
+    ],
+    "answer": 0,
+    "explanation": "The IGC Code requires the motor room airlock to consist of two gas-tight doors placed at least 1.5 meters apart (and not more than 2.5 meters apart). This airlock design prevents the total loss of air pressure when entering the motor room."
+  },
+  {
+    "question": "What is the relationship between ventilation and the extent of hazardous zones in an enclosed space?",
+    "options": [
+      "Increasing ventilation reduces the extent of hazardous zones.",
+      "Ventilation is only used to manage toxic gases, not flammable zones.",
+      "Ventilation rate does not affect the size of Zone 0 or Zone 1 areas.",
+      "Decreasing ventilation ensures the zones will not fill the entire space."
+    ],
+    "answer": 0,
+    "explanation": "Ventilation directly influences the size and persistence of gas/air mixtures. The standard states that the higher the amount of ventilation in relation to the possible release rates, the smaller the extent of the hazardous zones will be, potentially reducing them to a negligible extent (non-hazardous area)."
+  }
+]
