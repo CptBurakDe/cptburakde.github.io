@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Burak Demirci – Oceangoing Watchkeeping Officer</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+.cv-container {
+  width: 210mm;
+  height: auto; /* 297mm yerine auto */
+  margin: auto;
+  background: #fff;
+  display: flex;
+  box-sizing: border-box;
+  padding: 5mm 10mm; /* üst ve alt boşluğu küçülttük */
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.left-column {
+  width: 34%;
+  border-right: 1px solid #ccc;
+  padding-right: 8mm;
+  box-sizing: border-box;
+}
+.right-column {
+  width: 66%;
+  padding-left: 8mm;
+  box-sizing: border-box;
+}
+.profile-picture img {
+  width: 100%;
+  max-width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+.section-title {
+  font-size: 11pt;
+  font-weight: bold;
+  margin-top: 10px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ccc;
+}
+.education-item, .contact-info, .skills, .cert-list, .interests {
+  font-size: 10pt;
+  margin-bottom: 6px;
+}
+.header h1 {
+  margin: 0;
+  font-size: 18pt;
+}
+.header h2 {
+  margin: 0;
+  font-size: 12pt;
+  color: #555;
+}
+.experience-item {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo, .ship-photo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.experience-item .company { font-size: 9pt; font-style: italic; color: #555; }
+.experience-item .title { font-size: 10pt; font-weight: bold; }
+.experience-item ul { margin: 5px 0 0 18px; padding: 0; font-size: 9pt; }
+
+.qr-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.qr-box {
+  width: 48%;
+  text-align: center;
+  font-size: 9pt;
+}
+.qr-box img {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 5px;
+}
+
+.download-buttons {
+  text-align: center;
+  margin-top: 10px;
+}
+button {
+  margin: 5px;
+  padding: 8px 16px;
+  font-size: 10pt;
+  cursor: pointer;
+}
+
+@media print {
+  body { background: #fff; }
+  .cv-container { box-shadow: none; margin: 0; }
+  .download-buttons { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cv-container" id="cv">
+  <div class="left-column">
+    <div class="profile-picture">
+      <img src="../img/burakde.jpg" alt="Burak Demirci">
+    </div>
+    <div class="section-title">Contact</div>
+    <div class="contact-info">
+      <b>Email:</b> <a href="mailto:burak_de@yahoo.com">burak_de@yahoo.com</a><br>
+      <b>Position:</b> Oceangoing Watchkeeping Officer<br>
+      <b>Nationality:</b> Turkish<br>
+      <b>DOB:</b> 09/11/2000<br>
+      <b>Phone:</b> 
+      <a href="tel:+905353450911" 
+         onclick="copyPhone(event, '+90 (535) 345 09 11')">
+        +90 (535) 345 09 11
+      </a><br>
+      <b>Marital Status:</b> Single<br>
+      <b>Military Service:</b> Completed
+    </div>
+
+    <div class="section-title">Education</div>
+    <div class="education-item">
+      <b>Karadeniz Technical University</b><br>
+      B.Sc. in Maritime Transportation & Management Eng.<br>
+      2019–2023 | GPA: 3.50/4.00
+    </div>
+    <div class="education-item">
+      <b>Istanbul Uskudar High School</b><br>
+      High School Diploma | 2014–2018
+    </div>
+
+    <div class="section-title">Skills</div>
+    <div class="skills">
+      Bridge Team Management<br>
+      Ship Handling & Navigation<br>
+      Cargo & Ballast Operations<br>
+      LSA/FFE Maintenance<br>
+      Risk Assessment & Safety Audits<br>
+      TRANSAS NS4000 ECDIS<br>
+      GMDSS GOC, ARPA Radar Ops<br>
+      Data Analysis, Handling, Automation (Python, SQL, Excel, VBA)<br>
+      Passage Planning & Audit Preparation & SIRE Preparation
+    </div>
+
+    <div class="section-title">Certifications</div>
+    <div class="cert-list">
+      STCW II/1 OOW Unlimited License<br>
+      Fire Fighting & Fast Rescue Boats<br>
+      Medical Care on Board<br>
+      Chemical & Oil Tanker Ops<br>
+      Security Awareness & Designated Duties<br>
+      Ship Security Officer (SSO)<br>
+      ISM Code & ISPS Code<br>
+    </div>
+
+    <div class="section-title">Languages</div>
+    <div>English – Professional Working Proficiency</div>
+
+    <div class="section-title">Interests</div>
+    <div class="interests">
+      Maritime Safety<br>
+      Navigation Systems<br>
+      Data Science in Shipping<br>
+      Cyber Security<br>
+      Operational Leadership
+    </div>
+  </div>
+
+  <div class="right-column">
+    <div class="header">
+      <h1>BURAK DEMIRCI</h1>
+      <h2>OCEANGOING WATCHKEEPING OFFICER</h2>
+    </div>
+
+    <div class="section-title">Profile</div>
+    <p style="font-size:10pt;text-align:justify;">
+      Oceangoing Watchkeeping Officer experienced in tanker operations, navigation, and safety management on Aframax, LR, MR, and chemical/oil vessels. Participated in over 300 cargo operations and numerous terminal Vettings, flag state, and OCIMF SIRE 2.0 inspections. Competent in ECDIS (TRANSAS NS4000), Marflex / Framo Deepwell pumps, ballast treatment systems (ALFALAVAL), and SOLAS/ISM implementation. Focused on maintaining safety, environmental compliance, and operational efficiency under pressure. Skilled in mentoring junior officers and cadets, coordinating with masters and chief officers, and implementing operational best practices.
+    </p>
+
+    <div class="section-title">Experience</div>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <img src="../img/okanogullari.png" class="logo">
+        <div class="duration" style="font-size:9pt;">Sep 2023 – Oct 2025</div>
+        <img src="../img/sebahatana.jpg" class="ship-photo">
+      </div>
+      <div class="company">Cilicia / Okanogulları Shipping – M/T SEBAHAT ANA (8672.9 DWT)</div>
+      <div class="title">Second Officer</div>
+      <ul>
+        <li>Bridge watchkeeping, navigation, and COLREG compliance.</li>
+        <li>Numerous cargo operations (CBM, SBM).</li>
+        <li>Maintained safety equipment, LSA/FFE.</li>
+        <li>Participated in SIRE 2.0, Flag state, and Terminal Vettings inspections with positive outcomes.</li>
+        <li>Prepared passage plans, risk assessments, and safety drills.</li>
+        <li>Coordinated with masters and chief officers.</li>
+      </ul>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <img src="../img/imza_marine_a_s_logo.jpg" class="logo">
+        <div class="duration" style="font-size:9pt;">Mar 2022 – Oct 2022</div>
+        <img src="../img/bluminosa.jpg" class="ship-photo">
+      </div>
+      <div class="company">Imza Marine – M/T B LUMINOSA (68,439 DWT)</div>
+      <div class="title">Deck Cadet</div>
+      <ul>
+        <li>Assisted in shipboard operations including cargo and ballast control.</li>
+        <li>Maintained safety and firefighting systems in compliance with SOLAS.</li>
+        <li>Participated in mooring/unmooring operations under supervision.</li>
+        <li>Recorded navigational and safety logs accurately during watch.</li>
+        <li>Gained experience in STS operations and port maneuvers.</li>
+      </ul>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <img src="../img/imza_marine_a_s_logo.jpg" class="logo">
+        <div class="duration" style="font-size:9pt;">Jul 2021 – Sep 2021</div>
+        <img src="../img/coatlicue.jpg" class="ship-photo">
+      </div>
+      <div class="company">Imza Marine – M/T COATLICUE (105,322 DWT)</div>
+      <div class="title">Deck Cadet</div>
+      <ul>
+        <li>Assisted with crude oil washing, stripping, and pump-room checks.</li>
+        <li>Performed navigational duties.</li>
+        <li>Participated in onboard safety and emergency drills.</li>
+        <li>Improved practical skills in cargo handling systems and operational safety.</li>
+      </ul>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <img src="../img/aurora_shipping_llc_logo.jpg" class="logo">
+        <div class="duration" style="font-size:9pt;">Jul 2020 – Sep 2020</div>
+        <img src="../img/trinity.jpg" class="ship-photo">
+      </div>
+      <div class="company">Aurora Shipping – M/T TRIDENT TRINITY (45,467 DWT)</div>
+      <div class="title">Deck Cadet</div>
+      <ul>
+        <li>Bridge watchkeeping and CCR Assisting</li>
+        <li>Inerting, gas freeing, and ship-to-ship (STS) operations.</li>
+        <li>Performed daily safety rounds and assisted with drills.</li>
+        <li>Enhanced knowledge of Oil Product Tanker operations and safety compliance.</li>
+      </ul>
+    </div>
+
+    <div class="qr-section">
+      <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://cptburakde.github.io">
+        <div>Website: cptburakde.github.io</div>
+      </div>
+      <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://gemiadami.uab.gov.tr/verification/67384263278/dsadad">
+        <div>Seafarer Verification</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="download-buttons">
+    <button onclick="window.print()">Download as PDF</button>
+</div>
+
+</body>
+</html>
+
+<script>
+    function copyPhone(event, number) {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if(!isMobile){
+        event.preventDefault(); // tel: linkini engelle
+        navigator.clipboard.writeText(number).then(() => {
+          alert("Phone number copied to clipboard: " + number);
+        }).catch(err => {
+          console.error("Failed to copy phone:", err);
+        });
+      }
+    }
+</script>
+

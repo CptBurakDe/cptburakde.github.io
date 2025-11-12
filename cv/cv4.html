@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Burak Demirci – Oceangoing Watchkeeping Officer</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+.cv-container {
+  width: 210mm;
+  height: auto;
+  margin: auto;
+  background: #fff;
+  display: flex;
+  box-sizing: border-box;
+  padding: 5mm 10mm;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.left-column {
+  width: 34%;
+  border-right: 1px solid #ccc;
+  padding-right: 8mm;
+  box-sizing: border-box;
+}
+.right-column {
+  width: 66%;
+  padding-left: 8mm;
+  box-sizing: border-box;
+}
+
+.profile-picture img {
+  width: 100%;
+  max-width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.section-title {
+  font-size: 11pt;
+  font-weight: bold;
+  margin-top: 10px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ccc;
+}
+
+.education-item, .contact-info, .skills, .cert-list, .interests, .lang-list, .profile-text {
+  font-size: 10pt;
+  margin-bottom: 6px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 18pt;
+}
+.header h2 {
+  margin: 0;
+  font-size: 12pt;
+  color: #555;
+}
+
+.experience-item {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo, .ship-photo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.experience-item .company { font-size: 9pt; font-style: italic; color: #555; }
+.experience-item .title { font-size: 10pt; font-weight: bold; }
+.experience-item ul { margin: 5px 0 0 18px; padding: 0; font-size: 9pt; }
+
+.qr-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.qr-box {
+  width: 48%;
+  text-align: center;
+  font-size: 9pt;
+}
+.qr-box img {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 5px;
+}
+
+.download-buttons {
+  text-align: center;
+  margin-top: 10px;
+}
+button {
+  margin: 5px;
+  padding: 8px 16px;
+  font-size: 10pt;
+  cursor: pointer;
+}
+
+@media print {
+  body { background: #fff; }
+  .cv-container { box-shadow: none; margin: 0; }
+  .download-buttons { display: none; }
+  #langBtn { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- DİL BUTONU -->
+<div style="position: fixed; top: 10px; right: 10px; z-index: 1000;">
+    <button id="langBtn" style="border:none; background:none; cursor:pointer;">
+        <img id="langIcon" src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="EN" width="30">
+    </button>
+</div>
+
+<div class="cv-container" id="cv">
+
+  <div class="left-column">
+
+    <div class="profile-picture">
+      <img src="../img/burakde.jpg" alt="Burak Demirci">
+    </div>
+
+    <div class="section-title" data-en="Contact" data-tr="İletişim">Contact</div>
+    <div class="contact-info" data-en="Email: burak_de@yahoo.com\nPosition: Oceangoing Watchkeeping Officer\nNationality: Turkish\nDOB: 1999\nPassport: Valid until 2031" 
+         data-tr="Email: burak_de@yahoo.com\nPozisyon: Denizcilik Görev Subayı\nUyruk: Türk\nDoğum Yılı: 1999\nPasaport: 2031’e kadar geçerli">
+      <b>Email:</b> burak_de@yahoo.com<br>
+      <b>Position:</b> Oceangoing Watchkeeping Officer<br>
+      <b>Nationality:</b> Turkish<br>
+      <b>DOB:</b> 1999<br>
+      <b>Passport:</b> Valid until 2031
+    </div>
+
+    <div class="section-title" data-en="Education" data-tr="Eğitim">Education</div>
+    <div class="education-item" data-en="Karadeniz Technical University\nB.Sc. in Maritime Transportation & Management Eng.\n2019–2023 | GPA: 3.50/4.00" 
+         data-tr="Karadeniz Teknik Üniversitesi\nDenizcilik ve Yönetim Mühendisliği Lisans\n2019–2023 | Not Ortalaması: 3.50/4.00">
+      <b>Karadeniz Technical University</b><br>
+      B.Sc. in Maritime Transportation & Management Eng.<br>
+      2019–2023 | GPA: 3.50/4.00
+    </div>
+    <div class="education-item" data-en="Istanbul Uskudar High School\nScience Department | 2014–2018" 
+         data-tr="İstanbul Üsküdar Lisesi\nFen Bölümü | 2014–2018">
+      <b>Istanbul Uskudar High School</b><br>
+      Science Department | 2014–2018
+    </div>
+
+    <div class="section-title" data-en="Skills" data-tr="Beceriler">Skills</div>
+    <div class="skills" data-en="Bridge Team Management\nShip Handling & Navigation\nCargo & Ballast Operations\nLSA/FSS Maintenance\nRisk Assessment & Safety Audits\nTRANSAS NS4000 ECDIS\nGMDSS, AIS, ARPA Radar Ops\nData Analysis (Python, SQL, VBA)\nPassage Planning & Audit Preparation" 
+         data-tr="Köprü Ekip Yönetimi\nGemi Kullanımı ve Navigasyon\nYük ve Balast Operasyonları\nLSA/FSS Bakımı\nRisk Değerlendirmesi & Güvenlik Denetimleri\nTRANSAS NS4000 ECDIS\nGMDSS, AIS, ARPA Radar Operasyonları\nVeri Analizi (Python, SQL, VBA)\nGeçiş Planlaması & Denetim Hazırlığı">
+      Bridge Team Management<br>
+      Ship Handling & Navigation<br>
+      Cargo & Ballast Operations<br>
+      LSA/FSS Maintenance<br>
+      Risk Assessment & Safety Audits<br>
+      TRANSAS NS4000 ECDIS<br>
+      GMDSS, AIS, ARPA Radar Ops<br>
+      Data Analysis (Python, SQL, VBA)<br>
+      Passage Planning & Audit Preparation
+    </div>
+
+    <div class="section-title" data-en="Certifications" data-tr="Sertifikalar">Certifications</div>
+    <div class="cert-list" data-en="STCW II/1 OOW Unlimited License\nAdvanced Fire Fighting\nFast Rescue Boats\nMedical Care on Board\nAdvanced Chemical & Oil Tanker Ops\nSecurity Awareness & Designated Duties\nShip Security Officer (SSO)"
+         data-tr="STCW II/1 OOW Sınırsız Lisans\nİleri Düzey Yangın Eğitimi\nHızlı Kurtarma Botları\nGemide İlk Yardım\nİleri Kimyasal & Petrol Tanker Operasyonları\nGüvenlik Farkındalığı & Atanmış Görevler\nGemi Güvenliği Görevlisi (SSO)">
+      STCW II/1 OOW Unlimited License<br>
+      Advanced Fire Fighting<br>
+      Fast Rescue Boats<br>
+      Medical Care on Board<br>
+      Advanced Chemical & Oil Tanker Ops<br>
+      Security Awareness & Designated Duties<br>
+      Ship Security Officer (SSO)
+    </div>
+
+    <div class="section-title" data-en="Languages" data-tr="Diller">Languages</div>
+    <div class="lang-list" data-en="English – Professional\nTurkish – Native" data-tr="İngilizce – Profesyonel\nTürkçe – Ana Dil">
+      English – Professional<br>Turkish – Native
+    </div>
+
+    <div class="section-title" data-en="Interests" data-tr="İlgi Alanları">Interests</div>
+    <div class="interests" data-en="Maritime Safety\nNavigation Systems\nData Science in Shipping\nCyber Security\nOperational Leadership"
+         data-tr="Denizcilik Güvenliği\nNavigasyon Sistemleri\nDenizcilikte Veri Bilimi\nSiber Güvenlik\nOperasyonel Liderlik">
+      Maritime Safety<br>
+      Navigation Systems<br>
+      Data Science in Shipping<br>
+      Cyber Security<br>
+      Operational Leadership
+    </div>
+
+  </div>
+
+  <div class="right-column">
+
+    <div class="header">
+      <h1>BURAK DEMIRCI</h1>
+      <h2>OCEANGOING WATCHKEEPING OFFICER</h2>
+    </div>
+
+    <div class="section-title" data-en="Profile" data-tr="Profil">Profile</div>
+    <p class="profile-text" data-en="Officer experienced in tanker operations, navigation, and safety management on Aframax, LR, MR, and chemical/oil vessels. Participated in over 300 cargo operations and numerous vetting, flag, and PSC inspections. Competent in ECDIS (TRANSAS NS4000), Marflex pumps, ballast systems, and SOLAS/ISM implementation. Focused on maintaining safety, environmental compliance, and operational efficiency under pressure. Skilled in mentoring junior officers and cadets, coordinating with masters and chief officers, and implementing operational best practices."
+       data-tr="Tankercilik operasyonlarında deneyimli subay. Aframax, LR, MR ve kimyasal/petrol gemilerinde navigasyon ve güvenlik yönetimi gerçekleştirdi. 300’den fazla yük operasyonu ve çok sayıda vetting, bayrak ve PSC denetimine katıldı. ECDIS (TRANSAS NS4000), Marflex pompalar, balast sistemleri ve SOLAS/ISM uygulamalarında yetkin. Güvenliği, çevresel uyumu ve operasyonel verimliliği korumaya odaklı. Genç subayları ve stajyerleri mentor olarak yönlendirdi, kaptan ve başmühendis ile koordinasyon sağladı, operasyonel en iyi uygulamaları uyguladı.">
+      Officer experienced in tanker operations, navigation, and safety management on Aframax, LR, MR, and chemical/oil vessels. Participated in over 300 cargo operations and numerous vetting, flag, and PSC inspections. Competent in ECDIS (TRANSAS NS4000), Marflex pumps, ballast systems, and SOLAS/ISM implementation. Focused on maintaining safety, environmental compliance, and operational efficiency under pressure. Skilled in mentoring junior officers and cadets, coordinating with masters and chief officers, and implementing operational best practices.
+    </p>
+
+    <div class="section-title" data-en="Experience" data-tr="Deneyim">Experience</div>
+
+    <!-- EXPERIENCE ITEM ÖRNEĞİ -->
+    <div class="experience-item">
+      <div class="experience-header">
+        <img src="../img/okanogullari.png" class="logo">
+        <div class="duration" style="font-size:9pt;">Sep 2023 – Oct 2025</div>
+        <img src="../img/sebahatana.jpg" class="ship-photo">
+      </div>
+      <div class="company">Cilicia / Okanogulları Shipping – M/T SEBAHAT ANA (8672 DWT)</div>
+      <div class="title">Second Mate / Watch Officer</div>
+      <ul>
+        <li>Bridge watchkeeping, ECDIS-based navigation, and COLREG compliance.</li>
+        <li>Supervised 200+ cargo operations (loading, discharging, STS, COW).</li>
+        <li>Maintained safety equipment, LSA/FSS, and GMDSS logbooks.</li>
+        <li>Participated in SIRE, Flag, and Vetting inspections with positive outcomes.</li>
+        <li>Prepared passage plans, risk assessments, and safety drills.</li>
+        <li>Mentored junior officers and coordinated with shore management.</li>
+      </ul>
+    </div>
+
+    <!-- DİĞER EXPERIENCE ITEMLERİ BUNUN GİBİ EKLENECEK -->
+
+    <div class="qr-section">
+      <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://cptburakde.github.io">
+        <div>Website: cptburakde.github.io</div>
+      </div>
+      <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://gemiadami.uab.gov.tr/verification/67384263278/dsadad">
+        <div>Seafarer Verification</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="download-buttons">
+    <button data-en="Download as PDF" data-tr="PDF Olarak İndir" onclick="window.print()">Download as PDF</button>
+</div>
+
+<script>
+let currentLang = "en"; // Başlangıç dili
+
+function toggleLanguage() {
+    currentLang = (currentLang === "en") ? "tr" : "en";
+
+    // Tüm data-en/data-tr özniteliği olan öğeleri değiştir
+    document.querySelectorAll("[data-en][data-tr]").forEach(el => {
+        el.innerText = el.getAttribute("data-" + currentLang).replace(/\\n/g,"<br>");
+    });
+
+    // Bayrak ikonunu değiştir
+    const langIcon = document.getElementById("langIcon");
+    if(currentLang === "en"){
+        langIcon.src = "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg";
+        langIcon.alt = "EN";
+    } else {
+        langIcon.src = "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg";
+        langIcon.alt = "TR";
+    }
+}
+
+document.getElementById("langBtn").addEventListener("click", toggleLanguage);
+</script>
+
+</body>
+</html>
