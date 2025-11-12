@@ -165,6 +165,11 @@ function showResults() {
     else if (percentage >= 70) message = `Great! You scored ${correctAnswers}/${quizData.length} (${percentage}%)! 🌊`;
     else message = `You scored ${correctAnswers}/${quizData.length} (${percentage}%). Keep studying LGHP4 notes! 📚`;
     finalMessage.textContent = message;
+    
+    // Track quiz result
+    if (typeof VisitorTracking !== 'undefined') {
+        VisitorTracking.trackQuiz('Quiz 6', correctAnswers, quizData.length, percentage);
+    }
 }
 
 // --- SHARE & TRY AGAIN BUTTONS (Mevcut kodları koru) ---
@@ -172,6 +177,9 @@ document.addEventListener('DOMContentLoaded', loadQuizData);
 
 tryAgainBtn.addEventListener('click', () => { window.location.reload(); });
 </script>
+
+<!-- Visitor Tracking -->
+<script src="../../js/visitor-tracking.js"></script>
 
 </body>
 </html>

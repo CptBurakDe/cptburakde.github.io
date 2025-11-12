@@ -6,6 +6,77 @@
   <title>Visitor Statistics - Admin Dashboard</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    /* Password Protection */
+    #passwordModal {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    #passwordModal.hidden {
+      display: none;
+    }
+
+    .password-container {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      padding: 40px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .password-container h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      border: none;
+      padding: 0;
+    }
+
+    .password-container p {
+      color: var(--text-light);
+      margin-bottom: 25px;
+      font-size: 0.95em;
+    }
+
+    .password-input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 1em;
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+
+    .password-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+    }
+
+    .password-error {
+      color: var(--danger);
+      font-size: 0.9em;
+      margin-top: -15px;
+      margin-bottom: 15px;
+      display: none;
+    }
+
+    .password-error.show {
+      display: block;
+    }
+
     :root {
       --primary: #1e3a8a;
       --primary-dark: #1e40af;
@@ -418,7 +489,18 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <!-- Password Protection Modal -->
+  <div id="passwordModal">
+    <div class="password-container">
+      <h2>🔒 Admin Dashboard</h2>
+      <p>Please enter the password to access the statistics:</p>
+      <input type="password" id="passwordInput" class="password-input" placeholder="Enter password" autocomplete="off">
+      <div id="passwordError" class="password-error">Incorrect password. Please try again.</div>
+      <button class="btn btn-primary" onclick="checkPassword()" style="width: 100%;">Login</button>
+    </div>
+  </div>
+
+  <div class="container" id="mainContainer" style="display: none;">
     <header>
       <h1>📊 Visitor Statistics</h1>
       <div class="actions">
@@ -451,12 +533,22 @@
           <div class="value" id="uniqueIPs">0</div>
           <div class="change">Different IPs</div>
         </div>
-        <div class="stat-card">
-          <h3>First Visit</h3>
-          <div class="value" style="font-size: 1.2em;" id="firstVisit">-</div>
-          <div class="change">Tracking started</div>
-        </div>
+      <div class="stat-card">
+        <h3>First Visit</h3>
+        <div class="value" style="font-size: 1.2em;" id="firstVisit">-</div>
+        <div class="change">Tracking started</div>
       </div>
+      <div class="stat-card">
+        <h3>Total Quizzes</h3>
+        <div class="value" id="totalQuizzes">0</div>
+        <div class="change">Completed</div>
+      </div>
+      <div class="stat-card">
+        <h3>Average Score</h3>
+        <div class="value" id="averageScore">0%</div>
+        <div class="change">All quizzes</div>
+      </div>
+    </div>
 
       <div class="section">
         <h2>📄 Page Views</h2>
@@ -487,6 +579,21 @@
         <h2>📋 All Visitors</h2>
         <div id="allVisitors"></div>
       </div>
+
+      <div class="section">
+        <h2>📝 Quiz Results</h2>
+        <div id="quizResults"></div>
+      </div>
+
+      <div class="section">
+        <h2>📊 Quiz Statistics</h2>
+        <div id="quizStatistics"></div>
+      </div>
+
+      <div class="section">
+        <h2>🎯 Score Distribution</h2>
+        <div id="scoreDistribution"></div>
+      </div>
     </div>
 
     <div id="emptyState" class="section" style="display: none;">
@@ -511,6 +618,48 @@
 
   <script src="../js/visitor-tracking.js"></script>
   <script>
+    // Password Protection
+    const ADMIN_PASSWORD = 'admin123'; // Change this password!
+    const PASSWORD_STORAGE_KEY = 'admin_auth';
+    
+    function checkPassword() {
+      const password = document.getElementById('passwordInput').value;
+      const errorDiv = document.getElementById('passwordError');
+      
+      if (password === ADMIN_PASSWORD) {
+        sessionStorage.setItem(PASSWORD_STORAGE_KEY, 'authenticated');
+        document.getElementById('passwordModal').classList.add('hidden');
+        document.getElementById('mainContainer').style.display = 'block';
+        loadStats();
+      } else {
+        errorDiv.classList.add('show');
+        document.getElementById('passwordInput').value = '';
+        document.getElementById('passwordInput').focus();
+      }
+    }
+
+    function checkAuth() {
+      if (sessionStorage.getItem(PASSWORD_STORAGE_KEY) === 'authenticated') {
+        document.getElementById('passwordModal').classList.add('hidden');
+        document.getElementById('mainContainer').style.display = 'block';
+        loadStats();
+      } else {
+        document.getElementById('passwordModal').classList.remove('hidden');
+        document.getElementById('mainContainer').style.display = 'none';
+        document.getElementById('passwordInput').focus();
+      }
+    }
+
+    // Allow Enter key to submit password
+    document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        checkPassword();
+      }
+    });
+
+    // Check authentication on page load
+    checkAuth();
+
     let stats = null;
 
     function formatDate(dateString) {
@@ -624,6 +773,139 @@
       container.innerHTML = html;
     }
 
+    function renderQuizResults() {
+      const container = document.getElementById('quizResults');
+      if (!stats || !stats.quizResults || stats.quizResults.length === 0) {
+        container.innerHTML = '<div class="empty-state"><p>No quiz results yet</p></div>';
+        return;
+      }
+
+      const html = `
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Quiz Name</th>
+              <th>Score</th>
+              <th>Percentage</th>
+              <th>IP Address</th>
+              <th>Device</th>
+              <th>Browser</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${stats.quizResults.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp)).map(result => {
+              const percentage = result.percentage || 0;
+              let badgeClass = 'badge-warning';
+              if (percentage === 100) badgeClass = 'badge-success';
+              else if (percentage >= 90) badgeClass = 'badge-primary';
+              else if (percentage >= 70) badgeClass = 'badge-info';
+              else if (percentage < 50) badgeClass = 'badge-danger';
+              
+              return `
+              <tr>
+                <td>${formatDate(result.timestamp)}</td>
+                <td><strong>${result.quizName || 'Unknown'}</strong></td>
+                <td>${result.score || 0} / ${result.totalQuestions || 0}</td>
+                <td><span class="badge ${badgeClass}">${percentage}%</span></td>
+                <td><code>${result.ip || 'Unknown'}</code></td>
+                <td><span class="badge badge-info">${result.device?.type || 'Unknown'}</span></td>
+                <td><span class="badge badge-primary">${result.browser || 'Unknown'}</span></td>
+              </tr>
+            `;
+            }).join('')}
+          </tbody>
+        </table>
+      `;
+      container.innerHTML = html;
+    }
+
+    function renderQuizStatistics() {
+      const container = document.getElementById('quizStatistics');
+      if (!stats || !stats.quizStats || !stats.quizStats.quizAverages || Object.keys(stats.quizStats.quizAverages).length === 0) {
+        container.innerHTML = '<div class="empty-state"><p>No quiz statistics available</p></div>';
+        return;
+      }
+
+      const quizAverages = stats.quizStats.quizAverages;
+      const quizCounts = stats.quizStats.quizCounts;
+      
+      const html = `
+        <div class="chart-container">
+          ${Object.entries(quizAverages).sort((a, b) => a[0].localeCompare(b[0])).map(([quizName, average]) => {
+            const count = quizCounts[quizName] || 0;
+            let badgeClass = 'badge-warning';
+            if (average === 100) badgeClass = 'badge-success';
+            else if (average >= 90) badgeClass = 'badge-primary';
+            else if (average >= 70) badgeClass = 'badge-info';
+            else if (average < 50) badgeClass = 'badge-danger';
+            
+            return `
+              <div class="bar">
+                <div class="bar-label">${quizName} <span class="badge ${badgeClass}" style="margin-left: 10px;">${average}%</span> <span style="color: var(--text-light); font-size: 0.85em;">(${count} attempts)</span></div>
+                <div class="bar-fill" style="width: ${average}%">
+                  ${average}%
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+      container.innerHTML = html;
+    }
+
+    function renderScoreDistribution() {
+      const container = document.getElementById('scoreDistribution');
+      if (!stats || !stats.quizStats || !stats.quizStats.scoreDistribution) {
+        container.innerHTML = '<div class="empty-state"><p>No score distribution data</p></div>';
+        return;
+      }
+
+      const dist = stats.quizStats.scoreDistribution;
+      const total = dist.perfect + dist.excellent + dist.good + dist.average + dist.poor;
+      
+      if (total === 0) {
+        container.innerHTML = '<div class="empty-state"><p>No score distribution data</p></div>';
+        return;
+      }
+
+      const html = `
+        <div class="chart-container">
+          <div class="bar">
+            <div class="bar-label">Perfect (100%) <span class="badge badge-success">${dist.perfect}</span></div>
+            <div class="bar-fill" style="width: ${(dist.perfect / total) * 100}%; background: linear-gradient(90deg, var(--success) 0%, #059669 100%);">
+              ${dist.perfect}
+            </div>
+          </div>
+          <div class="bar">
+            <div class="bar-label">Excellent (90-99%) <span class="badge badge-primary">${dist.excellent}</span></div>
+            <div class="bar-fill" style="width: ${(dist.excellent / total) * 100}%; background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);">
+              ${dist.excellent}
+            </div>
+          </div>
+          <div class="bar">
+            <div class="bar-label">Good (70-89%) <span class="badge badge-info">${dist.good}</span></div>
+            <div class="bar-fill" style="width: ${(dist.good / total) * 100}%; background: linear-gradient(90deg, var(--info) 0%, #2563eb 100%);">
+              ${dist.good}
+            </div>
+          </div>
+          <div class="bar">
+            <div class="bar-label">Average (50-69%) <span class="badge badge-warning">${dist.average}</span></div>
+            <div class="bar-fill" style="width: ${(dist.average / total) * 100}%; background: linear-gradient(90deg, var(--warning) 0%, #d97706 100%);">
+              ${dist.average}
+            </div>
+          </div>
+          <div class="bar">
+            <div class="bar-label">Poor (&lt;50%) <span class="badge badge-danger">${dist.poor}</span></div>
+            <div class="bar-fill" style="width: ${(dist.poor / total) * 100}%; background: linear-gradient(90deg, var(--danger) 0%, #dc2626 100%);">
+              ${dist.poor}
+            </div>
+          </div>
+        </div>
+      `;
+      container.innerHTML = html;
+    }
+
     function loadStats() {
       document.getElementById('loading').style.display = 'block';
       document.getElementById('content').style.display = 'none';
@@ -644,6 +926,8 @@
           document.getElementById('uniqueVisitors').textContent = formatNumber(stats.uniqueVisitors);
           document.getElementById('uniqueIPs').textContent = formatNumber(stats.uniqueIPs);
           document.getElementById('firstVisit').textContent = formatDate(stats.firstVisit);
+          document.getElementById('totalQuizzes').textContent = formatNumber(stats.quizStats?.totalQuizzes || 0);
+          document.getElementById('averageScore').textContent = (stats.quizStats?.averageScore || 0) + '%';
 
           // Render charts
           renderChart('pageViewsChart', stats.pageViews, stats.totalViews);
@@ -654,6 +938,9 @@
           // Render tables
           renderRecentVisitors();
           renderAllVisitors();
+          renderQuizResults();
+          renderQuizStatistics();
+          renderScoreDistribution();
 
           document.getElementById('loading').style.display = 'none';
           document.getElementById('content').style.display = 'block';
@@ -710,11 +997,12 @@
       }
     });
 
-    // Load stats on page load
-    loadStats();
-
-    // Auto-refresh every 30 seconds
-    setInterval(loadStats, 30000);
+    // Auto-refresh every 30 seconds (only if authenticated)
+    setInterval(() => {
+      if (sessionStorage.getItem(PASSWORD_STORAGE_KEY) === 'authenticated') {
+        loadStats();
+      }
+    }, 30000);
   </script>
 </body>
 </html>

@@ -28,6 +28,7 @@
         visitors: [],
         pageViews: [],
         uniqueIPs: [],
+        quizResults: [],
         totalViews: 0,
         uniqueVisitors: 0,
         firstVisit: new Date().toISOString(),
@@ -44,6 +45,10 @@
       // Ensure visitors is an array
       if (!Array.isArray(parsed.visitors)) {
         parsed.visitors = [];
+      }
+      // Ensure quizResults is an array
+      if (!Array.isArray(parsed.quizResults)) {
+        parsed.quizResults = [];
       }
       return parsed;
     } catch (e) {
@@ -72,6 +77,7 @@
         visitors: Array.isArray(data.visitors) ? data.visitors : [],
         pageViews: Array.isArray(data.pageViews) ? data.pageViews : [],
         uniqueIPs: uniqueIPsArray,
+        quizResults: Array.isArray(data.quizResults) ? data.quizResults : [],
         totalViews: data.totalViews || 0,
         uniqueVisitors: uniqueIPsArray.length,
         firstVisit: data.firstVisit || new Date().toISOString(),
@@ -269,6 +275,52 @@
     }
   }
 
+  // Track quiz result
+  async function trackQuizResult(quizName, score, totalQuestions, percentage) {
+    try {
+      const data = getTrackingData();
+      const ip = await getVisitorIP();
+      
+      // Ensure quizResults is an array
+      if (!Array.isArray(data.quizResults)) {
+        data.quizResults = [];
+      }
+      
+      const quizResult = {
+        quizName: quizName,
+        score: score,
+        totalQuestions: totalQuestions,
+        percentage: percentage,
+        ip: ip,
+        timestamp: new Date().toISOString(),
+        device: CONFIG.TRACK_DEVICE ? getDeviceInfo() : null,
+        browser: CONFIG.TRACK_BROWSER ? getBrowserInfo() : null,
+        url: window.location.href
+      };
+      
+      // Add quiz result
+      data.quizResults.push(quizResult);
+      data.lastUpdate = new Date().toISOString();
+      
+      // Save data
+      saveTrackingData(data);
+      
+      // Send to API if configured
+      if (CONFIG.API_ENDPOINT) {
+        sendToAPI(quizResult);
+      }
+      
+      if (CONFIG.DEBUG) {
+        console.log('Quiz result tracked:', quizResult);
+      }
+      
+      return quizResult;
+    } catch (e) {
+      console.error('Error tracking quiz result:', e);
+      return null;
+    }
+  }
+
   // Get statistics
   function getStatistics() {
     const data = getTrackingData();
@@ -324,6 +376,43 @@
       });
     }
     
+    // Calculate quiz statistics
+    const quizStats = {};
+    const quizResults = Array.isArray(data.quizResults) ? data.quizResults : [];
+    
+    // Calculate average score per quiz
+    const quizAverages = {};
+    const quizCounts = {};
+    quizResults.forEach(result => {
+      const quizName = result.quizName || 'Unknown';
+      if (!quizAverages[quizName]) {
+        quizAverages[quizName] = 0;
+        quizCounts[quizName] = 0;
+      }
+      quizAverages[quizName] += result.percentage || 0;
+      quizCounts[quizName] += 1;
+    });
+    
+    // Calculate average
+    Object.keys(quizAverages).forEach(quizName => {
+      quizAverages[quizName] = Math.round(quizAverages[quizName] / quizCounts[quizName]);
+    });
+    
+    // Calculate overall quiz statistics
+    const totalQuizzes = quizResults.length;
+    const averageScore = totalQuizzes > 0 
+      ? Math.round(quizResults.reduce((sum, r) => sum + (r.percentage || 0), 0) / totalQuizzes)
+      : 0;
+    
+    // Calculate score distribution
+    const scoreDistribution = {
+      perfect: quizResults.filter(r => r.percentage === 100).length,
+      excellent: quizResults.filter(r => r.percentage >= 90 && r.percentage < 100).length,
+      good: quizResults.filter(r => r.percentage >= 70 && r.percentage < 90).length,
+      average: quizResults.filter(r => r.percentage >= 50 && r.percentage < 70).length,
+      poor: quizResults.filter(r => r.percentage < 50).length
+    };
+    
     return {
       totalViews: data.totalViews || 0,
       uniqueVisitors: data.uniqueVisitors || data.uniqueIPs.length || 0,
@@ -335,7 +424,15 @@
       browserViews: browserViews,
       referrerViews: referrerViews,
       visitors: data.visitors || [],
-      recentViews: Array.isArray(data.pageViews) ? data.pageViews.slice(-50).reverse() : []
+      recentViews: Array.isArray(data.pageViews) ? data.pageViews.slice(-50).reverse() : [],
+      quizResults: quizResults,
+      quizStats: {
+        totalQuizzes: totalQuizzes,
+        averageScore: averageScore,
+        quizAverages: quizAverages,
+        quizCounts: quizCounts,
+        scoreDistribution: scoreDistribution
+      }
     };
   }
 
@@ -388,6 +485,7 @@
   // Export public API
   window.VisitorTracking = {
     track: trackPageView,
+    trackQuiz: trackQuizResult,
     getStats: getStatistics,
     exportData: exportData,
     clearData: clearData,

@@ -245,6 +245,11 @@ function showResults() {
         emoji = '📚';
     }
     finalMessage.innerHTML = `${message} ${emoji}`;
+    
+    // Track quiz result
+    if (typeof VisitorTracking !== 'undefined') {
+        VisitorTracking.trackQuiz('Quiz 13', correctAnswers, quizData.length, percentage);
+    }
 }
 
 // --- SHARE & TRY AGAIN BUTTONS ---
@@ -313,6 +318,9 @@ function showShareFeedback(message) {
 
 tryAgainBtn.addEventListener('click', () => { window.location.reload(); });
 </script>
+
+<!-- Visitor Tracking -->
+<script src="../../js/visitor-tracking.js"></script>
 
 </body>
 </html>

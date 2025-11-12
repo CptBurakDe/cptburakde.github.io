@@ -245,6 +245,11 @@ function showResults() {
         emoji = '📚';
     }
     finalMessage.innerHTML = `${message} ${emoji}`;
+    
+    // Track quiz result
+    if (typeof VisitorTracking !== 'undefined') {
+        VisitorTracking.trackQuiz('Quiz 14', correctAnswers, quizData.length, percentage);
+    }
 }
 
 // --- SHARE & TRY AGAIN BUTTONS ---
@@ -253,7 +258,7 @@ document.addEventListener('DOMContentLoaded', loadQuizData);
 // Share Result Button Functionality
 shareResultBtn.addEventListener('click', async () => {
     const percentage = Math.round((correctAnswers / quizData.length) * 100);
-    const shareText = `I scored ${correctAnswers}/${quizData.length} (${percentage}%) on the LGHP4 Quiz 13! Tested my LNG/LGC knowledge. #LGHP4 #Maritime`;
+    const shareText = `I scored ${correctAnswers}/${quizData.length} (${percentage}%) on the LGHP4 Quiz 14! Tested my LNG/LGC knowledge. #LGHP4 #Maritime`;
     const shareUrl = window.location.href;
     const fullText = `${shareText} ${shareUrl}`;
 
@@ -261,7 +266,7 @@ shareResultBtn.addEventListener('click', async () => {
     if (navigator.share) {
         try {
             await navigator.share({
-                title: 'LGHP4 Quiz 13 Result',
+                title: 'LGHP4 Quiz 14 Result',
                 text: shareText,
                 url: shareUrl
             });
@@ -313,6 +318,9 @@ function showShareFeedback(message) {
 
 tryAgainBtn.addEventListener('click', () => { window.location.reload(); });
 </script>
+
+<!-- Visitor Tracking -->
+<script src="../../js/visitor-tracking.js"></script>
 
 </body>
 </html>

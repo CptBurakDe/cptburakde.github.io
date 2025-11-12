@@ -2,6 +2,17 @@
 
 Bu proje, web sitesi ziyaretçilerini takip etmek için bir JavaScript tabanlı sistem içerir.
 
+## 🔒 Admin Dashboard Şifresi
+
+Admin dashboard'a erişmek için şifre gereklidir. Varsayılan şifre:
+- **Şifre**: `admin123`
+
+⚠️ **ÖNEMLİ**: Şifreyi değiştirmek için `admin/stats.html` dosyasındaki `ADMIN_PASSWORD` değişkenini düzenleyin:
+
+```javascript
+const ADMIN_PASSWORD = 'your-new-password'; // Şifrenizi buraya yazın
+```
+
 ## Özellikler
 
 - ✅ Sayfa görüntüleme takibi
@@ -10,7 +21,10 @@ Bu proje, web sitesi ziyaretçilerini takip etmek için bir JavaScript tabanlı 
 - ✅ Tarayıcı bilgisi takibi
 - ✅ Referrer (yönlendirme kaynağı) takibi
 - ✅ Zaman damgası takibi
+- ✅ Quiz sonuçları takibi (başarı oranı, IP, zaman)
+- ✅ Quiz istatistikleri (ortalama skor, skor dağılımı)
 - ✅ Admin dashboard ile istatistik görüntüleme
+- ✅ Şifre korumalı admin dashboard
 
 ## Kullanım
 
@@ -44,6 +58,10 @@ veya tarayıcınızda:
 https://your-domain.com/admin/stats.html
 ```
 
+### Şifre Koruma
+
+Admin dashboard şifre korumalıdır. Varsayılan şifre: `admin123`
+
 ### Dashboard Özellikleri
 
 - 📊 Toplam sayfa görüntüleme sayısı
@@ -55,6 +73,10 @@ https://your-domain.com/admin/stats.html
 - 🔗 Referrer istatistikleri
 - 📋 Son ziyaretçiler listesi
 - 👥 Tüm ziyaretçiler listesi
+- 📝 Quiz sonuçları ve istatistikleri
+- 📊 Quiz başarı oranları
+- 🎯 Quiz skor dağılımı
+- 💯 Quiz bazlı ortalama skorlar
 
 ### Dashboard İşlemleri
 
