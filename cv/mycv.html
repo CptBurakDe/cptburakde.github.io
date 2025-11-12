@@ -447,9 +447,75 @@ body::after {
   display: block;
   height: 0;
 }
+
+/* Hide CV content when modal is shown */
+#passwordModal.active ~ .cv-outer,
+#passwordModal.active ~ .download-buttons {
+  display: none;
+}
 </style>
 </head>
 <body class="theme-default">
+
+<!-- Password protection modal -->
+<div id="passwordModal" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;">
+  <div style="background:#fff;padding:40px;border-radius:8px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.3);max-width:400px;">
+    <h2 style="margin-top:0;color:#0d1117;">🔒 Password Protected</h2>
+    <p style="color:#666;margin:16px 0;">This CV is password protected. Please enter the password to continue.</p>
+    <input type="password" id="pwInput" placeholder="Enter password" style="width:100%;padding:12px;border:1px solid #d0d7de;border-radius:6px;font-size:14px;box-sizing:border-box;margin-bottom:16px;">
+    <button onclick="checkPassword()" style="width:100%;padding:12px;background:#0969da;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;font-weight:600;">Unlock</button>
+    <p id="pwError" style="color:#d1242f;font-size:12px;margin-top:12px;display:none;">Incorrect password. Please try again.</p>
+  </div>
+</div>
+
+<script>
+// Password protection for mycv.html
+(function(){
+  const CORRECT_PASSWORD = 'IMRICH';
+  const SESSION_KEY = 'mycv_unlocked';
+
+  function checkPassword(){
+    const input = document.getElementById('pwInput').value;
+    const errorMsg = document.getElementById('pwError');
+    const modal = document.getElementById('passwordModal');
+    
+    if(input === CORRECT_PASSWORD){
+      sessionStorage.setItem(SESSION_KEY, 'true');
+      modal.classList.remove('active');
+      modal.style.display = 'none';
+      errorMsg.style.display = 'none';
+    } else {
+      errorMsg.style.display = 'block';
+      document.getElementById('pwInput').value = '';
+    }
+  }
+
+  // Allow Enter key
+  document.addEventListener('DOMContentLoaded', function(){
+    const pwInput = document.getElementById('pwInput');
+    const modal = document.getElementById('passwordModal');
+    
+    if(pwInput){
+      pwInput.addEventListener('keypress', function(e){
+        if(e.key === 'Enter') checkPassword();
+      });
+    }
+
+    // Check if already unlocked
+    if(sessionStorage.getItem(SESSION_KEY)){
+      modal.classList.remove('active');
+      modal.style.display = 'none';
+      if(pwInput) pwInput.blur();
+    } else {
+      modal.classList.add('active');
+      modal.style.display = 'flex';
+      if(pwInput) pwInput.focus();
+    }
+  });
+
+  window.checkPassword = checkPassword;
+})();
+</script>
 
 <!-- wrap to enable scaling to fit A4 height -->
 <div class="cv-outer">

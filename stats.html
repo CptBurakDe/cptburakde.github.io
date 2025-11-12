@@ -1,0 +1,85 @@
+<!-- ...existing code (head, etc)... -->
+<body>
+  <h1>Visit Stats</h1>
+  <table border="1">
+    <tr>
+      <th>IP Address</th>
+      <th>Timestamp</th>
+      <th>User Agent</th>
+      <th>Page</th>
+    </tr>
+    <tbody id="statsTable"></tbody>
+  </table>
+
+  <div id="passwordModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;">
+    <div style="background:#fff;padding:40px;border-radius:8px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.3);max-width:400px;">
+      <h2 style="margin-top:0;color:#0d1117;">🔒 Password Required</h2>
+      <p style="color:#666;margin:16px 0;">Stats are password protected.</p>
+      <input type="password" id="pwInput" placeholder="Enter password" style="width:100%;padding:12px;border:1px solid #d0d7de;border-radius:6px;font-size:14px;box-sizing:border-box;margin-bottom:16px;">
+      <button onclick="checkStatsPassword()" style="width:100%;padding:12px;background:#0969da;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;font-weight:600;">Unlock</button>
+      <p id="pwError" style="color:#d1242f;font-size:12px;margin-top:12px;display:none;">Incorrect password.</p>
+    </div>
+  </div>
+
+  <script>
+  const CORRECT_PASSWORD = 'IMRICH';
+  const STATS_UNLOCK_KEY = 'stats_unlocked';
+
+  function checkStatsPassword(){
+    const input = document.getElementById('pwInput').value;
+    if(input === CORRECT_PASSWORD){
+      sessionStorage.setItem(STATS_UNLOCK_KEY, 'true');
+      document.getElementById('passwordModal').style.display = 'none';
+      loadStats();
+    } else {
+      document.getElementById('pwError').style.display = 'block';
+      document.getElementById('pwInput').value = '';
+    }
+  }
+
+  window.checkStatsPassword = checkStatsPassword;
+
+  // Check auth on load
+  window.addEventListener('DOMContentLoaded', function(){
+    const pwInput = document.getElementById('pwInput');
+    if(pwInput){
+      pwInput.addEventListener('keypress', function(e){
+        if(e.key === 'Enter') checkStatsPassword();
+      });
+      pwInput.focus();
+    }
+
+    if(sessionStorage.getItem(STATS_UNLOCK_KEY)){
+      document.getElementById('passwordModal').style.display = 'none';
+      loadStats();
+    } else {
+      document.getElementById('passwordModal').style.display = 'flex';
+      document.getElementById('statsTable').innerHTML = '';
+    }
+  });
+
+  function loadStats(){
+    // Fetch stats from server (GET /api/stats)
+    fetch('/api/stats')
+      .then(r => r.json())
+      .then(data => {
+        const tbody = document.getElementById('statsTable');
+        tbody.innerHTML = '';
+        if(Array.isArray(data)){
+          data.forEach(row => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td>${row.ip || 'unknown'}</td>
+              <td>${row.timestamp || ''}</td>
+              <td>${row.userAgent || 'N/A'}</td>
+              <td>${row.page || 'index'}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
+      })
+      .catch(err => console.error('Failed to load stats:', err));
+  }
+  </script>
+</body>
+</html>

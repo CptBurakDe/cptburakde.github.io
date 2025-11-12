@@ -103,8 +103,8 @@
             <a class="nav-link js-scroll-trigger" href="lghp4/lghp4-quizzes.html">Quizzes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="admin/stats.html" target="_blank">
-              <i class="fa fa-bar-chart mr-1"></i>Admin Dashboard
+            <a class="nav-link js-scroll-trigger" href="cv/mycv.html" target="_blank">
+              <i class="fa fa-bar-chart mr-1"></i>My CV
             </a>
           </li>
         </ul>
@@ -567,3 +567,40 @@
   </body>
 
 </html>
+
+<style>
+/* ...existing code... */
+
+/* Logo grid - CENTER alignment */
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  margin: 50px auto; /* CENTER with auto margins */
+  max-width: 800px; /* constrain max width */
+  padding: 0 20px; /* some side padding */
+}
+
+/* center experience/company logos horizontally and normalize size */
+.resume-item .col-md-3 img,
+.resume-item .col-12.col-md-3 img,
+.resume-item .col-md-3 .img-fluid,
+.resume-item .col-12.col-md-3 .img-fluid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 60px !important;  /* keep previous visual size, override inline if present */
+  width: auto !important;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+/* also ensure small-screen variants are centered */
+@media (max-width: 768px) {
+  .resume-item .col-md-3 img,
+  .resume-item .col-12.col-md-3 img {
+    margin-bottom: 12px;
+  }
+}
+
+/* ...existing code... */
+</style>
