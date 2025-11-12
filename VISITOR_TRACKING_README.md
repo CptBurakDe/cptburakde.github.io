@@ -7,11 +7,7 @@ Bu proje, web sitesi ziyaretçilerini takip etmek için bir JavaScript tabanlı 
 Admin dashboard'a erişmek için şifre gereklidir. Varsayılan şifre:
 - **Şifre**: `admin123`
 
-⚠️ **ÖNEMLİ**: Şifreyi değiştirmek için `admin/stats.html` dosyasındaki `ADMIN_PASSWORD` değişkenini düzenleyin:
 
-```javascript
-const ADMIN_PASSWORD = 'your-new-password'; // Şifrenizi buraya yazın
-```
 
 ## Özellikler
 
