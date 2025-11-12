@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Burak Demirci – Nautical Business Card</title>
+<style>
+body {
+  font-family: 'Arial', sans-serif;
+  background: #001f33;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card-container {
+  width: 350px;
+  height: 200px;
+  perspective: 1200px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.9s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.card-front {
+  background: linear-gradient(145deg, #00264d, #004080);
+  border: 2px solid #003366;
+  position: relative;
+}
+
+.card-front img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 2px solid #ffd700;
+  object-fit: cover;
+}
+
+.card-front h2 {
+  margin: 5px 0 0 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-front h4 {
+  margin: 3px 0;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.nav-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+}
+
+.card-back {
+  background: linear-gradient(145deg, #004080, #001f33);
+  border: 2px solid #003366;
+  transform: rotateY(180deg);
+  padding-top: 20px;
+}
+
+.card-back h3 {
+  margin-bottom: 5px;
+  font-size: 14px;
+  text-decoration: underline;
+  color: #ffd700;
+}
+
+.contact-item {
+  font-size: 12px;
+  margin: 4px 0;
+}
+
+.contact-item a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.qr-code {
+  margin-top: 12px;
+}
+
+.qr-code img {
+  width: 70px;
+  height: 70px;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 25px;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255,255,255,0.1),
+    rgba(255,255,255,0.1) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  border-radius: 0 0 15px 15px;
+}
+
+@media (max-width: 400px) {
+  .card-container { width: 90%; height: 180px; }
+  .card-front h2 { font-size: 16px; }
+  .card-front h4, .card-back h3, .contact-item { font-size: 11px; }
+  .qr-code img { width: 60px; height: 60px; }
+}
+</style>
+</head>
+<body>
+
+<div class="card-container">
+  <div class="card">
+    <!-- Front Side -->
+    <div class="card-side card-front">
+      <img src="../img/burakde.jpg" alt="Burak Demirci">
+      <h2>Burak Demirci</h2>
+      <h4>Oceangoing Watchkeeping Officer</h4>
+      <h4>Turkish | Single | Military Completed</h4>
+      <img class="nav-icon" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Helm_icon.svg" alt="Nautical Helm">
+      <div class="wave"></div>
+    </div>
+    <!-- Back Side -->
+    <div class="card-side card-back">
+      <h3>Contact</h3>
+      <div class="contact-item">
+        Email: <a href="mailto:burak_de@yahoo.com">burak_de@yahoo.com</a>
+      </div>
+      <div class="contact-item">
+        Phone: <a href="tel:+905353450911" onclick="copyPhone(event, '+90 (535) 345 09 11')">+90 (535) 345 09 11</a>
+      </div>
+      <div class="contact-item">
+        Position: Oceangoing Watchkeeping Officer
+      </div>
+      <div class="qr-code">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://cptburakde.github.io" alt="Website QR Code">
+        <div style="font-size:10px; margin-top:3px;">cptburakde.github.io</div>
+      </div>
+      <div class="wave"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+function copyPhone(event, text) {
+  if(navigator.userAgent.match(/Mobi/)){
+    window.location.href = 'tel:+905353450911';
+  } else {
+    event.preventDefault();
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Phone number copied to clipboard: ' + text);
+    });
+  }
+}
+</script>
+
+</body>
+</html>

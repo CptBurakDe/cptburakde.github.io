@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Burak Demirci – Nautical Business Card</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #cce6ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .card-container {
+    width: 350px;
+    height: 200px;
+    perspective: 1000px;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: rotateY(180deg);
+  }
+
+  .card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    color: #fff;
+  }
+
+  .card-front {
+    background: linear-gradient(to bottom right, #004080, #3399ff);
+    border: 2px solid #003366;
+    position: relative;
+  }
+
+  .card-front img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    border: 2px solid #fff;
+  }
+
+  .card-front h2 {
+    margin: 5px 0 0 0;
+    font-size: 18px;
+  }
+
+  .card-front h4 {
+    margin: 3px 0;
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  .card-front .icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .card-back {
+    background: linear-gradient(to bottom right, #3399ff, #004080);
+    border: 2px solid #003366;
+    transform: rotateY(180deg);
+  }
+
+  .card-back h3 {
+    margin-bottom: 5px;
+    font-size: 14px;
+    text-decoration: underline;
+  }
+
+  .contact-item {
+    font-size: 12px;
+    margin: 3px 0;
+  }
+
+  .contact-item a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .qr-code {
+    margin-top: 10px;
+  }
+
+  .qr-code img {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Nautical wave icon background */
+  .wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    background: repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,0.3),
+      rgba(255,255,255,0.3) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+    border-radius: 0 0 15px 15px;
+  }
+
+  @media (max-width: 400px) {
+    .card-container {
+      width: 90%;
+      height: 180px;
+    }
+    .card-front h2 { font-size: 16px; }
+    .card-front h4, .card-back h3, .contact-item { font-size: 11px; }
+    .qr-code img { width: 60px; height: 60px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card-container">
+  <div class="card">
+    <!-- Front Side -->
+    <div class="card-side card-front">
+      <img src="../img/burakde.jpg" alt="Burak Demirci">
+      <h2>Burak Demirci</h2>
+      <h4>Oceangoing Watchkeeping Officer</h4>
+      <h4>Turkish | Single | Military Completed</h4>
+      <!-- Nautical icon -->
+      <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Compass_rose.svg" alt="Compass Icon">
+      <div class="wave"></div>
+    </div>
+    <!-- Back Side -->
+    <div class="card-side card-back">
+      <h3>Contact</h3>
+      <div class="contact-item">
+        Email: <a href="mailto:burak_de@yahoo.com">burak_de@yahoo.com</a>
+      </div>
+      <div class="contact-item">
+        Phone: <a href="tel:+905353450911" onclick="copyPhone(event, '+90 (535) 345 09 11')">+90 (535) 345 09 11</a>
+      </div>
+      <div class="contact-item">
+        Position: Oceangoing Watchkeeping Officer
+      </div>
+      <div class="qr-code">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://cptburakde.github.io" alt="Website QR Code">
+        <div style="font-size:10px; margin-top:3px;">cptburakde.github.io</div>
+      </div>
+      <div class="wave"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+function copyPhone(event, text) {
+  if(navigator.userAgent.match(/Mobi/)){
+    window.location.href = 'tel:+905353450911';
+  } else {
+    event.preventDefault();
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Phone number copied to clipboard: ' + text);
+    });
+  }
+}
+</script>
+
+</body>
+</html>

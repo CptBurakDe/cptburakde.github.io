@@ -1,0 +1,277 @@
+[
+  {
+    "question": "What type of wood was historically used in LNG tank insulation due to excellent thermal properties?",
+    "options": [
+      "Oak",
+      "Pine",
+      "Balsa",
+      "Cedar"
+    ],
+    "answer": 2,
+    "explanation": "Balsa wood was used historically because its open-cell structure provides excellent thermal insulation. However, it is highly flammable and can absorb large amounts of liquids, which limits its use in modern systems."
+  },
+  {
+    "question": "What is the primary factor in selecting cargo tank materials for liquefied gas carriers?",
+    "options": [
+      "Minimum service temperature",
+      "Cost of material",
+      "Color of the steel",
+      "Manufacturer preference"
+    ],
+    "answer": 0,
+    "explanation": "The selection of cargo tank materials is primarily based on the minimum service temperature because steels can become brittle below certain temperatures. Secondary factors, such as cargo compatibility, are considered after the minimum service temperature."
+  },
+  {
+    "question": "Which material property is most important to prevent brittle failure at low temperatures?",
+    "options": [
+      "Electrical conductivity",
+      "Low temperature toughness",
+      "Surface hardness",
+      "Magnetic permeability"
+    ],
+    "answer": 1,
+    "explanation": "Low temperature toughness is critical because metals and alloys lose ductility at low temperatures. Ensuring adequate toughness prevents cracking or brittle failure under operational conditions."
+  },
+  {
+    "question": "Why is balsa wood no longer used in modern LNG tank insulation?",
+    "options": [
+      "Expensive compared to other woods",
+      "Difficult to source in required sizes",
+      "Too rigid for membrane tanks",
+      "High flammability and absorption properties"
+    ],
+    "answer": 3,
+    "explanation": "Despite its thermal insulation advantages, balsa wood is flammable and absorbs liquids like hydrocarbons, which creates safety hazards. These risks outweigh its insulation benefits in modern cargo containment systems."
+  },
+  {
+    "question": "What temperature must fully refrigerated LPG tanks often withstand?",
+    "options": [
+      "-55°C",
+      "-20°C",
+      "0°C",
+      "-10°C"
+    ],
+    "answer": 0,
+    "explanation": "Fully refrigerated LPG tanks are designed to withstand temperatures as low as -55°C. This ensures the structural integrity of the tank and compatibility with the cargo’s boiling point."
+  },
+  {
+    "question": "Which steel treatment achieves low temperature characteristics for structural carbon steels?",
+    "options": [
+      "Painting and coating",
+      "Cold rolling only",
+      "Special heat treatment and welding",
+      "Galvanization"
+    ],
+    "answer": 2,
+    "explanation": "Specialized welding and heat treatment are necessary to achieve low temperature toughness in structural carbon steels. This ensures the material can safely operate at the required minimum service temperatures."
+  },
+  {
+    "question": "Which tanks are self-supporting and do not contribute to hull strength?",
+    "options": [
+      "Independent Type A, B, and C",
+      "Membrane tanks",
+      "Balsa insulated tanks",
+      "Partial filling tanks"
+    ],
+    "answer": 0,
+    "explanation": "Independent tanks (Type A, B, C) are self-supporting and bear structural loads themselves. They influence design calculations but do not provide additional strength to the ship’s hull."
+  },
+  {
+    "question": "Which LNG tank type does not require a secondary barrier?",
+    "options": [
+      "Type A",
+      "Type C",
+      "Membrane",
+      "Type B Prismatic"
+    ],
+    "answer": 1,
+    "explanation": "Type C tanks are designed such that they do not require a secondary barrier. This makes them suitable for single-hull constructions and simpler installation while maintaining safety standards."
+  },
+  {
+    "question": "What is the main limitation of Type B Prismatic SPB tanks?",
+    "options": [
+      "High risk of sloshing",
+      "Requires nickel alloy steel",
+      "Cannot carry LNG",
+      "Limited number of shipyards licensed for construction"
+    ],
+    "answer": 3,
+    "explanation": "Type B Prismatic SPB tanks are strong and prevent sloshing, but only certain shipyards have the license to construct them. This restricts availability and increases design planning considerations."
+  },
+  {
+    "question": "In membrane LNG systems, what is a significant operational limitation?",
+    "options": [
+      "Impact resistance and partial filling restrictions",
+      "Low cargo capacity",
+      "Cannot use nickel steel",
+      "Requires balsa wood insulation"
+    ],
+    "answer": 0,
+    "explanation": "Membrane tanks have extensive operational experience and low boil-off rates, but their impact resistance is limited. Partial filling restrictions exist to prevent sloshing unless additional reinforcements are applied."
+  },
+  {
+    "question": "What is the primary characteristic that dictates the unsuitability of Balsa wood for modern cargo containment insulation systems?",
+    "options": [
+      "Its high thermal conductivity compared to other materials.",
+      "Its minimal structural integrity, requiring extensive external support.",
+      "Its excellent absorption capacity for hydrocarbon liquids and flammability risks.",
+      "Its inability to withstand the cryogenic temperatures of LNG."
+    ],
+    "answer": 2,
+    "explanation": "Despite its good thermal insulation, Balsa wood has a porous structure that enables it to absorb significant quantities of hydrocarbon liquids or vapor, posing a major safety risk. Additionally, it exhibits a relatively high rate of charring and rapid surface flame spread when exposed to fire."
+  },
+  {
+    "question": "Which type of independent cargo tank is uniquely characterized by the acceptability of single-hull construction and the lack of a required secondary barrier?",
+    "options": [
+      "Independent Type A Prismatic",
+      "Independent Type B Prismatic (SPB)",
+      "Independent Type B Spherical (Moss)",
+      "Independent Type C"
+    ],
+    "answer": 3,
+    "explanation": "The design criteria for the Independent Type C tank permit it to be used with a single hull. Furthermore, its structural design and stress analysis allow it to meet safety requirements without the need for a separate secondary barrier."
+  },
+  {
+    "question": "What is the most critical material property that must be considered when selecting metals and alloys for cryogenic cargo tanks?",
+    "options": [
+      "Yield Strength",
+      "Low Temperature Toughness",
+      "Corrosion Resistance",
+      "Thermal Expansion Coefficient"
+    ],
+    "answer": 1,
+    "explanation": "The fundamental concern when designing tanks for very low service temperatures is the tendency for many metals and alloys to become brittle. Therefore, the most essential material property to ensure structural integrity and safety under cryogenic conditions is **low temperature toughness**."
+  },
+  {
+    "question": "Why are Type C tanks considered less attractive for constructing very large capacity liquefied gas carriers?",
+    "options": [
+      "Their design is highly susceptible to severe liquid sloshing.",
+      "They require an expensive, fully independent secondary barrier.",
+      "They are less space efficient and have high cost/weight ratios at large scales.",
+      "They exhibit a free surface effect when partially filled."
+    ],
+    "answer": 2,
+    "explanation": "A drawback of Type C tanks is that they become less favorable for exceptionally large volumes compared to other types. This is due to efficiency constraints, including the associated cost and weight penalties, and their inherent lack of space efficiency."
+  },
+  {
+    "question": "What is the primary safety concern related to the flammability of insulation materials during shipyard maintenance, especially after a vessel is declared 'gas-free'?",
+    "options": [
+      "The possibility of igniting the structural carbon steel of the hull.",
+      "The release of vaporized 'heavy-end' residues from the insulation, forming a flammable atmosphere.",
+      "The high surface temperature required for the insulation to sustain combustion.",
+      "The risk of fire spreading rapidly through the vessel's accommodation block."
+    ],
+    "answer": 1,
+    "explanation": "Most insulation materials are flammable, and a specific risk arises because residual gases, referred to as 'heavy-end' residues, can remain trapped within the insulation. If heat is applied, these residues may vaporize and subsequently create a hazardous flammable atmosphere, even in areas thought to be gas-free."
+  },
+  {
+    "question": "Which containment system's limitation includes reduced cargo capacity relative to the ship's physical size and a restriction on forward visibility from the bridge?",
+    "options": [
+      "Membrane",
+      "Independent Type A Prismatic",
+      "Independent Type C",
+      "Independent Type B Spherical (Moss)"
+    ],
+    "answer": 3,
+    "explanation": "The distinctive dome shape of the Type B Spherical (Moss) tank results in a tank height that can obstruct the view forward from the wheelhouse. This design also limits the total volume of cargo that can be carried relative to the overall dimensions of the ship."
+  },
+  {
+    "question": "For fully-refrigerated LPG carriers operating down to temperatures like -55°C, which material type is typically used for the cargo tank construction?",
+    "options": [
+      "Nickel alloyed steels, stainless steels, or aluminum.",
+      "Fully killed, fine-grained, carbon-manganese steels, sometimes with 0.5% nickel.",
+      "Un-treated structural carbon steels, provided the welding is appropriate.",
+      "Low-density aluminum alloys used in older, experimental designs."
+    ],
+    "answer": 1,
+    "explanation": "Achieving service temperatures in the range of fully-refrigerated LPG requires materials that maintain toughness at those temperatures. This is accomplished using **fully killed, fine-grained, carbon-manganese steels**, often with a small percentage of nickel alloying for enhanced performance."
+  },
+  {
+    "question": "The Membrane containment system is well-regarded in LNG service for which key operational benefit?",
+    "options": [
+      "Its completely rigid structure offering superior impact resistance.",
+      "Its zero requirement for any form of secondary barrier.",
+      "Its robust design which allows high partial filling without restrictions.",
+      "Its typical performance resulting in a low Boil-Off Rate (BOR)."
+    ],
+    "answer": 3,
+    "explanation": "A significant operational advantage of the Membrane system is its efficiency in containing the cargo while minimizing heat ingress. This performance is quantified by a typically low **Boil-Off Rate (BOR)**, which reduces cargo losses during transit."
+  },
+  {
+    "question": "When carrying cargoes at intermediate temperatures, between -10°C and -55°C, what can sometimes be classified as the secondary barrier, depending on IGC Code requirements?",
+    "options": [
+      "A separate, fully independent tank inside the primary tank.",
+      "The ship's main hull structure.",
+      "The balsa wood insulation layer.",
+      "The centerline bulkhead."
+    ],
+    "answer": 1,
+    "explanation": "For cargoes maintained in this specific temperature range, the design standards allow the structural limits of the ship's main hull to serve as the necessary **secondary barrier** boundary, provided it meets the strength and material requirements of the IGC Code for that service temperature."
+  },
+  {
+    "question": "Which two containment systems are explicitly described as utilizing a centerline bulkhead to prevent liquid sloshing?",
+    "options": [
+      "Type A Prismatic and Membrane",
+      "Type B Spherical (Moss) and Type C",
+      "Type A Prismatic and Type B Prismatic (SPB)",
+      "Membrane and Type B Prismatic (SPB)"
+    ],
+    "answer": 2,
+    "explanation": "Both the Type A Prismatic and the Type B Prismatic (SPB) designs incorporate a **centreline bulkhead** as a characteristic feature to ensure the cargo liquid remains stable and to actively prevent the phenomenon of sloshing during the ship's movement."
+  },
+  {
+    "question": "For which extremely low-temperature cargoes, such as ethylene (-104°C) and LNG (-162°C), must the cargo tank construction use specialized alloys like nickel alloyed steels or aluminum?",
+    "options": [
+      "All refrigerated cargoes below -40°C.",
+      "Fully-refrigerated Propane only.",
+      "Cargoes with boiling points near or below -100°C.",
+      "Semi-refrigerated Propylene only."
+    ],
+    "answer": 2,
+    "explanation": "The most challenging cryogenic temperatures, specifically those required for ethylene (BP -104°C) and LNG (BP -162°C), necessitate the use of materials with superior low-temperature toughness, such as nickel alloyed steels, stainless steels, or aluminum. These are mandated for service below approximately -55°C."
+  },
+  {
+    "question": "What is a specific limitation associated with the Type A Prismatic containment system?",
+    "options": [
+      "It is highly susceptible to the free surface effect.",
+      "Its complex design limits the number of licensed fabrication shipyards.",
+      "It requires an independent secondary barrier.",
+      "Its tank height severely restricts forward visibility."
+    ],
+    "answer": 2,
+    "explanation": "Despite its robust nature and sloshing prevention via a centerline bulkhead, the Type A Prismatic tank design is limited by the requirement to include a fully **independent secondary barrier** to ensure cargo safety in the event of a primary tank breach."
+  },
+  {
+    "question": "Cargo containment systems are defined as including which three primary components, in addition to supporting structures?",
+    "options": [
+      "Reliquefaction plant, inert gas system, and pressure relief valves.",
+      "Hull, deck plates, and ballast tanks.",
+      "Primary barrier, secondary barrier, and insulation.",
+      "Pump tower, cargo manifold, and emergency shutdown system."
+    ],
+    "answer": 2,
+    "explanation": "The definition of a cargo containment system encompasses the key layers designed to hold the cargo and maintain its temperature: the **primary barrier**, which directly holds the cargo; the **secondary barrier**, which acts as a backup; and the thermal **insulation** system."
+  },
+  {
+    "question": "Which containment system is specifically noted to have no partial filling limitations and no free surface effect?",
+    "options": [
+      "Independent Type C",
+      "Membrane",
+      "Independent Type B Prismatic (SPB)",
+      "Independent Type B Spherical (Moss)"
+    ],
+    "answer": 3,
+    "explanation": "The spherical geometry of the Type B Spherical (Moss) tank inherently prevents significant liquid movement that causes free surface effects. Furthermore, the robust nature of the design ensures that operational restrictions related to partial filling are not necessary."
+  },
+  {
+    "question": "For the Independent Type B Prismatic (SPB) system, what is the key benefit besides its very robust design?",
+    "options": [
+      "It does not require any secondary barrier.",
+      "It allows for the ship's hull to be part of the containment.",
+      "It utilizes a centerline bulkhead to prevent sloshing.",
+      "It results in the lowest possible Boil-Off Rate."
+    ],
+    "answer": 2,
+    "explanation": "Like the Type A tank, the Type B Prismatic (SPB) system is designed with a **centreline bulkhead**. This internal structural feature is credited with preventing liquid sloshing, a significant benefit for cargo stability."
+  }
+]
