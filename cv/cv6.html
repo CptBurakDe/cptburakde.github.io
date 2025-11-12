@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Burak Demirci — CV (Blue Split)</title>
+<style>
+/* Blue split layout optimized for A4 single page */
+:root{
+  --page-width:210mm;
+  --page-height:297mm;
+  --base-font:9pt;
+  --navy:#05243f;
+  --light-blue:#e6f6ff;
+  --accent:#0b80d6;
+  --muted:#b8d6ee;
+}
+html,body{height:100%; margin:0; padding:0; background:#eaf6ff; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+body{font-family:Inter, "Segoe UI", Arial, sans-serif; font-size:var(--base-font); padding:12px; color:#07203a;}
+
+/* wrapper */
+.cv-outer{display:flex; justify-content:center;}
+.cv-wrapper{transform-origin:top center;}
+
+/* container */
+.cv-container{width:var(--page-width); box-sizing:border-box; padding:8mm; display:flex; gap:10mm; border-radius:6px; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+
+/* columns with strong left color */
+.left-column{width:34%; background:var(--navy); color:#fff; padding:10px; border-radius:4px; box-sizing:border-box;}
+.right-column{width:66%; background:var(--light-blue); color:var(--navy); padding:10px; border-radius:4px; box-sizing:border-box;}
+
+/* compact elements */
+.profile-picture img{width:100%; max-width:100px; height:100px; border-radius:50%; object-fit:cover; display:block; margin:6px auto;}
+.section-title{font-weight:700; font-size:9.2pt; text-transform:uppercase; margin-top:8px; margin-bottom:6px; color:#cfe9ff;}
+.contact-info, .education-item, .skills, .cert-list, .interests{font-size:9pt; line-height:1.12;}
+.header h1{margin:0; font-size:14pt; color:var(--navy);}
+.header h2{margin:0; font-size:10pt; color:rgba(7,32,58,0.8);}
+
+/* experience */
+.experience-item{margin-bottom:8px; padding-bottom:6px; border-bottom:1px dashed rgba(7,32,58,0.06);}
+.experience-header{display:flex; justify-content:space-between; align-items:center; gap:6px;}
+.logo, .ship-photo{width:34px; height:34px; object-fit:cover; border-radius:4px;}
+.experience-item ul{margin:4px 0 0 14px; padding:0; font-size:8.8pt;}
+
+/* qr */
+.qr-section{display:flex; justify-content:center; margin-top:8px;}
+.qr-box img{width:92px; height:92px; border-radius:6px;}
+
+/* actions */
+.top-actions{display:flex; justify-content:center; gap:8px; margin-top:10px;}
+button{padding:7px 12px; border-radius:6px; border:1px solid rgba(0,0,0,0.08); cursor:pointer; background:#fff;}
+
+@media print{
+  body{background:#fff;}
+  .cv-container{box-shadow:none; border:none; width:210mm; padding:8mm;}
+  .top-actions{display:none;}
+}
+</style>
+</head>
+<body>
+<div class="top-actions">
+  <button onclick="window.print()">Download as PDF</button>
+</div>
+
+<div class="cv-outer">
+  <div class="cv-wrapper" id="cvWrap">
+    <div class="cv-container" id="cv">
+      <div class="left-column">
+        <div class="profile-picture">
+          <img src="../img/burakde.jpg" alt="Burak Demirci">
+        </div>
+        <div class="section-title">Contact</div>
+        <div class="contact-info">
+          <b>Email:</b> <a style="color:#cfe9ff" href="mailto:burak_de@yahoo.com">burak_de@yahoo.com</a><br>
+          <b>Position:</b> Oceangoing Watchkeeping Officer<br>
+          <b>Nationality:</b> Turkish<br>
+          <b>DOB:</b> 09/11/2000<br>
+          <b>Phone:</b> <a style="color:#cfe9ff" href="tel:+905353450911" onclick="copyPhone(event,'+90 (535) 345 09 11')">+90 (535) 345 09 11</a><br>
+          <b>Marital Status:</b> Single<br>
+          <b>Military Service:</b> Completed
+        </div>
+
+        <div class="section-title">Education</div>
+        <div class="education-item">
+          <b>Karadeniz Technical University</b><br>
+          B.Sc. in Maritime Transportation & Management Eng.<br>
+          2019–2023 | GPA: 3.50/4.00
+        </div>
+
+        <div class="section-title">Skills</div>
+        <div class="skills">
+          Bridge Team Management<br>
+          Ship Handling & Navigation<br>
+          Cargo & Ballast Ops<br>
+          TRANSAS NS4000 ECDIS<br>
+          Data Analysis (Python, SQL, Excel)
+        </div>
+
+        <div class="section-title">Languages</div>
+        <div>English – Professional Working Proficiency</div>
+      </div>
+
+      <div class="right-column">
+        <div class="header">
+          <h1>BURAK DEMIRCI</h1>
+          <h2>OCEANGOING WATCHKEEPING OFFICER</h2>
+        </div>
+
+        <div class="section-title">Profile</div>
+        <p style="font-size:9pt; text-align:justify; line-height:1.12;">
+          An oceangoing Watchkeeping Officer with 3 years experience in tanker operations, navigation and safety management on Aframax, LR, MR and chemical/oil vessels. Participated in 300+ cargo operations and several inspections and vettings. Focused on safety, compliance and operational efficiency.
+        </p>
+
+        <div class="section-title">Experience</div>
+        <div class="experience-item">
+          <div class="experience-header">
+            <img src="../img/okanogullari.png" class="logo">
+            <div class="duration" style="font-size:9pt;">Sep 2023 – Oct 2025</div>
+            <img src="../img/sebahatana.jpg" class="ship-photo">
+          </div>
+          <div class="company">Cilicia / Okanogulları Shipping – M/T SEBAHAT ANA (8672.9 DWT)</div>
+          <div class="title">Second Officer</div>
+          <ul>
+            <li>Bridge watchkeeping and navigation.</li>
+            <li>Cargo operations and mooring.</li>
+            <li>LSA/FFE maintenance and vettings.</li>
+          </ul>
+        </div>
+
+        <!-- other experience entries preserved -->
+        <div class="experience-item">
+          <div class="experience-header">
+            <img src="../img/imza_marine_a_s_logo.jpg" class="logo">
+            <div class="duration" style="font-size:9pt;">Mar 2022 – Oct 2022</div>
+            <img src="../img/bluminosa.jpg" class="ship-photo">
+          </div>
+          <div class="company">Imza Marine – M/T B LUMINOSA (68,439 DWT)</div>
+          <div class="title">Deck Cadet</div>
+          <ul>
+            <li>Assisted in shipboard operations including cargo and ballast control.</li>
+            <li>Maintained safety and firefighting systems.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <img src="../img/imza_marine_a_s_logo.jpg" class="logo">
+            <div class="duration" style="font-size:9pt;">Jul 2021 – Sep 2021</div>
+            <img src="../img/coatlicue.jpg" class="ship-photo">
+          </div>
+          <div class="company">Imza Marine – M/T COATLICUE (105,322 DWT)</div>
+          <div class="title">Deck Cadet</div>
+          <ul>
+            <li>Assisted with crude oil washing and pump-room checks.</li>
+          </ul>
+        </div>
+
+        <div class="qr-section">
+          <div class="qr-box">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://gemiadami.uab.gov.tr/verification/67384263278/dsadad" alt="QR">
+            <div style="font-size:8.5pt; color:var(--navy);">Seafarer Verification</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- autoscale script for A4 fit -->
+<script>
+(function(){
+  const wrapper = document.getElementById('cvWrap');
+  const cv = document.getElementById('cv');
+
+  function mmToPx(mm){
+    const el = document.createElement('div');
+    el.style.height = mm + 'mm';
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    const px = el.getBoundingClientRect().height;
+    document.body.removeChild(el);
+    return px;
+  }
+
+  function fitToA4(){
+    const target = mmToPx(297) - mmToPx(10);
+    wrapper.style.transform = 'none';
+    const actual = cv.getBoundingClientRect().height;
+    let scale = 1;
+    if(actual > target) scale = Math.max(0.66, target/actual);
+    wrapper.style.transform = 'scale(' + scale + ')';
+  }
+
+  window.addEventListener('load', ()=> setTimeout(fitToA4,60));
+  window.addEventListener('resize', ()=> setTimeout(fitToA4,120));
+  window.addEventListener('beforeprint', ()=> setTimeout(fitToA4,40));
+
+  window.copyPhone = function(event, number){
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if(!isMobile){
+      event.preventDefault();
+      if(navigator.clipboard) navigator.clipboard.writeText(number).catch(()=>alert(number));
+    }
+  };
+})();
+</script>
+</body>
+</html>
