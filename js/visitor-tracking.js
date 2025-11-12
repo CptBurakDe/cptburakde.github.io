@@ -493,3 +493,65 @@
   };
 
 })();
+
+(function(){
+  // Minimal, reliable visitor tracking for heterogeneous environments.
+  // 1) Try to obtain visitor public IP via ipify.
+  // 2) Send payload to /api/visit on your server (expected to persist).
+  // 3) Fallback: send reduced payload (without ip) if ip fetch fails.
+
+  const VISIT_ENDPOINT = '/api/visit'; // server-side endpoint that stores visits
+  const IP_SERVICE = 'https://api.ipify.org?format=json';
+  const TIMEOUT = 4000; // ms
+
+  function timeoutFetch(url, opts = {}, t = TIMEOUT){
+    return Promise.race([
+      fetch(url, opts),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), t))
+    ]);
+  }
+
+  function buildPayload(ip){
+    return {
+      ip: ip || null,
+      userAgent: navigator.userAgent || null,
+      page: location.pathname + location.search,
+      referrer: document.referrer || null,
+      ts: new Date().toISOString()
+    };
+  }
+
+  function sendVisit(payload){
+    // Use keepalive to improve chance of delivery on page unload
+    try{
+      fetch(VISIT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true
+      }).catch(err => {
+        // optional: fallback to logging to console or another endpoint
+        console.warn('Visit post failed', err);
+      });
+    }catch(e){
+      console.warn('Visit send error', e);
+    }
+  }
+
+  // Main
+  (function track(){
+    // First, attempt to get public IP (ipify). If blocked, still send payload without ip.
+    timeoutFetch(IP_SERVICE, { method: 'GET', mode: 'cors' }, TIMEOUT)
+      .then(r => r.ok ? r.json() : Promise.reject(new Error('ip service response not ok')))
+      .then(data => {
+        const payload = buildPayload(data.ip);
+        sendVisit(payload);
+      })
+      .catch(() => {
+        // ipify failed — still send payload without ip
+        const payload = buildPayload(null);
+        sendVisit(payload);
+      });
+  })();
+
+})();
