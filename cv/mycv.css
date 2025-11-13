@@ -133,7 +133,17 @@ body.theme-dark .section-title{ color:var(--accent-light); border-bottom-color:v
 .logo,.ship-photo{width:34px;height:34px;object-fit:cover;border-radius:4px;border:1px solid var(--border);transition:all var(--transition);cursor:pointer;}
 @media (hover:hover) and (pointer:fine){ .logo:hover,.ship-photo:hover{transform:scale(1.12) rotate(2deg);box-shadow:0 6px 16px var(--shadow);border-color:var(--accent-light);} }
 
-.experience-item .company{font-size:9pt;font-style:italic;color:var(--muted);}
+/* consistent company styling across all themes */
+.experience-item .company{font-size:9pt;font-style:italic;color:var(--muted);transition:color var(--transition);}
+
+/* dark mode: ensure company and duration are readable and consistent */
+body.theme-dark .experience-item .company{color:#8b949e;}
+body.theme-dark .experience-header .duration{color:#8b949e;}
+
+/* blue theme: ensure company and duration are readable and consistent */
+body.theme-blue .experience-item .company{color:#3f5878;}
+body.theme-blue .experience-header .duration{color:#3f5878;}
+
 .experience-item .title{font-size:9.5pt;font-weight:700;transition:color var(--transition);}
 .experience-item ul{margin:4px 0 0 16px;padding:0;font-size:8.8pt;line-height:1.06;}
 

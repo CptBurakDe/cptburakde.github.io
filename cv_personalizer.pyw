@@ -143,7 +143,7 @@ class CVPersonalizerApp:
             
             try:
                 shutil.copy2(self.selected_file, dest_path)
-                logo_path = f"img/logos/{dest_name}"
+                logo_path = f"../img/logos/{dest_name}"
                 self.log_output(f"✓ Logo copied to {logo_path}")
             except Exception as e:
                 messagebox.showerror("Error", f"Failed to copy logo: {e}")
