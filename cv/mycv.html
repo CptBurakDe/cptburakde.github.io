@@ -54,7 +54,28 @@
   document.addEventListener('DOMContentLoaded', function(){
     const pwInput = document.getElementById('pwInput');
     const modal = document.getElementById('passwordModal');
-    
+
+    // If URL contains an 'id' parameter, skip password prompt entirely
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('id')) {
+        // mark as unlocked for session and hide modal
+        sessionStorage.setItem(SESSION_KEY, 'true');
+        if (modal) {
+          modal.classList.remove('active');
+          modal.style.display = 'none';
+        }
+        if (pwInput) pwInput.blur();
+        // expose checkPassword for console use if needed
+        window.checkPassword = checkPassword;
+        return;
+      }
+    } catch (e) {
+      // ignore URL parsing errors and continue normal flow
+      console.warn('URL parse error (password skip):', e);
+    }
+
+    // normal password behavior
     if(pwInput){
       pwInput.addEventListener('keypress', function(e){
         if(e.key === 'Enter') checkPassword();
@@ -62,12 +83,16 @@
     }
 
     if(sessionStorage.getItem(SESSION_KEY)){
-      modal.classList.remove('active');
-      modal.style.display = 'none';
+      if(modal){
+        modal.classList.remove('active');
+        modal.style.display = 'none';
+      }
       if(pwInput) pwInput.blur();
     } else {
-      modal.classList.add('active');
-      modal.style.display = 'flex';
+      if(modal){
+        modal.classList.add('active');
+        modal.style.display = 'flex';
+      }
       if(pwInput) pwInput.focus();
     }
   });
