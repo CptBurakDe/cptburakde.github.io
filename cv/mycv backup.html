@@ -468,16 +468,6 @@ body::after {
   </div>
 </div>
 
-<!-- Greeting popup for company personalization -->
-<div id="greetingModal" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9998;display:none;align-items:center;justify-content:center;">
-  <div style="background:#fff;padding:40px;border-radius:8px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.3);max-width:450px;">
-    <img id="greetingLogo" src="" alt="Company Logo" style="width:80px;height:80px;object-fit:contain;margin:0 auto 16px;display:block;">
-    <h2 id="greetingTitle" style="margin-top:0;color:#0d1117;"></h2>
-    <p id="greetingText" style="color:#666;margin:16px 0;font-size:14px;"></p>
-    <button onclick="closeGreeting()" style="padding:12px 24px;background:#0969da;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;font-weight:600;">Continue</button>
-  </div>
-</div>
-
 <script>
 // Password protection for mycv.html
 (function(){
@@ -500,6 +490,7 @@ body::after {
     }
   }
 
+  // Allow Enter key
   document.addEventListener('DOMContentLoaded', function(){
     const pwInput = document.getElementById('pwInput');
     const modal = document.getElementById('passwordModal');
@@ -510,6 +501,7 @@ body::after {
       });
     }
 
+    // Check if already unlocked
     if(sessionStorage.getItem(SESSION_KEY)){
       modal.classList.remove('active');
       modal.style.display = 'none';
@@ -523,71 +515,6 @@ body::after {
 
   window.checkPassword = checkPassword;
 })();
-
-// Company personalization and greeting popup
-window.closeGreeting = function(){
-  const modal = document.getElementById('greetingModal');
-  modal.style.display = 'none';
-};
-
-function getQueryParam(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-}
-
-function initializeCV(COMPANY_MAP) {
-  const companyId = getQueryParam('id');
-  
-  if (companyId && COMPANY_MAP[companyId]) {
-    const company = COMPANY_MAP[companyId];
-    
-    // Show greeting popup
-    const modal = document.getElementById('greetingModal');
-    document.getElementById('greetingLogo').src = company.logo;
-    document.getElementById('greetingTitle').textContent = `Welcome to ${company.name}!`;
-    document.getElementById('greetingText').textContent = `We're excited to see your qualifications. Your CV is personalized for ${company.name}.`;
-    modal.style.display = 'flex';
-    
-    // Add career goal section
-    addCareerGoalSection(company);
-  }
-}
-
-function addCareerGoalSection(company) {
-  const profileSection = document.querySelector('.section-title');
-  if (!profileSection) return;
-  
-  const rightColumn = document.querySelector('.right-column');
-  const profileP = rightColumn.querySelector('p[style*="justify"]');
-  
-  if (profileP) {
-    const careerSection = document.createElement('div');
-    careerSection.style.marginTop = '10px';
-    careerSection.innerHTML = `
-      <div class="section-title">Career Goal</div>
-      <div style="display:flex;gap:10px;align-items:center;font-size:10pt;margin-bottom:8px;">
-        <img src="${company.logo}" alt="${company.name}" style="width:40px;height:40px;object-fit:contain;border-radius:4px;border:1px solid var(--border);">
-        <div>
-          <b>Target Company:</b> ${company.name}<br>
-          <span style="color:var(--muted);font-size:9pt;">Tailored opportunity for growth and maritime excellence</span>
-        </div>
-      </div>
-    `;
-    profileP.parentNode.insertBefore(careerSection, profileP.nextSibling);
-  }
-}
-
-// Fetch companies.json and initialize
-document.addEventListener('DOMContentLoaded', function(){
-  fetch('../companies.json')
-    .then(response => response.json())
-    .then(data => {
-      initializeCV(data);
-    })
-    .catch(err => {
-      console.warn('Could not load companies.json:', err);
-    });
-});
 </script>
 
 <!-- wrap to enable scaling to fit A4 height -->
@@ -653,13 +580,6 @@ document.addEventListener('DOMContentLoaded', function(){
           Data Science in Shipping<br>
           Cyber Security<br>
           Operational Leadership
-        </div>
-
-        <div class="qr-section">
-          <div class="qr-box">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=75x75&data=https://gemiadami.uab.gov.tr/verification/67384263278/dsadad">
-            <div>Seafarer Verification</div>
-          </div>
         </div>
       </div>
 
@@ -741,6 +661,13 @@ document.addEventListener('DOMContentLoaded', function(){
             <li>Performed daily safety rounds and assisted with drills.</li>
             <li>Enhanced knowledge of Oil Product Tanker operations and safety compliance.</li>
           </ul>
+        </div>
+
+        <div class="qr-section">
+          <div class="qr-box">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://gemiadami.uab.gov.tr/verification/67384263278/dsadad">
+            <div>Seafarer Verification</div>
+          </div>
         </div>
       </div>
     </div>
