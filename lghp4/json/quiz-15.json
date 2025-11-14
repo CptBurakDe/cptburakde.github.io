@@ -1,0 +1,222 @@
+[
+  {
+    "question": "What is the maximum allowed tank design pressure in the vapor space for a fully-refrigerated Type A tank under the IGC Code?",
+    "options": [
+      "0.7 bar",
+      "2.0 bar",
+      "1.5 bar",
+      "5.0 bar"
+    ],
+    "answer": 0,
+    "explanation": "Type A tanks are designed to carry cargo in a fully-refrigerated state, meaning they operate near atmospheric pressure, and the IGC Code sets the maximum allowed design pressure in the vapor space at 0.7 bar."
+  },
+  {
+    "question": "Which independent tank type is characterized by being a spherical or cylindrical pressure vessel with a design pressure above 2 bar?",
+    "options": [
+      "Type A",
+      "Type B Prismatic",
+      "Type C",
+      "Membrane"
+    ],
+    "answer": 2,
+    "explanation": "Type C tanks are constructed as pressure vessels, typically spherical or cylindrical, and are designed to withstand high internal pressures, starting above 2 bar."
+  },
+  {
+    "question": "What is the most common material used to construct the spherical shell of a Type B Moss tank?",
+    "options": [
+      "Low-carbon steel",
+      "Aluminum",
+      "Stainless steel",
+      "High-tensile steel"
+    ],
+    "answer": 1,
+    "explanation": "The Moss tank, which is the most common spherical Type B arrangement, typically utilizes aluminum for the construction of its spherical shell due to its suitability for low-temperature service."
+  },
+  {
+    "question": "According to the IGC Code, a secondary containment system is mandatory for Type A tanks designed to carry cargoes below which specific temperature?",
+    "options": [
+      "Minus 163 degrees Celsius",
+      "Minus 20 degrees Celsius",
+      "Minus 70 degrees Celsius",
+      "Minus 10 degrees Celsius"
+    ],
+    "answer": 3,
+    "explanation": "The IGC Code requires all Type A tanks capable of carrying cargoes with temperatures below minus 10 degrees Celsius to be fitted with a complete secondary containment system (secondary barrier)."
+  },
+  {
+    "question": "What specific design principle for Type B tanks permits them to utilize only a partial secondary barrier like a drip tray?",
+    "options": [
+      "Leak before failure",
+      "Detailed stress analysis",
+      "Conventional internal stiffening",
+      "Double hull protection"
+    ],
+    "answer": 0,
+    "explanation": "Type B tanks are designed using the leak before failure concept, which ensures that any potential crack or flaw would be detectable through leakage before it could lead to catastrophic failure, thereby allowing for a partial secondary barrier."
+  },
+  {
+    "question": "Which containment solution is considered the most common accepted design approach for the secondary barrier in fully-refrigerated LPG carriers using Type A tanks?",
+    "options": [
+      "Installation of a separate, insulated concrete barrier",
+      "Utilizing the cargo dome as the containment structure",
+      "Placing a full separate barrier around each tank",
+      "Allowing the ship's hull to form part of the secondary barrier"
+    ],
+    "answer": 3,
+    "explanation": "For Type A tanks carrying cargoes no colder than minus 55 degrees Celsius (like LPG), the IGC Code allows the ship's hull structure itself to form part of the secondary containment system, provided the hull steel is suitable for low temperatures."
+  },
+  {
+    "question": "What is the typical operational working pressure range that cargo tanks and associated equipment are designed for in a semi-refrigerated gas carrier using Type C tanks?",
+    "options": [
+      "0.5 to 2.0 bar",
+      "5 to 7 bar",
+      "10 to 12 bar",
+      "15 to 18 bar"
+    ],
+    "answer": 1,
+    "explanation": "Semi-refrigerated ships typically operate their Type C tanks and equipment at a working pressure of approximately 5 to 7 bar to maintain the cargo in a partially cooled and pressurized state."
+  },
+  {
+    "question": "In a membrane cargo containment system, what structure absorbs the primary static and dynamic loads exerted by the liquefied cargo?",
+    "options": [
+      "The tank's primary barrier",
+      "The independent tank foundation",
+      "The ship's inner hull structure",
+      "The thermal insulation panels"
+    ],
+    "answer": 2,
+    "explanation": "Membrane tanks are non-self-supporting systems that rely entirely on the adjacent inner hull structure of the vessel to act as the primary load-bearing structure."
+  },
+  {
+    "question": "What is the fundamental difference in the IGC Code design safety philosophy between Type A tanks and Type B tanks that mandates a complete secondary barrier for Type A?",
+    "options": [
+      "Type A tanks are not designed on the leak before failure concept",
+      "Type A tanks utilize less robust insulation materials",
+      "Type A tanks are only used for atmospheric pressure cargo",
+      "Type A tanks do not undergo detailed stress analysis"
+    ],
+    "answer": 0,
+    "explanation": "The requirement for a complete secondary barrier on Type A tanks stems from the fact that, unlike Type B tanks, they are not designed and proven to the 'leak before failure' concept."
+  },
+  {
+    "question": "What is the maximum working pressure approximately that Type C tanks on a typical fully-pressurised gas carrier must be designed to withstand?",
+    "options": [
+      "7 bar",
+      "12 bar",
+      "15 bar",
+      "18 bar"
+    ],
+    "answer": 3,
+    "explanation": "Fully-pressurised gas carriers transport cargo at ambient temperature, requiring the Type C tanks to be designed for high pressure, typically up to about 18 bar, to keep the cargo liquefied."
+  },
+  {
+    "question": "For Type A tanks intended to carry LNG or Ethane at temperatures below minus 55 degrees Celsius, what is the IGC Code's strict requirement for the secondary barrier?",
+    "options": [
+      "It must be integrated with the ship's hull",
+      "It must be constructed of low-temperature alloy steel",
+      "It must be entirely separate from the hull structure",
+      "It must be capable of containing a leak for 30 days"
+    ],
+    "answer": 2,
+    "explanation": "The IGC Code mandates that for Type A tanks carrying extremely cold cargoes below minus 55 degrees Celsius, the secondary barrier must be constructed as a unit entirely separate from the ship's hull to ensure hull integrity."
+  },
+  {
+    "question": "What gas is typically used to fill the hold space surrounding a Type B spherical tank under normal operating conditions, especially to avoid moisture ingress?",
+    "options": [
+      "Nitrogen (Inert Gas)",
+      "Dry air",
+      "Cargo vapor",
+      "Vacuum"
+    ],
+    "answer": 1,
+    "explanation": "In Moss-type designs, the hold spaces are normally filled with dry air to prevent the ingress of moisture, which is necessary to avoid the development of cold spots on the tank's exterior surface."
+  },
+  {
+    "question": "What is the narrow range of thickness typically specified for the inner element that forms the primary barrier in a Membrane containment system?",
+    "options": [
+      "0.1 to 0.5 mm",
+      "1.5 to 2.5 mm",
+      "0.7 to 1.5 mm",
+      "2.5 to 5.0 mm"
+    ],
+    "answer": 2,
+    "explanation": "The primary barrier in a membrane system is defined as a thin inner element designed to contain the cargo, with its thickness typically ranging from 0.7 mm to 1.5 mm."
+  },
+  {
+    "question": "What structural design technique is employed for Type C tanks in fully-pressurised carriers to address the challenge of poor hull volume utilization?",
+    "options": [
+      "Use of bi-lobe or intersecting pressure vessels",
+      "Increasing the diameter and reducing the length of tanks",
+      "Switching to Type B prismatic tank designs",
+      "Fitting the tanks with conventional internal stiffening"
+    ],
+    "answer": 0,
+    "explanation": "The primary drawback of Type C tanks in fully-pressurised carriers is their poor hull volume utilization, which is mitigated by using bi-lobe or intersecting pressure vessel designs that conform better to the hull shape."
+  },
+  {
+    "question": "During calm or harbor conditions, the inherent strength of a spherical Type B tank allows the pressure to be raised to what approximate maximum for liquid discharge operations?",
+    "options": [
+      "0.7 bar",
+      "1.0 bar",
+      "2.0 bar",
+      "1.5 bar"
+    ],
+    "answer": 2,
+    "explanation": "Because dynamic liquid pressure from ship motion is absent in calm conditions, the natural strength of the spherical Type B tank permits the internal pressure to be safely raised to around 2.0 bar to discharge the liquid cargo."
+  },
+  {
+    "question": "What is the lowest minimum temperature that the steel used in Type C tanks for semi-refrigerated ships is typically capable of safely withstanding?",
+    "options": [
+      "Minus 55 degrees Celsius",
+      "Minus 90 degrees Celsius",
+      "Minus 120 degrees Celsius",
+      "Minus 104 degrees Celsius"
+    ],
+    "answer": 3,
+    "explanation": "The steel used in the tanks of semi-refrigerated ships is generally capable of handling temperatures as low as minus 104 degrees Celsius, which is sufficient for cargoes like ethylene and ethane."
+  },
+  {
+    "question": "For how many days is the secondary barrier in a membrane system explicitly required by the IGC Code to be designed to safely contain a liquid cargo leak?",
+    "options": [
+      "7 days",
+      "15 days",
+      "30 days",
+      "5 days"
+    ],
+    "answer": 1,
+    "explanation": "The IGC Code mandates that the membrane secondary barrier must be designed to ensure safe containment of any liquid cargo leakage from the primary barrier for a period of 15 days."
+  },
+  {
+    "question": "Which method, alongside temperature sensors, is continuously used to monitor the insulation spaces of a membrane containment system for potential defects?",
+    "options": [
+      "Monitoring nitrogen flow for leakage via gas detectors",
+      "Sampling the inert gas in the hold space for oxygen levels",
+      "Manually inspecting the space for signs of ice formation",
+      "Checking the pressure differential between the inner and outer hull"
+    ],
+    "answer": 0,
+    "explanation": "Nitrogen gas is continuously passed through the insulation spaces and is monitored by gas detectors before venting, providing a rapid method for detecting any leakage from the membrane barriers."
+  },
+  {
+    "question": "What substance was historically added to perlite insulation in the NO 96 system to ensure the material maintained its insulating properties?",
+    "options": [
+      "Foam",
+      "Silicone",
+      "Epoxy resin",
+      "Glass wool"
+    ],
+    "answer": 1,
+    "explanation": "The perlite powder historically used for insulation in the NO 96 system was processed with silicone to make it impervious to water or moisture, which helps prevent a loss of thermal efficiency."
+  },
+  {
+    "question": "What is the critical safety requirement for the double hull temperature during the 15-day period following a primary membrane leak?",
+    "options": [
+      "It must remain above the cargo's boiling point",
+      "It must not fall below the ambient sea temperature",
+      "It must be maintained within 5 degrees of the primary barrier",
+      "It must not drop to a level that could cause brittle fracture of the hull steel"
+    ],
+    "answer": 3,
+    "explanation": "The temperature of the double hull structure must be prevented from falling to a level that could lead to brittle fracture in the steel of the hull structure, which would compromise the ship's structural integrity."
+  }
+]
