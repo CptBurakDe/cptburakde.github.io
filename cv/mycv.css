@@ -164,7 +164,18 @@ body.theme-blue .experience-header .duration{color:#3f5878;}
 .right-column .section-title + div p,
 .right-column .section-title + div div{color:var(--right-text);font-family:inherit;font-size:9pt;line-height:1.06;}
 @media (hover:hover) and (pointer:fine){ .right-column .section-title + div:hover{transform:translateY(-3px) translateX(2px);box-shadow:0 12px 28px var(--shadow);background:linear-gradient(180deg,rgba(88,166,255,0.02),rgba(88,166,255,0.005));border-bottom-color:var(--accent-light);} }
-.right-column .section-title + div img{width:34px;height:34px;object-fit:cover;border-radius:4px;border:1px solid var(--border);transition:all var(--transition);}
+
+/* Career Goal logo: stronger hover effect (scale 1.25 vs standard 1.12) */
+.right-column .section-title + div img{
+  width:34px;height:34px;object-fit:cover;border-radius:4px;border:1px solid var(--border);transition:all var(--transition);cursor:pointer;
+}
+@media (hover:hover) and (pointer:fine){ 
+  .right-column .section-title + div img:hover{
+    transform:scale(1.25) rotate(3deg);
+    box-shadow:0 8px 20px var(--shadow);
+    border-color:var(--accent-light);
+  } 
+}
 
 /* Links */
 a{color:var(--accent);text-decoration:none;transition:all var(--transition);border-bottom:1px solid transparent;}
