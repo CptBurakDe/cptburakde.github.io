@@ -26,5 +26,9 @@
   "pasco": {
     "name": "PascoGas Deniz İşletmeleri A.Ş.",
     "logo": "../img/logos/pasco.png"
+  },
+  "ahtanker": {
+    "name": "Anadoluhisarı Tankercilik A.Ş.",
+    "logo": "../img/logos/ahtanker.png"
   }
 }
