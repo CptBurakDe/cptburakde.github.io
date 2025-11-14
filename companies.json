@@ -22,5 +22,9 @@
   "onn": {
     "name": "ONN Denizcilik ve Danışmanlık Ltd. Sti",
     "logo": "../img/logos/onn.png"
+  },
+  "pasco": {
+    "name": "PascoGas Deniz İşletmeleri A.Ş.",
+    "logo": "../img/logos/pasco.png"
   }
 }
