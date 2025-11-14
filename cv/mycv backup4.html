@@ -57,10 +57,10 @@
     const pwInput = document.getElementById('pwInput');
     const modal = document.getElementById('passwordModal');
 
-    // Check URL for 'id' OR 'download=true' to bypass password prompt entirely
+    // If URL contains an 'id' parameter, skip password prompt entirely
     try {
       const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.has('id') || urlParams.get('download') === 'true') {
+      if (urlParams.has('id')) {
         // mark as unlocked for session and hide modal
         sessionStorage.setItem(SESSION_KEY, 'true');
         if (modal) {
@@ -68,10 +68,12 @@
           modal.style.display = 'none';
         }
         if (pwInput) pwInput.blur();
+        // expose checkPassword for console use if needed
         window.checkPassword = checkPassword;
         return;
       }
     } catch (e) {
+      // ignore URL parsing errors and continue normal flow
       console.warn('URL parse error (password skip):', e);
     }
 
@@ -114,40 +116,32 @@ function getQueryParam(param) {
 function initializeCV(COMPANY_MAP) {
     try {
         const companyId = getQueryParam('id');
-        const downloadFlag = getQueryParam('download'); // Download bayrağını al
-
+        
         // 1. Gerekli DOM elemanlarının varlığını kontrol et
         const modal = document.getElementById('greetingModal');
         const logoEl = document.getElementById('greetingLogo');
         const titleEl = document.getElementById('greetingTitle');
         const textEl = document.getElementById('greetingText');
         
+        // Eğer modal veya temel elemanlardan biri yoksa, devam etme (Hata Önleme)
         if (!modal || !logoEl || !titleEl || !textEl) {
             console.error('Error: Required DOM elements (greetingModal, greetingLogo, etc.) not found.');
+            // Eğer URL'de ID yoksa, bu durum normaldir (link oluşturma modu)
             if (!companyId) return; 
+            // Eğer ID varsa ama elementler yoksa, bu bir kurulum hatasıdır.
             return;
         }
 
         // 2. Şirket ID ve Harita Kontrolü (Link Oluşturma Modu)
         if (!companyId || !COMPANY_MAP || !COMPANY_MAP[companyId]) {
             console.warn('Company ID not found or invalid. Showing link creation interface.');
+            // Eğer link oluşturma arayüzünüz varsa burada onu gösterin (inputModal gibi)
+            // Örn: document.getElementById('inputModal').style.display = 'flex';
             return;
         }
 
         const company = COMPANY_MAP[companyId];
 
-        // 6. Kariyer Hedefi Bölümünü Enjekte Et (PDF için içerik eklenmeli)
-        addCareerGoalSection(company);
-
-        // 7. KARŞILAMA POPUP KONTROLÜ
-        if (downloadFlag === 'true') {
-             // Eğer otomatik indirme isteniyorsa popup'ı gösterme ve pas geç
-            console.log('Download parameter detected. Suppressing greeting modal for auto-PDF generation.');
-            return; // PDF hazırlığı için başlatma tamamlandı
-        }
-
-        // 8. Normal Modal Görüntüleme Akışı (download=false veya hiç yoksa)
-        
         // 3. Modal İçeriği (Rolünüze özel metin ve HTML kalınlaştırma)
         titleEl.textContent = `Welcome, This CV is Exclusively Prepared for ${company.name}!`;
 
@@ -177,6 +171,7 @@ function initializeCV(COMPANY_MAP) {
 
         // 5. Kapanma İşleyicisi
         const closeModal = (e) => {
+            // Modal içindeki içeriğe veya butona tıklamayı engelle (sadece dışarıya tıkla)
             if (e.target === modal || e.key === 'Escape') {
                 modal.style.display = 'none';
                 modal.classList.remove('active');
@@ -185,8 +180,13 @@ function initializeCV(COMPANY_MAP) {
                 modal.removeEventListener('click', closeModal);
             }
         };
+        // Olay dinleyicilerini ekle (sadece bir kez)
         document.addEventListener('keydown', closeModal);
         modal.addEventListener('click', closeModal);
+
+        // 6. Kariyer Hedefi Bölümünü Enjekte Et
+        // addCareerGoalSection'un daha önce tanımlandığını varsayıyoruz.
+        addCareerGoalSection(company);
 
     } catch (err) {
         console.error('Error initializing CV (Fatal):', err);
@@ -389,11 +389,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </div>
 
 <div class="download-buttons">
-  <!-- Birinci Yöntem: Tarayıcı Baskı Diyaloğu (window.print) -->
-  <button class="primary" onclick="window.print()">Print</button>
-  <button class="primary" onclick="window.location.href = window.location.href + (window.location.href.includes('?') ? '&' : '?') + 'download=true'">
-    Download as PDF
-</button>
+  <button class="primary" onclick="window.print()">Download as PDF</button>
 
   <!-- Theme selector -->
   <div style="display:flex;gap:6px;align-items:center;">
@@ -450,23 +446,21 @@ document.addEventListener('DOMContentLoaded', function(){
           setTimeout(()=> n.remove(), 2200);
         }).catch(err => console.error('Failed to copy phone:', err));
       } else {
-        // Fallback for environments without clipboard access (like iframes)
-        console.log('Phone number:', number);
-        // Note: I have avoided 'alert()' as per instructions.
+        alert('Phone number: ' + number);
       }
     }
   };
 
-  // İkinci Yöntem: Auto-download PDF if download=true parameter present (no print dialog)
+  // Auto-download PDF if download=true parameter present (no print dialog)
   function checkAutoDownload(){
     try {
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.get('download') === 'true') {
         // Get company ID for filename
-        const companyId = urlParams.get('id') || 'General'; // ID yoksa 'General' kullan
+        const companyId = urlParams.get('id') || 'CV';
         const fileName = `Burak Demirci-CV-${companyId}.pdf`;
         
-        // CV'nin render olmasını ve kişiselleştirme mantığının tamamlanmasını bekle
+        // Wait for CV to render, then generate PDF
         setTimeout(() => {
           const cvElement = document.getElementById('cv');
           if (!cvElement) {
@@ -476,7 +470,7 @@ document.addEventListener('DOMContentLoaded', function(){
           
           // html2pdf options
           const opt = {
-            margin: 0, // İstenilen kenar boşluğu sıfırlandı
+            margin: 10,
             filename: fileName,
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 2, useCORS: true },
@@ -485,8 +479,7 @@ document.addEventListener('DOMContentLoaded', function(){
           
           // Generate and download PDF
           html2pdf().set(opt).from(cvElement).save();
-          console.log(`Auto-download triggered: ${fileName}`);
-        }, 5000);
+        }, 800);
       }
     } catch (e) {
       console.warn('Auto-download check error:', e);
@@ -542,3 +535,4 @@ document.addEventListener('DOMContentLoaded', function(){
 
 </body>
 </html>
+

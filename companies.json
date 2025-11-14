@@ -1,16 +1,4 @@
 {
-  "sample_shipping": {
-    "name": "Sample Shipping Lines",
-    "logo": "img/logos/sample_shipping.png"
-  },
-  "blue_ocean": {
-    "name": "Blue Ocean Maritimes",
-    "logo": "img/logos/blue_ocean.png"
-  },
-  "global_nav": {
-    "name": "Global Navigation Corp",
-    "logo": "img/logos/global_nav.png"
-  },
   "mantagas": {
     "name": "Mantagas Denizcilik ve Ticaret Ltd.Şti.",
     "logo": "https://www.mantagas.com/images/logo/mantaship-logo.png"
@@ -30,5 +18,9 @@
   "ahtanker": {
     "name": "Anadoluhisarı Tankercilik A.Ş.",
     "logo": "../img/logos/ahtanker.png"
+  },
+  "kaptanoglu": {
+    "name": "KAPTANOĞLU DENİZCİLİK SAN. VE TİC.A.Ş.",
+    "logo": "https://kaptanoglu.com/wp-content/uploads/2024/11/group1.png"
   }
 }
