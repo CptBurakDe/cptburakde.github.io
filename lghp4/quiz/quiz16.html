@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LGHP4 Quiz 16</title>
+<link rel="stylesheet" href="../../css/quiz.css">
+</head>
+<body>
+<h1>LGHP4 Liquefied Gas Handling Procedures Quiz 16</h1>
+
+<div class="quiz-header">
+    <h3 id="timer" class="timer">Time Left: 30 seconds</h3> 
+    <h2 id="score" class="score">Score: 0 / 0</h2>
+</div> 
+<div class="quiz-container" id="quiz">
+</div>
+
+<div id="results" class="quiz-container results-container">
+    <div class="results-content">
+        <h2 id="results-title" class="results-title">Congratulations! Quiz Completed! 🎉</h2>
+        <p id="final-message" class="final-message"></p>
+        
+        <div class="results-buttons">
+            <button id="share-result-btn" class="btn btn-share">
+                <span class="btn-icon">📤</span> Share My Result
+            </button>
+            <button id="try-again-btn" class="btn btn-try-again">
+                <span class="btn-icon">🔄</span> Try Again
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+const quizContainer = document.getElementById('quiz');
+const scoreElement = document.getElementById('score');
+const resultsContainer = document.getElementById('results');
+const finalMessage = document.getElementById('final-message');
+const timerElement = document.getElementById('timer'); 
+const shareResultBtn = document.getElementById('share-result-btn');
+const tryAgainBtn = document.getElementById('try-again-btn');
+
+let quizData = [];   // Artık dışarıdan gelecek
+let correctAnswers = 0;
+let answeredQuestions = 0;
+let currentQuestionIndex = 0;
+let timerInterval;
+const TIME_PER_QUESTION = 30;
+
+// --- JSON'DAN SORULARI ÇEK ---
+async function loadQuizData() {
+    try {
+        const response = await fetch('../json/quiz-16.json'); // JSON yolu
+        if (!response.ok) throw new Error('Quiz data could not be loaded');
+        quizData = await response.json();
+        initializeQuiz();
+    } catch (err) {
+        console.error('Error loading quiz data:', err);
+        quizContainer.innerHTML = '<p style="color:red;">Failed to load quiz data.</p>';
+    }
+}
+
+// --- QUIZ INITIALIZATION ---
+function initializeQuiz() {
+    const totalQuestions = quizData.length;
+
+    // Soruları oluştur
+    quizData.forEach((q, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question';
+        questionDiv.style.display = index === 0 ? 'block' : 'none';
+
+        const questionTitle = document.createElement('h3');
+        questionTitle.textContent = `${index + 1}. ${q.question}`;
+        questionDiv.appendChild(questionTitle);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        // Explanation div'i oluştur
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'explanation';
+        explanationDiv.style.display = 'none';
+        const explanationTitle = document.createElement('strong');
+        explanationTitle.className = 'explanation-title';
+        explanationTitle.textContent = 'Explanation: ';
+        explanationDiv.appendChild(explanationTitle);
+        const explanationText = document.createElement('span');
+        explanationText.className = 'explanation-text';
+        explanationText.textContent = q.explanation || '';
+        explanationDiv.appendChild(explanationText);
+
+        // Next Question butonu oluştur
+        const nextButton = document.createElement('button');
+        nextButton.className = 'btn btn-next';
+        nextButton.style.display = 'none';
+        const nextButtonText = document.createElement('span');
+        nextButtonText.textContent = index < totalQuestions - 1 ? 'Next Question' : 'Show Results';
+        nextButton.appendChild(nextButtonText);
+        const nextButtonIcon = document.createElement('span');
+        nextButtonIcon.className = 'btn-icon';
+        nextButtonIcon.textContent = index < totalQuestions - 1 ? '→' : '🎯';
+        nextButton.appendChild(nextButtonIcon);
+        nextButton.addEventListener('click', () => {
+            currentQuestionIndex++;
+            updateScore();
+            if (currentQuestionIndex < totalQuestions) {
+                showQuestion(currentQuestionIndex);
+            } else {
+                showResults();
+            }
+        });
+
+        q.options.forEach((opt, i) => {
+            const btn = document.createElement('button');
+            btn.textContent = opt;
+
+            btn.addEventListener('click', () => {
+                stopTimer();
+                answeredQuestions++;
+                Array.from(optionsDiv.children).forEach(b => b.disabled = true);
+                Array.from(optionsDiv.children).forEach((b, idx) => {
+                    if (idx === q.answer) b.classList.add('correct');
+                });
+                if (i === q.answer) correctAnswers++;
+                else btn.classList.add('incorrect');
+
+                // Explanation'ı göster
+                explanationDiv.style.display = 'block';
+                // Next butonunu göster
+                nextButton.style.display = 'block';
+                // Score'u güncelle
+                updateScore();
+            });
+
+            optionsDiv.appendChild(btn);
+        });
+
+        questionDiv.appendChild(optionsDiv);
+        questionDiv.appendChild(explanationDiv);
+        questionDiv.appendChild(nextButton);
+        quizContainer.appendChild(questionDiv);
+    });
+
+    // Update initial score display with total questions
+    scoreElement.textContent = `Score: 0 / ${totalQuestions}`;
+    showQuestion(currentQuestionIndex);
+}
+
+// --- TIMER, SCORE, RESULTS (Mevcut fonksiyonları koru) ---
+function startTimer() {
+    let timeLeft = TIME_PER_QUESTION;
+    timerElement.textContent = `Time Left: ${timeLeft} seconds`;
+    timerElement.classList.remove('timer-warning', 'timer-stopped');
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = `Time Left: ${timeLeft} seconds`;
+        
+        // Add warning class when 5 seconds or less
+        if (timeLeft <= 5) {
+            timerElement.classList.add('timer-warning');
+        }
+        
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            timerElement.textContent = "Time's Up!";
+            timerElement.classList.remove('timer-warning');
+            timerElement.classList.add('timer-stopped');
+            handleTimeout();
+        }
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+    timerElement.classList.add('timer-stopped');
+    timerElement.classList.remove('timer-warning');
+}
+
+function handleTimeout() {
+    const currentQuestionDiv = quizContainer.children[currentQuestionIndex];
+    if (currentQuestionDiv) {
+        const optionsDiv = currentQuestionDiv.querySelector('.options');
+        Array.from(optionsDiv.children).forEach(b => b.disabled = true);
+        Array.from(optionsDiv.children).forEach((b, idx) => {
+            if (idx === quizData[currentQuestionIndex].answer) b.classList.add('correct');
+        });
+        // Explanation'ı göster
+        const explanationDiv = currentQuestionDiv.querySelector('.explanation');
+        if (explanationDiv) {
+            explanationDiv.style.display = 'block';
+        }
+        // Next butonunu göster
+        const nextButton = currentQuestionDiv.querySelector('.btn-next');
+        if (nextButton) {
+            nextButton.style.display = 'block';
+        }
+    }
+    answeredQuestions++;
+    updateScore();
+}
+
+function showQuestion(index) {
+    Array.from(quizContainer.children).forEach((div, i) => {
+        div.style.display = i === index ? 'block' : 'none';
+        if (i === index) {
+            // Yeni soru gösterilirken explanation ve next button'u gizle
+            const explanationDiv = div.querySelector('.explanation');
+            if (explanationDiv) {
+                explanationDiv.style.display = 'none';
+            }
+            const nextButton = div.querySelector('.btn-next');
+            if (nextButton) {
+                nextButton.style.display = 'none';
+            }
+        }
+    });
+    startTimer();
+}
+
+function updateScore() {
+    scoreElement.textContent = `Score: ${correctAnswers} / ${quizData.length}`;
+    // Results otomatik gösterilmeyecek, kullanıcı "Show Results" butonuna basacak
+}
+
+function showResults() {
+    stopTimer();
+    quizContainer.style.display = 'none';
+    resultsContainer.classList.add('show');
+    timerElement.style.display = 'none';
+    scoreElement.style.display = 'none';
+    const percentage = Math.round((correctAnswers / quizData.length) * 100);
+    let message;
+    let emoji = '';
+    if (percentage === 100) {
+        message = `Perfect! You answered all ${correctAnswers} questions correctly!`;
+        emoji = '🚢⚓';
+    } else if (percentage >= 70) {
+        message = `Great! You scored ${correctAnswers}/${quizData.length} (${percentage}%)!`;
+        emoji = '🌊';
+    } else {
+        message = `You scored ${correctAnswers}/${quizData.length} (${percentage}%). Keep studying LGHP4 notes!`;
+        emoji = '📚';
+    }
+    finalMessage.innerHTML = `${message} ${emoji}`;
+    
+    // Track quiz result
+    if (typeof VisitorTracking !== 'undefined') {
+        VisitorTracking.trackQuiz('Quiz 15', correctAnswers, quizData.length, percentage);
+    }
+}
+
+// --- SHARE & TRY AGAIN BUTTONS ---
+document.addEventListener('DOMContentLoaded', loadQuizData);
+
+// Share Result Button Functionality
+shareResultBtn.addEventListener('click', async () => {
+    const percentage = Math.round((correctAnswers / quizData.length) * 100);
+    const shareText = `I scored ${correctAnswers}/${quizData.length} (${percentage}%) on the LGHP4 Quiz 15! Tested my LNG/LGC knowledge. #LGHP4 #Maritime`;
+    const shareUrl = window.location.href;
+    const fullText = `${shareText} ${shareUrl}`;
+
+    // Try Web Share API first (mobile-friendly)
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: 'LGHP4 Quiz 15 Result',
+                text: shareText,
+                url: shareUrl
+            });
+            // Show success feedback
+            showShareFeedback('Shared successfully!');
+            return;
+        } catch (error) {
+            // User cancelled or share failed, fall back to clipboard
+            if (error.name !== 'AbortError') {
+                console.log('Share failed, falling back to clipboard');
+            }
+        }
+    }
+
+    // Fallback: Copy to clipboard
+    try {
+        await navigator.clipboard.writeText(fullText);
+        showShareFeedback('Result copied to clipboard! Paste it anywhere to share.');
+    } catch (err) {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = fullText;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            showShareFeedback('Result copied to clipboard! Paste it anywhere to share.');
+        } catch (e) {
+            showShareFeedback('Unable to share. Please copy the result manually.');
+        }
+        document.body.removeChild(textArea);
+    }
+});
+
+// Show share feedback message
+function showShareFeedback(message) {
+    const feedback = document.createElement('div');
+    feedback.className = 'share-feedback';
+    feedback.textContent = message;
+    document.body.appendChild(feedback);
+    
+    setTimeout(() => {
+        feedback.classList.add('fade-out');
+        setTimeout(() => feedback.remove(), 300);
+    }, 3000);
+}
+
+tryAgainBtn.addEventListener('click', () => { window.location.reload(); });
+</script>
+
+<!-- Visitor Tracking -->
+<script src="../../js/visitor-tracking.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+[
+  {
+    "question": "Where are the liquid and vapor manifolds on gas carriers typically located?",
+    "options": [
+      "In the cargo compressor room",
+      "At the bow or stern of the vessel",
+      "Amidships",
+      "Near the vent riser base"
+    ],
+    "answer": 2,
+    "explanation": "Gas carriers are typically fitted with liquid and vapor manifolds ideally positioned in the mid-section of the ship (amidships)."
+  },
+  {
+    "question": "Where is the liquid loading line directed to within each cargo tank?",
+    "options": [
+      "To the top of the tank dome",
+      "To the bottom of the tank",
+      "To the vapour header connection point",
+      "To the cargo compressor room inlet"
+    ],
+    "answer": 1,
+    "explanation": "The liquid loading line is routed through the tank dome and directed to the bottom of each cargo tank."
+  },
+  {
+    "question": "What is the primary purpose of fitting a vapour relief valve to a cargo tank dome?",
+    "options": [
+      "To facilitate reliquefaction of cargo boil-off",
+      "To connect the tank to the liquid header",
+      "To release excess vapor pressure to the vent riser",
+      "To provide a connection point for spool pieces"
+    ],
+    "answer": 2,
+    "explanation": "Vapor relief valves are fitted to the tank domes and connected via a vent header to the vent riser to release excess vapor pressure safely."
+  },
+  {
+    "question": "What is the key advantage of using a flanged spool piece, even if the distance piece matches the Marine Loading Arm MLA size?",
+    "options": [
+      "It reduces the maximum allowable design forces on the manifold.",
+      "It eliminates the need for lifting lugs on the reducer.",
+      "It simplifies the replacement process if flange face damage occurs.",
+      "It allows for the use of camlocks for blanking on solid flanges."
+    ],
+    "answer": 2,
+    "explanation": "The use of a flanged spool piece is recommended because if the flange face sustains damage, the spool piece can be easily replaced. Repairing the flange of a welded distance piece is a more complicated process."
+  },
+  {
+    "question": "What is the required minimum design pressure for deck liquid lines on gas ships, according to the IGC Code?",
+    "options": [
+      "It must be less than the working pressure.",
+      "It must not be less than 10 bar.",
+      "It must not exceed the thermal expansion rating.",
+      "It is not legally specified, as liquefied gases are not MARPOL Annex I cargoes."
+    ],
+    "answer": 1,
+    "explanation": "The IGC Code specifies that the design pressure for deck liquid lines on gas carriers must not be less than 10 bar."
+  },
+  {
+    "question": "Which of the following is the primary method recommended for accommodating thermal expansion and contraction in cargo pipelines?",
+    "options": [
+      "Fitting expansion bellows made of corrosion resistant materials",
+      "Installing strong anchor points to resist lateral displacement",
+      "Utilizing the natural geometry of the pipe bends",
+      "Installing expansion loops in the pipeline"
+    ],
+    "answer": 3,
+    "explanation": "The provision for accommodating thermal expansion and contraction in cargo pipelines is best achieved by fitting expansion loops in the pipelines."
+  },
+  {
+    "question": "Which protective measure is mandated by the IGC Code for all pipelines or components that can be isolated in a liquid full condition?",
+    "options": [
+      "Pressure gauges for monitoring internal pressure",
+      "Low temperature and high pressure alarms",
+      "Relief valves for thermal expansion and evaporation",
+      "Strong anchor points to resist displacement"
+    ],
+    "answer": 2,
+    "explanation": "The IGC Code mandates that all pipelines or components that can be isolated when liquid-full must be protected with relief valves designed to relieve pressure resulting from thermal expansion and evaporation."
+  },
+  {
+    "question": "What is the operational reason given for NOT leaving removable spool pieces in place after use?",
+    "options": [
+      "To minimize total system pressure drop.",
+      "To maintain positive segregation of incompatible cargoes.",
+      "To simplify future pressure testing procedures.",
+      "To comply with SIGTTO Manifold Recommendations."
+    ],
+    "answer": 1,
+    "explanation": "Removable spool pieces used for operational reasons should generally not be left in place but should be removed and the pipelines blanked to maintain positive segregation, especially for incompatible cargoes."
+  },
+  {
+    "question": "Where is the vapor connection for the cargo reliquefaction process typically taken from in a semi-refrigerated gas carrier?",
+    "options": [
+      "From the condensate return line manifold",
+      "Directly from the top fill line",
+      "From the main liquid header",
+      "From the vapor header leading to the cargo compressor room"
+    ],
+    "answer": 3,
+    "explanation": "On semi-refrigerated gas carriers that reliquefy cargo, a vapor connection is taken from the vapor header and routed to the cargo compressor room where the cargo boil-off is processed."
+  },
+  {
+    "question": "In cases where offset reducers or Y pieces are necessary for STS operations, which condition is mandatory for their use?",
+    "options": [
+      "They must only be used on non-refrigerated gas carriers.",
+      "They must utilize quick-acting couplers.",
+      "They must be supported by engineering studies and available test certificates.",
+      "They must be fitted with a blank flange and camlocks."
+    ],
+    "answer": 2,
+    "explanation": "The use of offset reducers or Y pieces, such as those required for LNG STS operations, should generally be avoided unless proper engineering studies have been carried out and corresponding test certificates are available."
+  },
+  {
+    "question": "What material characteristic is essential for expansion bellows used in cargo pipelines outside the cargo tanks?",
+    "options": [
+      "Must be rated for pressures less than the liquid pipeline design criteria",
+      "Must be corrosion resistant",
+      "Must be equipped with a lifting lug",
+      "Must be easily dismantled for pressure testing"
+    ],
+    "answer": 1,
+    "explanation": "Expansion bellows, when used outside the cargo tanks, must be made from corrosion resistant materials and must meet the design and fitting requirements of the IGC Code."
+  },
+  {
+    "question": "What is the most appropriate mitigation measure to prevent vapor lines from being locked-in liquid full during intermittent service?",
+    "options": [
+      "Increasing the relief valve size on the vapor header.",
+      "Installing high pressure alarms before locking in sections.",
+      "Ensuring the line is kept permanently open to the vent riser.",
+      "Applying strong anchor points to the insulated section."
+    ],
+    "answer": 1,
+    "explanation": "Mitigation measures for vapor lines that may be locked-in liquid full include installing low temperature and high pressure alarms to monitor conditions before isolation, or modifying operating procedures to ensure valves are not closed until temperatures stabilize."
+  },
+  {
+    "question": "What is the primary connection point for the vapour relief valves fitted to the cargo tank domes?",
+    "options": [
+      "The liquid loading line",
+      "The vent riser via a vent header",
+      "The cargo compressor room",
+      "The turret manifold"
+    ],
+    "answer": 1,
+    "explanation": "Vapor relief valves are installed on the tank domes and are connected to the vent riser using a piping arrangement known as a vent header."
+  },
+  {
+    "question": "What specialized equipment might be installed at the bow of a new LNG carrier also serving as a Regasification Vessel RV?",
+    "options": [
+      "A turret manifold",
+      "A condensate return line",
+      "A simplified liquid header",
+      "An expansion bellows"
+    ],
+    "answer": 0,
+    "explanation": "New LNG carriers, particularly those serving as Regasification Vessels RVs, may have a specialized turret manifold mounted towards the bow in addition to the conventional manifold."
+  },
+  {
+    "question": "Why is it considered prudent to ensure that expansion bellows installed in vapor lines meet the liquid pipeline design criteria?",
+    "options": [
+      "To ensure the bellow's structural integrity during thermal expansion and contraction.",
+      "To prevent vapor lines from being locked in liquid full condition during isolation.",
+      "To maintain adequate pressure rating in the event of liquid accumulation in the line.",
+      "To resist lateral and vertical displacement caused by surge pressures."
+    ],
+    "answer": 2,
+    "explanation": "When installing expansion bellows in vapor lines, it is prudent to ensure the pressure rating of the bellows meets at least the liquid pipeline design criteria, covering the rare possibility of the vapor line becoming liquid full."
+  },
+  {
+    "question": "Which document provides additional guidance on the layout strength and fittings of gas carrier manifolds?",
+    "options": [
+      "The IGC Code Chapter 15",
+      "OCIMF The Safe Transfer of Liquefied Gas",
+      "SIGTTO Manifold Recommendations for Liquefied Gas Carriers",
+      "MARPOL Annex I Cargo Operations Manual"
+    ],
+    "answer": 2,
+    "explanation": "Additional guidance regarding the layout strength and fittings of gas carrier manifolds can be found in the SIGTTO document Manifold Recommendations for Liquefied Gas Carriers."
+  },
+  {
+    "question": "What is the required practice for spool pieces used for segregation or inert gas plant connections after their operational purpose is complete?",
+    "options": [
+      "They should be bolted to the distance piece and left onboard.",
+      "They should be tagged and isolated but left in place for future use.",
+      "They must be removed to ensure positive segregation and the pipelines blanked.",
+      "They must be tested up to the design pressure before removal."
+    ],
+    "answer": 2,
+    "explanation": "Spool pieces used for operational reasons must generally be removed after use and the lines blanked to ensure positive segregation, rather than being left in place."
+  },
+  {
+    "question": "According to the IGC Code what condition is strictly prohibited concerning the routing of cargo pipelines?",
+    "options": [
+      "They must not pass through the cargo tank domes.",
+      "They are not permitted to be located below deck level.",
+      "They must not be connected to vapor headers.",
+      "They must be protected by expansion bellows."
+    ],
+    "answer": 1,
+    "explanation": "The IGC Code strictly forbids the routing of cargo pipelines below deck level, requiring all pipe connections to the tanks to pass through the cargo tank domes, which pierce the main deck."
+  },
+  {
+    "question": "In the reliquefaction process what is the term for the line that returns the condensed cargo back to the tank?",
+    "options": [
+      "The vapor header",
+      "The discharge manifold",
+      "The top fill line",
+      "The condensate return line"
+    ],
+    "answer": 3,
+    "explanation": "Following reliquefaction, the cargo is returned to each cargo tank via piping known as a condensate return line."
+  },
+  {
+    "question": "Which type of line is typically not required to be fitted with relief valves against thermal expansion under the IGC Code?",
+    "options": [
+      "Liquid lines that can be isolated",
+      "Vapor-only lines",
+      "Condensate return lines",
+      "Loading manifolds"
+    ],
+    "answer": 1,
+    "explanation": "In practice, while all liquid lines that can be isolated are equipped with protection against thermal expansion, vapor-only lines may not be so fitted, as the possibility of liquid accumulation is rare."
+  },
+  {
+    "question": "What essential fittings are installed in cargo pipeline systems to resist lateral or vertical displacement caused by surge pressures?",
+    "options": [
+      "Expansion bellows",
+      "Expansion loops",
+      "Pressure relief valves",
+      "Strong anchor points"
+    ],
+    "answer": 3,
+    "explanation": "In addition to the expansion arrangements, strong anchor points are installed in piping systems to resist lateral or vertical displacement resulting from sudden or surge pressures."
+  },
+  {
+    "question": "Why is annual pressure testing of cargo lines on liquefied gas carriers generally not required?",
+    "options": [
+      "The working pressure is too high to allow for safe testing.",
+      "Liquefied gases are not classified as MARPOL Annex I cargoes.",
+      "Testing to design pressure is not legally mandatory.",
+      "All deck liquid lines are designed to withstand 10 bar minimum."
+    ],
+    "answer": 1,
+    "explanation": "Cargo lines on liquefied gas carriers do not typically require annual pressure testing because liquefied gases are explicitly not classified as MARPOL Annex I cargoes, unlike crude oil or petroleum products."
+  },
+  {
+    "question": "What fitting is provided on reducers and spool pieces to aid in their safe handling and positioning?",
+    "options": [
+      "A camlock mechanism",
+      "A solid flange",
+      "A lifting lug",
+      "A thermal expansion bellow"
+    ],
+    "answer": 2,
+    "explanation": "Reducers and spool pieces are often fitted with a lifting lug to facilitate safe handling. This lug is generally positioned near the center of gravity."
+  },
+  {
+    "question": "Which specialized fitting is recommended to be used even when the distance piece is the same size as the marine loading arm MLAs?",
+    "options": [
+      "A turret manifold connection",
+      "A Y piece for hose connection",
+      "A flanged spool piece",
+      "A welded neck type presentation flange"
+    ],
+    "answer": 2,
+    "explanation": "The use of a flanged spool piece is recommended even when the distance piece is the same size as the MLA, as it simplifies the process of replacing a damaged flange face compared to a welded piece."
+  },
+  {
+    "question": "Where must the lifting lug on a reducer or spool piece be located?",
+    "options": [
+      "As close as possible to the center of gravity",
+      "Near the quick-acting couplers only",
+      "Only on the end facing the manifold",
+      "Away from any flange connection"
+    ],
+    "answer": 0,
+    "explanation": "A lifting lug, when fitted to a reducer or spool piece, should be positioned as close as possible to the center of gravity to ensure balanced and safe handling."
+  },
+  {
+    "question": "What is the primary method used to prevent the long term isolation of a vapor line section in a liquid full state due to leakage or evaporation?",
+    "options": [
+      "Increasing the line's pressure rating to over 10 bar.",
+      "Installing high pressure or low temperature alarms in the section.",
+      "Applying heavy insulation to minimize temperature swings.",
+      "Using corrosion-resistant expansion bellows."
+    ],
+    "answer": 1,
+    "explanation": "Mitigation measures against vapor lines becoming locked-in liquid full, particularly during intermittent service, include the installation of high pressure and/or low temperature alarms to warn operators before complete isolation."
+  },
+  {
+    "question": "Which type of flange is typically used for manifold presentation flanges on gas carriers?",
+    "options": [
+      "Blind flange type",
+      "Slip-on flange type",
+      "Welded neck type with raised faces",
+      "Socket-weld flange type"
+    ],
+    "answer": 2,
+    "explanation": "Manifold presentation flanges are usually of the welded neck type and feature raised faces, ensuring a robust connection suitable for cargo transfer."
+  }
+]
