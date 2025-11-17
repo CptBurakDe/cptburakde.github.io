@@ -121,28 +121,6 @@
     "explanation": "Expansion bellows, when used outside the cargo tanks, must be made from corrosion resistant materials and must meet the design and fitting requirements of the IGC Code."
   },
   {
-    "question": "What is the most appropriate mitigation measure to prevent vapor lines from being locked-in liquid full during intermittent service?",
-    "options": [
-      "Increasing the relief valve size on the vapor header.",
-      "Installing high pressure alarms before locking in sections.",
-      "Ensuring the line is kept permanently open to the vent riser.",
-      "Applying strong anchor points to the insulated section."
-    ],
-    "answer": 1,
-    "explanation": "Mitigation measures for vapor lines that may be locked-in liquid full include installing low temperature and high pressure alarms to monitor conditions before isolation, or modifying operating procedures to ensure valves are not closed until temperatures stabilize."
-  },
-  {
-    "question": "What is the primary connection point for the vapour relief valves fitted to the cargo tank domes?",
-    "options": [
-      "The liquid loading line",
-      "The vent riser via a vent header",
-      "The cargo compressor room",
-      "The turret manifold"
-    ],
-    "answer": 1,
-    "explanation": "Vapor relief valves are installed on the tank domes and are connected to the vent riser using a piping arrangement known as a vent header."
-  },
-  {
     "question": "What specialized equipment might be installed at the bow of a new LNG carrier also serving as a Regasification Vessel RV?",
     "options": [
       "A turret manifold",
@@ -185,17 +163,6 @@
     ],
     "answer": 2,
     "explanation": "Spool pieces used for operational reasons must generally be removed after use and the lines blanked to ensure positive segregation, rather than being left in place."
-  },
-  {
-    "question": "According to the IGC Code what condition is strictly prohibited concerning the routing of cargo pipelines?",
-    "options": [
-      "They must not pass through the cargo tank domes.",
-      "They are not permitted to be located below deck level.",
-      "They must not be connected to vapor headers.",
-      "They must be protected by expansion bellows."
-    ],
-    "answer": 1,
-    "explanation": "The IGC Code strictly forbids the routing of cargo pipelines below deck level, requiring all pipe connections to the tanks to pass through the cargo tank domes, which pierce the main deck."
   },
   {
     "question": "In the reliquefaction process what is the term for the line that returns the condensed cargo back to the tank?",
@@ -251,49 +218,5 @@
     ],
     "answer": 2,
     "explanation": "Reducers and spool pieces are often fitted with a lifting lug to facilitate safe handling. This lug is generally positioned near the center of gravity."
-  },
-  {
-    "question": "Which specialized fitting is recommended to be used even when the distance piece is the same size as the marine loading arm MLAs?",
-    "options": [
-      "A turret manifold connection",
-      "A Y piece for hose connection",
-      "A flanged spool piece",
-      "A welded neck type presentation flange"
-    ],
-    "answer": 2,
-    "explanation": "The use of a flanged spool piece is recommended even when the distance piece is the same size as the MLA, as it simplifies the process of replacing a damaged flange face compared to a welded piece."
-  },
-  {
-    "question": "Where must the lifting lug on a reducer or spool piece be located?",
-    "options": [
-      "As close as possible to the center of gravity",
-      "Near the quick-acting couplers only",
-      "Only on the end facing the manifold",
-      "Away from any flange connection"
-    ],
-    "answer": 0,
-    "explanation": "A lifting lug, when fitted to a reducer or spool piece, should be positioned as close as possible to the center of gravity to ensure balanced and safe handling."
-  },
-  {
-    "question": "What is the primary method used to prevent the long term isolation of a vapor line section in a liquid full state due to leakage or evaporation?",
-    "options": [
-      "Increasing the line's pressure rating to over 10 bar.",
-      "Installing high pressure or low temperature alarms in the section.",
-      "Applying heavy insulation to minimize temperature swings.",
-      "Using corrosion-resistant expansion bellows."
-    ],
-    "answer": 1,
-    "explanation": "Mitigation measures against vapor lines becoming locked-in liquid full, particularly during intermittent service, include the installation of high pressure and/or low temperature alarms to warn operators before complete isolation."
-  },
-  {
-    "question": "Which type of flange is typically used for manifold presentation flanges on gas carriers?",
-    "options": [
-      "Blind flange type",
-      "Slip-on flange type",
-      "Welded neck type with raised faces",
-      "Socket-weld flange type"
-    ],
-    "answer": 2,
-    "explanation": "Manifold presentation flanges are usually of the welded neck type and feature raised faces, ensuring a robust connection suitable for cargo transfer."
   }
 ]
