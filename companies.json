@@ -22,5 +22,9 @@
   "kaptanoglu": {
     "name": "KAPTANOĞLU DENİZCİLİK SAN. VE TİC.A.Ş.",
     "logo": "../img/logos/kaptanoglu.png"
+  },
+  "nakkas": {
+    "name": "Nakkas Shipping & Trading Co.",
+    "logo": "../img/logos/nakkas.png"
   }
 }
