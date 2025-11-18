@@ -54,5 +54,9 @@
   "unitankers": {
     "name": "Uni Tankers Denizcilik Ve Ticaret Ltd. Sti",
     "logo": "../img/logos/unitankers.png"
+  },
+  "swan": {
+    "name": "SWAN TANKER SHIPPING",
+    "logo": "../img/logos/swan.png"
   }
 }
