@@ -46,5 +46,13 @@
   "hicri": {
     "name": "HICRI ERCILI DENIZCILIK AS",
     "logo": "../img/logos/hicri.png"
+  },
+  "tankmarine": {
+    "name": "Tankmarine Ship Management",
+    "logo": "https://www.tankmarine.com.tr/tema/genel/uploads/logo/web-logo_1.png"
+  },
+  "unitankers": {
+    "name": "Uni Tankers Denizcilik Ve Ticaret Ltd. Sti",
+    "logo": "../img/logos/unitankers.png"
   }
 }
