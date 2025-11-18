@@ -26,5 +26,25 @@
   "nakkas": {
     "name": "Nakkas Shipping & Trading Co.",
     "logo": "../img/logos/nakkas.png"
+  },
+  "chemfleet": {
+    "name": "Chemfleet Ship Management",
+    "logo": "../img/logos/chemfleet.png"
+  },
+  "acechem": {
+    "name": "ACECHEM TANKER",
+    "logo": "../img/logos/acechem.png"
+  },
+  "torlak": {
+    "name": "TORLAK SHIPPING",
+    "logo": "../img/logos/torlak.png"
+  },
+  "densa": {
+    "name": "DENSA TANKERS",
+    "logo": "../img/logos/densa.png"
+  },
+  "hicri": {
+    "name": "HICRI ERCILI DENIZCILIK AS",
+    "logo": "../img/logos/hicri.png"
   }
 }
