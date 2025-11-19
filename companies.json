@@ -74,5 +74,9 @@
   "orsa": {
     "name": "ORSA TANKER",
     "logo": "../img/logos/orsa.png"
+  },
+  "battal": {
+    "name": "Battal Marine Gemi İşletmeciliği A. Ş.",
+    "logo": "https://battalmarine.com/files/logo-b.png"
   }
 }
