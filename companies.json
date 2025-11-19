@@ -78,5 +78,9 @@
   "battal": {
     "name": "Battal Marine Gemi İşletmeciliği A. Ş.",
     "logo": "https://battalmarine.com/files/logo-b.png"
+  },
+  "gungen": {
+    "name": "Güngen Maritime & Trading A/Ş",
+    "logo": "../img/logos/gungen.png"
   }
 }
