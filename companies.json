@@ -58,5 +58,9 @@
   "swan": {
     "name": "SWAN TANKER SHIPPING",
     "logo": "../img/logos/swan.png"
+  },
+  "onn2": {
+    "name": "ONN Denizcilik ve Danışmanlık Ltd. Şti.",
+    "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQHHOcikmm_P2g/company-logo_200_200/company-logo_200_200/0/1714764506720?e=2147483647&v=beta&t=MtdIxDt4GTp8x5y3E4TVsz8XFoRYdg7c6sZ7rbGoEBY"
   }
 }
