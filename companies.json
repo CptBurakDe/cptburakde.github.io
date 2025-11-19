@@ -66,5 +66,9 @@
   "transka": {
     "name": "TRANSKA TANKERS",
     "logo": "../img/logos/transka.png"
+  },
+  "ymn": {
+    "name": "YMN Tanker Marine Management Inc.",
+    "logo": "https://www.ymntankers.com.tr/_nuxt/YMN_Tanker_Logo.DwWn5bTC.png"
   }
 }
