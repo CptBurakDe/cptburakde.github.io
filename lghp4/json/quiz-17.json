@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which party is primarily responsible for being able to safely and controllably stop the transfer process in a linked Emergency Shutdown ESD system?",
+    "options": [
+      "The port facility or terminal that is offloading the liquefied gas",
+      "The vessel or party that is receiving the liquefied gas cargo",
+      "The classification society overseeing the LNG system",
+      "The ship's cargo control room staff during transfer"
+    ],
+    "answer": 1,
+    "explanation": "The fundamental principle of a linked Emergency Shutdown ESD system is to grant the party receiving the liquefied gas—whether it is the ship during loading or the shore terminal during offloading—the capability to halt the transfer process in a safe and controlled manner. This ensures that the receiving party retains control over events occurring at their location, which is critical for safe operations."
+  },
+  {
+    "question": "What is the primary function of strainers installed at the loading and unloading manifold connections in the LNG trade?",
+    "options": [
+      "To regulate the temperature of the liquefied gas cargo",
+      "To protect the cargo handling equipment from damage by foreign objects",
+      "To filter out dissolved heavier hydrocarbons from the cargo stream",
+      "To increase the overall pressure within the cargo manifold system"
+    ],
+    "answer": 1,
+    "explanation": "Strainers are primarily installed at manifold connections to protect sensitive cargo handling equipment, such as pumps and compressors, from potential damage caused by foreign debris and objects that may have accidentally entered the cargo system. This protective function is crucial for maintaining the integrity and operational lifespan of the equipment."
+  },
+  {
+    "question": "What is the general design characteristic of many liquid strainers utilized in LNG and similar liquefied gas systems regarding the flow direction?",
+    "options": [
+      "They are generally designed to accommodate bidirectional flow for flexibility",
+      "They are typically designed for one-way flow only",
+      "They are designed to withstand high pressure from either direction",
+      "They are usually designed to bypass the flow in case of a minor clog"
+    ],
+    "answer": 1,
+    "explanation": "Many liquid strainers are specifically designed to allow flow in one direction only. It is critical that these strainers are installed correctly, as improper installation (the wrong way) can cause them to collapse, which defeats their protective purpose and may even introduce debris into the system."
+  },
+  {
+    "question": "What critical consideration must be taken into account when utilizing a finer mesh size for filtration in LNG systems?",
+    "options": [
+      "The risk of excessive pressure loss and potential freezing of heavier hydrocarbons on the filter surface",
+      "The possibility of the strainer collapsing due to increased flow velocity",
+      "The necessary increase in the differential pressure rating of the adjacent piping",
+      "The likelihood of an automatic ESD being triggered due to reduced flow rates"
+    ],
+    "answer": 0,
+    "explanation": "When a finer mesh size is used in filtration, two major risks must be considered: excessive pressure loss (head loss) across the filter element and the potential for heavier hydrocarbons to freeze onto the filter surface due to the Joule-Thomson effect. This freezing can lead to blockages, compromising the system's operation."
+  },
+  {
+    "question": "What is the required minimum pressure integrity for a clogged strainer during loading operations, based on typical safety standards?",
+    "options": [
+      "It should withstand the maximum pressure that the shore loading pumps can generate",
+      "It should withstand a differential pressure of approximately 0.5 bar",
+      "It must be able to withstand a differential pressure of 3 bar",
+      "It should be designed to withstand pressures up to 10 bar before relieving"
+    ],
+    "answer": 2,
+    "explanation": "Regardless of the necessary degree of filtration, a strainer, if it becomes clogged, must be able to withstand the differential pressures encountered during cargo transfer. Specifically, during loading operations, the strainer is typically required to be able to withstand a differential pressure of 3 bar. During discharge, it must withstand the maximum pressure the ship's pumps can generate."
+  },
+  {
+    "question": "Why are LNG strainers unsuitable for use with LPG cargoes, even if the LPG meets normal purity standards?",
+    "options": [
+      "LNG strainers have a mesh size that is too coarse for the moisture content in LPG",
+      "LPG cargoes generally operate at a much lower pressure than LNG, leading to flow issues",
+      "The LNG filtration standards are too fine, leading to frequent blockages from higher moisture and debris in LPG",
+      "The materials used in LNG strainers are incompatible with the chemical composition of LPG"
+    ],
+    "answer": 2,
+    "explanation": "LNG filtration standards are typically higher, meaning the mesh is finer (e.g., ASTM 20 mesh, nominal aperture 0.84 mm) than what is used for LPG. When these finer LNG strainers are used for LPG cargoes, the higher moisture and debris content commonly found in LPG (even when meeting purity standards) causes the finer mesh to block frequently. Consequently, coarser filters are generally used for LPG cargoes."
+  },
+  {
+    "question": "What is the primary purpose of fitting strainers in the vapour systems of liquefied gas carriers?",
+    "options": [
+      "To increase the vapour return flow rate to the shore terminal during loading",
+      "To prevent the carry-over of rust and dust particles into rotating machinery like compressors",
+      "To maintain a constant pressure within the cargo tank dome area",
+      "To condense any moisture present in the gas before it enters the reliquefaction plant"
+    ],
+    "answer": 1,
+    "explanation": "In vapour systems, strainers are typically installed to protect critical rotating equipment, such as compressors or similar machinery. Their primary purpose is to prevent the carry-over of foreign matter, such as rust or dust, which could cause significant damage to the internal components of these machines."
+  },
+  {
+    "question": "According to the IGC Code, what are the core requirements for initiating an Emergency Shutdown ESD?",
+    "options": [
+      "Activation through a single overfill alarm or a fire detection system only",
+      "Initiation by manual trip points or thermal-activated devices",
+      "Automatic activation upon a loss of electrical power to the valve actuators",
+      "Only through a pre-arranged signal from the shore terminal during transfer"
+    ],
+    "answer": 1,
+    "explanation": "The core requirement of the IGC Code is that an ESD shutdown must be capable of being initiated either through manual trip points (pushbuttons or pneumatic valves) or through thermal devices (fire sensors or fusible plugs). These core requirements are often supplemented by additional operational trip functions on modern vessels."
+  }
+]

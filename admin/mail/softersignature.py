@@ -1,0 +1,51 @@
+<div dir="ltr" class="yiv1200488976ydpbf13bec2signature">
+      <div class="yiv1200488976ydpdd3ed015pasted-link">
+        <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; color: rgb(68, 68, 68); width: 480px; font-size: 9pt; font-family: Arial, sans-serif; background: transparent !important; --darkreader-inline-color: var(--darkreader-text-444444, #bdb7af); --darkreader-inline-bgimage: initial; --darkreader-inline-bgcolor: transparent;" class="yiv1200488976ydpdd3ed015ng-scope" data-darkreader-inline-color="" data-darkreader-inline-bgimage="" data-darkreader-inline-bgcolor="">
+          <tbody>
+            <tr>
+              <td align="left" valign="top" style="padding: 0px; width: 0px; vertical-align: top; border-right: 3px solid rgb(209, 161, 55); --darkreader-inline-border-right: var(--darkreader-border-d1a137, #8f6d21);" class="yiv1200488976ydpdd3ed015ng-scope" data-darkreader-inline-border-right=""></td>
+
+              <td style="padding:5px;width:313px;">
+                <span style="font-size: 12pt; line-height: 12pt; color: rgb(0, 0, 0); font-weight: bold; --darkreader-inline-color: var(--darkreader-text-000000, #e8e6e3);" class="yiv1200488976ydpdd3ed015ng-binding" data-darkreader-inline-color="">Burak DEMİRCİ<br></span>
+
+                <span style="font-size: 8pt; line-height: 8pt; color: rgb(0, 0, 0); --darkreader-inline-color: var(--darkreader-text-000000, #e8e6e3);" class="yiv1200488976ydpdd3ed015ng-binding yiv1200488976ydpdd3ed015ng-scope" data-darkreader-inline-color="">Oceangoing Watchkeeping Officer<br></span>
+
+                <p style="margin:0px;padding-top:10px;padding-bottom:0px;font-size:9pt;line-height:15px;">
+                  <span style="font-size: 9pt; line-height: 15px; color: rgb(0, 0, 0); --darkreader-inline-color: var(--darkreader-text-000000, #e8e6e3);" data-darkreader-inline-color="">
+                    <span style="font-weight:700;">P:</span> +90(535) 345 09 11
+                  </span>
+                  <br>
+                  <span style="font-size: 9pt; line-height: 15px; color: rgb(0, 0, 0); --darkreader-inline-color: var(--darkreader-text-000000, #e8e6e3);" data-darkreader-inline-color="">
+                    <span style="font-weight:700;">E:</span>
+                    <a rel="nofollow noopener noreferrer" ymailto="mailto:burak_de@yahoo.com" target="_blank" href="mailto:burak_de@yahoo.com" style="color: rgb(0, 0, 0); font-size: 9pt; --darkreader-inline-color: var(--darkreader-text-000000, #e8e6e3);" data-darkreader-inline-color="">
+                      burak_de@yahoo.com
+                    </a>
+                  </span>
+                  <br>
+                  <span style="font-size: 9pt; line-height: 15px; color: rgb(0, 0, 0); --darkreader-inline-color: var(--darkreader-text-000000, #e8e6e3);" data-darkreader-inline-color="">
+                    <b>Adress:</b> Yukarı Dudullu Mh. Gazali Sk. No:13/2 Ümraniye/İSTANBUL
+                  </span>
+                </p>
+
+                <p style="margin:10px 0px 0px;padding-top:0px;padding-bottom:0px;font-size:9pt;line-height:15px;">
+                  <a rel="nofollow noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/cptburakdemirci/">
+                    <img width="19" src="https://ecp.yusercontent.com/mail?url=https%3A%2F%2Fwww.mail-signatures.com%2Fsignature-generator%2Fimg%2Ftemplates%2Fnovember-promo%2Fln.png&amp;t=1763373236&amp;ymreqid=388aaeed-5b40-77da-1c09-e5000201f100&amp;sig=c.UzRUw2P2NlSLBs4SWOOQ--~D" style="vertical-align:middle;width:19px;min-height:19px;" class="yiv1200488976">
+                  </a>
+                  &nbsp;&nbsp;
+                  <a rel="nofollow noopener noreferrer" target="_blank" href="https://wa.me/905353450911">
+                    <img width="19" src="https://ecp.yusercontent.com/mail?url=https%3A%2F%2Fwww.mail-signatures.com%2Fsignature-generator%2Fimg%2Ftemplates%2Fnovember-promo%2Fwa.png&amp;t=1763373236&amp;ymreqid=388aaeed-5b40-77da-1c09-e5000201f100&amp;sig=cuE4uNSWP.EL8lT29a_0WA--~D" style="vertical-align:middle;width:19px;min-height:19px;" class="yiv1200488976">
+                  </a>
+                </p>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br>
+    </div>
+
+<div style="display:none; width:1px; height:1px; overflow:hidden;">
+    <img src="https://marinein.net/track.php?id=zazabedo" width="1" height="1"
+      style="display:block; border:0; margin:0; padding:0;">
+</div>
