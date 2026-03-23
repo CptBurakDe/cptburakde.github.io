@@ -82,5 +82,9 @@
   "gungen": {
     "name": "Güngen Maritime & Trading A/Ş",
     "logo": "../img/logos/gungen.png"
+  },
+  "besiktas": {
+    "name": "Beşiktaş Likid Taşımacılık Denizcilik Ticaret A.Ş.",
+    "logo": "../img/logos/besiktas.png"
   }
 }
